@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next build\nnext start",
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "@types/node": "18.11.8",
