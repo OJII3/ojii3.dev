@@ -2,13 +2,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { MutableRefObject, useRef, useEffect } from 'react'
-import { Container, Row, Col, Fade } from 'react-bootstrap'
+import { Container, Row, Col, Card } from 'react-bootstrap'
 import styles from 'styles/Home.module.css'
 
 import NavbarComponent from '../../components/navbar'
-import { FadeUpRef, FadeRightRef } from '../../components/scroll-fade-ref'
+import { FadeUpRef, FadeRightRef, FadeLeftRef } from '../../components/scroll-fade-ref'
 
 export default () => {
+  const cardColgrid = 3;
 
   return (
     <div>
@@ -58,30 +59,45 @@ export default () => {
                 <img alt='' width='auto' src="https://github-readme-stats.vercel.app/api/top-langs/?username=OJII3&layout=compact" />
               </a>
               <p>
-                I also use C# too.
+                I also use C# too. I'm not a front-end engineer after all!
               </p>
             </Col>
           </Row>
-        </Container>
-
-        <Container fluid>
-
-          <Row className='justify-content-md-center'>
-            <a href="https://nextjs.org/docs" className={styles.card}>
-              <Col>
-
-                <h2>Documentation &rarr;</h2>
-                <p>Find in-depth information about Next.js features and API.</p>
-              </Col>
-            </a>
-            <a href="https://nextjs.org/learn" className={styles.card}>
-              <Col>
-                <h2>Learn &rarr;</h2>
-                <p>Learn about Next.js in an interactive course with quizzes!</p>
-              </Col>
-            </a>
+          <Row className='text-center p-5' ref={new FadeUpRef().ref}>
+            <Col>
+              <h3>Works</h3>
+            </Col>
           </Row>
 
+          <Row className='justify-content-md-center'>
+
+            <Col ref={new FadeLeftRef().ref} lg={cardColgrid}>
+              <Card>
+                <Card.Body>
+                  <Card.Title>Next.js × GitHub Pages</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">Website</Card.Subtitle>
+                  <Card.Text>
+                    React(Next.js)で作成した最新なホームページです。
+                  </Card.Text>
+                  <Card.Link href="/ojii3/nextjs-gh-pages">Details →</Card.Link>
+                </Card.Body>
+              </Card>
+            </Col>
+
+            <Col ref={new FadeRightRef().ref} lg={cardColgrid}>
+              <Card>
+                <Card.Body>
+                  <Card.Title>Tetris</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">Website</Card.Subtitle>
+                  <Card.Text>
+                    Javascriptでフルスクラッチしたブラウザゲームです。
+                  </Card.Text>
+                  <Card.Link href="ojii3/tetris">Details →</Card.Link>
+                </Card.Body>
+              </Card>
+            </Col>
+            
+          </Row>
           <Row className='justify-content-md-center'>
             <a
               href="https://github.com/vercel/next.js/tree/canary/examples"
