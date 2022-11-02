@@ -1,15 +1,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Button, Container, Form, Nav, Navbar, NavDropdown, Offcanvas } from 'react-bootstrap'
 
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-
-const OffcanvasNavbar = () => {
+/**
+ * Navbar: BsPrefixRefForwardingComponent<"nav", NavbarProps>
+ * @returns NavbarComponent: () => JSX.Element
+ */
+const NavbarComponent = () => {
   const expand = ''
   return (
     <Navbar key={expand} bg="light" expand={expand} className="mb-3">
@@ -81,4 +78,4 @@ const OffcanvasNavbar = () => {
   )
 }
 
-export default OffcanvasNavbar;
+export default NavbarComponent;
