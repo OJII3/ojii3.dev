@@ -12,6 +12,7 @@ const NavbarComponent = () => {
     <Navbar key={expand} bg="light" expand={expand} className="mb-3">
       <Container fluid>
         <Navbar.Brand href="/ojii3/home" className=''>
+          {/*
           <Image
             alt=""
             src="https://avatars.githubusercontent.com/u/84656786?v=4"
@@ -19,7 +20,9 @@ const NavbarComponent = () => {
             height="30"
             className="d-inline-block align-top"
             style={{borderRadius: '50%'}}
-          />{' '}OJII3
+          />
+  */}
+          {' '}OJII3
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
         <Navbar.Offcanvas
