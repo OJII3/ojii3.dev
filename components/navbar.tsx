@@ -38,19 +38,11 @@ const NavbarComponent = () => {
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <Nav.Link href="/ojii3/home">Home</Nav.Link>
-              <NavDropdown
-                title="Works"
-                id={`offcanvasNavbarDropdown-expand-${expand}`}
-              >
-                <NavDropdown.Item href="/ojii3/nextjs-gh-pages">Next.js × GitHub Pages</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">
-                  Something else here
-                </NavDropdown.Item>
-              </NavDropdown>
+              <Navbar.Collapse className='justify-content-end flex-grow-1 pe-3'>
+                <Nav.Item>Works</Nav.Item>
+                <Nav.Link href='/ojii3/nesxjs-gh-pages'>Next.js × GitHub Pages</Nav.Link>
+                <Nav.Link href='/ojii3/tetris'>Tetris</Nav.Link>
+              </Navbar.Collapse>
               <NavDropdown
                 title="Info"
                 id={`offcanvasNavbarDropdown-expand-${expand}`}
