@@ -4,6 +4,7 @@ import { Button } from "react-bootstrap"
 
 const BackToTopButton = () => {
   let [hidden, setHidden] = useState<boolean>(true)
+
   const button = (
     <div style={{
       position: 'relative'
@@ -13,7 +14,7 @@ const BackToTopButton = () => {
         bottom: '40px',
         right: '25px'
       }}>
-        <Button variant='secondary' className="p-4">
+        <Button variant='secondary' className="py-4 px-lg-4">
           TOP ↑
         </Button>
       </Link>

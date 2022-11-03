@@ -9,7 +9,7 @@ import { Button, Container, Form, Nav, Navbar, NavDropdown, Offcanvas } from 're
 const NavbarComponent = () => {
   const expand = ''
   return (
-    <Navbar key={expand} bg="light" expand={expand} className="mb-3">
+    <Navbar key={expand} bg="white" expand={expand} className="mb-3 mx-lg-3" style={{borderBottom: 'solid 1px #ccc'}}>
       <Container fluid>
         <Navbar.Brand as={Link} href='/ojii3/home'>
           {/*
@@ -43,6 +43,8 @@ const NavbarComponent = () => {
               <NavDropdown
                 title="Works"
                 id={`offcanvasNavbarDropdown-expand-${expand}`}
+                show={true}
+                disabled
               >
                 <NavDropdown.ItemText className='text-info'>Website</NavDropdown.ItemText>
                 <NavDropdown.Divider />
@@ -59,14 +61,15 @@ const NavbarComponent = () => {
                 <NavDropdown.ItemText />
               </NavDropdown>
               <NavDropdown
-                title="Info"
+                title="Others"
                 id={`offcanvasNavbarDropdown-expand-${expand}`}
+                show={true}
+                disabled
               >
                 <NavDropdown.Item href="https://github.com/ojii3">GitHub</NavDropdown.Item>
                 <NavDropdown.Item href="https://qiita.com/ojii3">Qiita</NavDropdown.Item>
-                <NavDropdown.Divider />
                 <NavDropdown.Item href="#action5">
-                  Something else here
+                  Twitter
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>

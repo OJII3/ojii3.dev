@@ -79,7 +79,7 @@ export default () => {
                   <Card.Text>
                     React(Next.js)で作成した最新なホームページです。2022.11
                   </Card.Text>
-                  <Card.Link as={Link} href="/ojii3/nextjs-gh-pages">Details →</Card.Link>
+                  <Card.Link href="/ojii3/nextjs-gh-pages">Details →</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
@@ -92,7 +92,7 @@ export default () => {
                   <Card.Text>
                     JavaScriptでフルスクラッチしたブラウザゲームです。
                   </Card.Text>
-                  <Card.Link as={Link} href="/ojii3/tetris">Details →</Card.Link>
+                  <Card.Link href="/ojii3/tetris">Details →</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
@@ -107,7 +107,7 @@ export default () => {
                   <Card.Text>
                     Google Formsで、入力文字数を表示するChrome拡張です。2022.5
                   </Card.Text>
-                  <Card.Link as={Link} href="/ojii3/chrome-form-character-counter">Details →</Card.Link>
+                  <Card.Link href="/ojii3/chrome-form-character-counter">Details →</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
@@ -120,7 +120,7 @@ export default () => {
                   <Card.Text>
                     暗記のための LINE bot です。
                   </Card.Text>
-                  <Card.Link as={Link} href="/ojii3/ichimon-itto-bot">Details →</Card.Link>
+                  <Card.Link href="/ojii3/ichimon-itto-bot">Details →</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
