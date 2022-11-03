@@ -17,7 +17,7 @@ export default () => {
       <NavbarComponent />
 
       <main>
-        <Container fluid className=''>
+        <Container fluid className='justify-content-center'>
           <Row className='p-5' ref={new FadeUpRef().ref}>
             <h1 className='text-center'>
               一問一答bot
