@@ -20,7 +20,7 @@ const BackToTopButton = () => {
     </div>)
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 400) {
         setHidden(false)
       } else {
         setHidden(true)

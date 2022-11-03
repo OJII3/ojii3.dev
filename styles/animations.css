@@ -1,6 +1,6 @@
 .fade-untriggered {
   opacity: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .fade-up {
@@ -8,6 +8,7 @@
   animation-duration: 1.0s;
   animation-fill-mode: forwards;
   opacity: 0;
+  overflow: hidden;
 }
 
 @keyframes fadeUpAnime {
@@ -27,6 +28,7 @@
   animation-duration: 1.0s;
   animation-fill-mode: forwards;
   opacity: 0;
+  overflow-x: hidden;
 }
 
 @keyframes fadeRightAnime {
@@ -46,6 +48,7 @@
   animation-duration: 1.0s;
   animation-fill-mode: forwards;
   opacity: 0;
+  overflow-x: hidden;
 }
 
 @keyframes fadeLeftAnime {

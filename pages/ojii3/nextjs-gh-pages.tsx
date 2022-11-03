@@ -17,7 +17,7 @@ export default () => {
 
       <main>
         <Container fluid className=''>
-          <Row className='p-5' ref={new FadeUpRef(true).ref}>
+          <Row className='p-5' ref={new FadeUpRef().ref}>
             <h1 className='text-center'>
               Next.js × Github Pages
             </h1>

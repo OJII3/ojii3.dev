@@ -13,10 +13,11 @@ class FadeRef {
   disabled: boolean = false
 
   /**
-   * className: fade-up, fade-down, fade-right, fade-left
-   * @param className 
+   * Example: <Row ref={new FadeUpRef().ref}><Row>
+   * @warning If you use FadeRight or FadeLeft, be sure to add style={{overflowX: hidden}} to the parent element
+   * @param disableAfter default value is true
    */
-  constructor(disableAfter: boolean = false) {
+  constructor(disableAfter: boolean = true) {
     this.fadeUpRef = useRef()
     this.disableAfter = disableAfter
   }

@@ -20,8 +20,8 @@ export default () => {
       <NavbarComponent />
 
       <main>
-        <Container fluid className=''>
-          <Row className='p-5' ref={new FadeUpRef(true).ref}>
+        <Container fluid>
+          <Row className='p-5' ref={new FadeUpRef().ref}>
             <h1 className='text-center'>
               Welcome to OJII3's Home!
             </h1>
@@ -70,7 +70,7 @@ export default () => {
             </Col>
           </Row>
 
-          <Row className='justify-content-md-center p-2'>
+          <Row className='justify-content-md-center p-2' style={{overflowX: 'hidden'}}>
             <Col className={cardColPadding} ref={new FadeLeftRef().ref} lg={cardColgrid}>
               <Card>
                 <Card.Body>
@@ -98,7 +98,7 @@ export default () => {
             </Col>
 
           </Row>
-          <Row className='justify-content-md-center p-2'>
+          <Row className='justify-content-md-center p-2' style={{overflowX: 'hidden'}}>
             <Col className={cardColPadding} ref={new FadeLeftRef().ref} lg={cardColgrid}>
               <Card>
                 <Card.Body>
@@ -107,7 +107,7 @@ export default () => {
                   <Card.Text>
                     Google Formsで、入力文字数を表示するChrome拡張です。2022.5
                   </Card.Text>
-                  <Card.Link as={Link} href="/ojii3/chrome-form-chara-counter">Details →</Card.Link>
+                  <Card.Link as={Link} href="/ojii3/chrome-form-character-counter">Details →</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
