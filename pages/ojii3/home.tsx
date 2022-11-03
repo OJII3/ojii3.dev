@@ -5,6 +5,7 @@ import { Container, Row, Col, Card, Image } from 'react-bootstrap'
 import NavbarComponent from '../../components/navbar'
 import Footer from '../../components/footer'
 import { FadeUpRef, FadeRightRef, FadeLeftRef } from '../../components/scroll-fade-ref'
+import BackToTopButton from '../../components/back-to-top-button'
 
 export default () => {
   const cardColgrid = 3
@@ -19,13 +20,13 @@ export default () => {
       <NavbarComponent />
 
       <main>
-        <Container fluid className='fade-up'>
-          <Row className='p-5'>
+        <Container fluid className=''>
+          <Row className='p-5' ref={new FadeUpRef(true).ref}>
             <h1 className='text-center'>
               Welcome to OJII3's Home!
             </h1>
           </Row>
-          <Row>
+          <Row ref={new FadeUpRef().ref}>
             <Col className='text-center'>
               {/*
               <Image alt='' width={130} height={136}
@@ -35,7 +36,7 @@ export default () => {
             </Col>
           </Row>
 
-          <Row className='p-5'>
+          <Row className='p-5' ref={new FadeUpRef().ref}>
             <Col>
               <p className='text-center'>
                 See more about this website →{' '}
@@ -78,7 +79,7 @@ export default () => {
                   <Card.Text>
                     React(Next.js)で作成した最新なホームページです。2022.11
                   </Card.Text>
-                  <Card.Link href="/ojii3/nextjs-gh-pages">Details →</Card.Link>
+                  <Card.Link as={Link} href="/ojii3/nextjs-gh-pages">Details →</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
@@ -89,9 +90,9 @@ export default () => {
                   <Card.Title>Tetris</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">Website</Card.Subtitle>
                   <Card.Text>
-                    Javascriptでフルスクラッチしたブラウザゲームです。2021.5
+                    JavaScriptでフルスクラッチしたブラウザゲームです。
                   </Card.Text>
-                  <Card.Link href="ojii3/tetris">Details →</Card.Link>
+                  <Card.Link as={Link} href="/ojii3/tetris">Details →</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
@@ -101,12 +102,12 @@ export default () => {
             <Col className={cardColPadding} ref={new FadeLeftRef().ref} lg={cardColgrid}>
               <Card>
                 <Card.Body>
-                  <Card.Title>Form Chara Counter</Card.Title>
+                  <Card.Title>Form Character Counter</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">Chrome Extensions</Card.Subtitle>
                   <Card.Text>
-                    Google Formsで、文字数をリアルタイムに表示するChrome拡張です。2022.5
+                    Google Formsで、入力文字数を表示するChrome拡張です。2022.5
                   </Card.Text>
-                  <Card.Link href="/ojii3/chrome-form-chara-counter">Details →</Card.Link>
+                  <Card.Link as={Link} href="/ojii3/chrome-form-chara-counter">Details →</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
@@ -119,7 +120,7 @@ export default () => {
                   <Card.Text>
                     暗記のための LINE bot です。
                   </Card.Text>
-                  <Card.Link href="ojii3/tetris">Details →</Card.Link>
+                  <Card.Link as={Link} href="/ojii3/ichimon-itto-bot">Details →</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
@@ -128,7 +129,9 @@ export default () => {
         </Container>
       </main>
 
+
       <Footer />
+      <BackToTopButton />
     </>
   )
 }

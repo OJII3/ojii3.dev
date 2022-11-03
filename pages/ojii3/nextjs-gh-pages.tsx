@@ -3,6 +3,7 @@ import { Container, Row, Col, ListGroup } from 'react-bootstrap'
 import NavbarComponent from '../../components/navbar'
 import Footer from '../../components/footer'
 import { FadeUpRef } from '../../components/scroll-fade-ref'
+import BackToTopButton from '../../components/back-to-top-button'
 
 export default () => {
   return (
@@ -15,17 +16,17 @@ export default () => {
       <NavbarComponent />
 
       <main>
-        <Container fluid className='fade-up'>
-          <Row className='p-5'>
+        <Container fluid className=''>
+          <Row className='p-5' ref={new FadeUpRef(true).ref}>
             <h1 className='text-center'>
               Next.js × Github Pages
             </h1>
           </Row>
-          <Row>
+          <Row ref={new FadeUpRef().ref}>
             <h2 className='text-center'>in TypeScript</h2>
           </Row>
 
-          <Row className='p-5'>
+          <Row className='p-5' ref={new FadeUpRef().ref}>
             <Col className='text-center'>
               <p>
                 See code in{' '}
@@ -34,7 +35,7 @@ export default () => {
             </Col>
           </Row>
 
-          <Row className='p-5'>
+          <Row className='p-5' ref={new FadeUpRef().ref}>
             <Col className='text-center'>
               <h2 className='text-danger'>The Sample is Exactly This Homepage!!</h2>
             </Col>
@@ -65,10 +66,23 @@ export default () => {
             </Col>
           </Row>
 
+          <Row className='justify-content-md-center p-5' ref={new FadeUpRef().ref}>
+            <Col sm={6}>
+              <h2 className='text-center'>Brief</h2>
+              <p className='brief'>
+                Next.jsで作成したものを静的サイトとしてエクスポートすることで、GitHub Pagesに公開しています。
+                また、GitHub Actionsを用いて、エクスポートから公開までの流れを自動化しています。
+                BootstrapのGrid Systemsにより、様々な画面サイズに対応できるほか、
+                React Hook を用いることで、ユーザーの操作に応じてアニメーションを表示しています。
+              </p>
+            </Col>
+          </Row>
+
         </Container>
       </main>
 
       <Footer />
+      <BackToTopButton />
     </>
   )
 }

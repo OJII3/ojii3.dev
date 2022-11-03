@@ -11,17 +11,17 @@ const NavbarComponent = () => {
   return (
     <Navbar key={expand} bg="light" expand={expand} className="mb-3">
       <Container fluid>
-        <Navbar.Brand href="/ojii3/home" className=''>
+        <Navbar.Brand as={Link} href='/ojii3/home'>
           {/*
           <Image
-            alt=""
-            src="https://avatars.githubusercontent.com/u/84656786?v=4"
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-            style={{borderRadius: '50%'}}
+          alt=""
+          src="https://avatars.githubusercontent.com/u/84656786?v=4"
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+          style={{borderRadius: '50%'}}
           />
-  */}
+        */}
           {' '}OJII3
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
@@ -37,12 +37,27 @@ const NavbarComponent = () => {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="/ojii3/home">Home</Nav.Link>
-              <Navbar.Collapse className='justify-content-end flex-grow-1 pe-3'>
-                <Nav.Item>Works</Nav.Item>
-                <Nav.Link href='/ojii3/nesxjs-gh-pages'>Next.js × GitHub Pages</Nav.Link>
-                <Nav.Link href='/ojii3/tetris'>Tetris</Nav.Link>
-              </Navbar.Collapse>
+              <Nav.Link as={Link} href='/ojii3/home'>
+                Home
+              </Nav.Link>
+              <NavDropdown
+                title="Works"
+                id={`offcanvasNavbarDropdown-expand-${expand}`}
+              >
+                <NavDropdown.ItemText className='text-info'>Website</NavDropdown.ItemText>
+                <NavDropdown.Divider />
+                <NavDropdown.Item as={Link} href='/ojii3/nextjs-gh-pages'>Next.js × GitHub Pages</NavDropdown.Item>
+                <NavDropdown.Item as={Link} href='/ojii3/tetris'>Tetris</NavDropdown.Item>
+                <NavDropdown.ItemText />
+                <NavDropdown.ItemText className='text-info'>Chrome Extensions</NavDropdown.ItemText>
+                <NavDropdown.Divider />
+                <NavDropdown.Item as={Link} href='/ojii3/chrome-form-character-counter'>Form Character Counter</NavDropdown.Item>
+                <NavDropdown.ItemText />
+                <NavDropdown.ItemText className='text-info'>Bot</NavDropdown.ItemText>
+                <NavDropdown.Divider />
+                <NavDropdown.Item as={Link} href='/ojii3/ichimon-itto-bot'>一問一答bot</NavDropdown.Item>
+                <NavDropdown.ItemText />
+              </NavDropdown>
               <NavDropdown
                 title="Info"
                 id={`offcanvasNavbarDropdown-expand-${expand}`}
@@ -69,7 +84,7 @@ const NavbarComponent = () => {
           </Offcanvas.Body>
         </Navbar.Offcanvas>
       </Container>
-    </Navbar>
+    </Navbar >
   )
 }
 

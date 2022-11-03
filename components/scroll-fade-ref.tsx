@@ -6,15 +6,19 @@ import { MutableRefObject, useEffect, useRef } from "react";
  * Plese don't forget to add `style={{ opacity: 0 }}`
  */
 class FadeRef {
+
   fadeUpRef: MutableRefObject<Element | undefined>
   className: string = 'fade-untriggered'
+  disableAfter: boolean
+  disabled: boolean = false
 
   /**
    * className: fade-up, fade-down, fade-right, fade-left
    * @param className 
    */
-  constructor () {
+  constructor(disableAfter: boolean = false) {
     this.fadeUpRef = useRef()
+    this.disableAfter = disableAfter
   }
 
   get ref() {
@@ -22,20 +26,25 @@ class FadeRef {
     return this.fadeUpRef
   }
 
-  observe() { useEffect(() => {
-    const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add(this.className);
-        } else {
-          entry.target.classList.remove(this.className);
-          entry.target.classList.add('fade-untriggered')
-        }
-      })
-    }, { threshold: 0.25 })
+  observe() {
+    useEffect(() => {
+      const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
+        entries.forEach(entry => {
+          if (this.disabled) {
+            return;
+          } else if (entry.isIntersecting) {
+            entry.target.classList.add(this.className);
+            this.disabled = this.disableAfter ? true : false;
+          } else {
+            entry.target.classList.remove(this.className);
+            entry.target.classList.add('fade-untriggered')
+          }
+        })
+      }, { threshold: 0.25 })
 
-    if (this.fadeUpRef.current) observer.observe(this.fadeUpRef.current)
-  })}
+      if (this.fadeUpRef.current) observer.observe(this.fadeUpRef.current)
+    })
+  }
 }
 
 export class FadeUpRef extends FadeRef {
