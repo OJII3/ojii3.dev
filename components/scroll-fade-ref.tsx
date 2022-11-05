@@ -41,7 +41,7 @@ class FadeRef {
             entry.target.classList.add('fade-untriggered')
           }
         })
-      }, { threshold: 0.1 })
+      }, { threshold: 0.25 })
 
       if (this.fadeUpRef.current) observer.observe(this.fadeUpRef.current)
     })

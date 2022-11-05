@@ -11,7 +11,7 @@ const BackToTopButton = () => {
     }} hidden={hidden}>
       <Link href='' style={{
         position: 'fixed',
-        bottom: '40px',
+        bottom: '25px',
         right: '25px'
       }}>
         <Button variant='secondary' className="py-4 px-lg-4">

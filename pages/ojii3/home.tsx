@@ -14,8 +14,11 @@ export default () => {
     <>
       <Head>
         <title>Home - OJII3</title>
-        <meta name="description" content="Homepage of OJII3" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta lang='ja' />
+        <meta name="description"
+          content="OJII3のホームページです。制作物などを掲載。"
+        />
+        <link rel="icon" href="/selfmade-icon.jpg" />
       </Head>
       <NavbarComponent />
 
@@ -49,19 +52,16 @@ export default () => {
         <Container fluid>
           <Row className='text-center p-5' ref={new FadeUpRef().ref}>
             <Col>
-              <h2>Who am I?</h2>
-              <p>It's a secret!</p>
+              <h2>What do I do?</h2>
+              <p></p>
             </Col>
           </Row>
           <Row className='text-center p-5' ref={new FadeUpRef().ref}>
-            <Col>
+            <Col className='col-12'>
               <h2>GitHub Stats</h2>
               <a href="https://github.com/anuraghazra/github-readme-stats">
-                <Image fluid alt='' src="https://github-readme-stats.vercel.app/api/top-langs/?username=OJII3&layout=compact" />
+                <Image fluid alt='Image of my preferred language' src="https://github-readme-stats.vercel.app/api/top-langs/?username=OJII3&layout=compact" />
               </a>
-              <p>
-                I also use C# too. I'm not a front-end engineer after all!
-              </p>
             </Col>
           </Row>
           <Row className='text-center p-5' ref={new FadeUpRef().ref}>
@@ -70,14 +70,14 @@ export default () => {
             </Col>
           </Row>
 
-          <Row className='justify-content-md-center p-2' style={{overflowX: 'hidden'}}>
+          <Row className='justify-content-md-center p-2' style={{ overflowX: 'hidden' }}>
             <Col className={cardColPadding} ref={new FadeLeftRef().ref} lg={cardColgrid}>
               <Card>
                 <Card.Body>
                   <Card.Title>Next.js × GitHub Pages</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">Website</Card.Subtitle>
                   <Card.Text>
-                    React(Next.js)で作成した最新なホームページです。2022.11
+                    React(Next.js)で作成したホームページです。2022.11
                   </Card.Text>
                   <Card.Link href="/ojii3/nextjs-gh-pages">Details →</Card.Link>
                 </Card.Body>
@@ -90,7 +90,7 @@ export default () => {
                   <Card.Title>Tetris</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">Website</Card.Subtitle>
                   <Card.Text>
-                    JavaScriptでフルスクラッチしたブラウザゲームです。
+                    JavaScriptでフルスクラッチしたテトリス風ブラウザゲームです。
                   </Card.Text>
                   <Card.Link href="/ojii3/tetris">Details →</Card.Link>
                 </Card.Body>
@@ -98,7 +98,7 @@ export default () => {
             </Col>
 
           </Row>
-          <Row className='justify-content-md-center p-2' style={{overflowX: 'hidden'}}>
+          <Row className='justify-content-md-center p-2' style={{ overflowX: 'hidden' }}>
             <Col className={cardColPadding} ref={new FadeLeftRef().ref} lg={cardColgrid}>
               <Card>
                 <Card.Body>
@@ -118,7 +118,7 @@ export default () => {
                   <Card.Title>一問一答bot</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">LINE bot</Card.Subtitle>
                   <Card.Text>
-                    暗記のための LINE bot です。
+                    英単語等暗記のための LINE bot です。
                   </Card.Text>
                   <Card.Link href="/ojii3/ichimon-itto-bot">Details →</Card.Link>
                 </Card.Body>

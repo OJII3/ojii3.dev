@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import { Button, Container, Form, Nav, Navbar, NavDropdown, Offcanvas } from 'react-bootstrap'
+import { Button, Container, Form, Nav, Navbar, NavDropdown, Offcanvas, Image } from 'react-bootstrap'
 
 /**
  * Navbar: BsPrefixRefForwardingComponent<"nav", NavbarProps>
@@ -9,7 +8,7 @@ import { Button, Container, Form, Nav, Navbar, NavDropdown, Offcanvas } from 're
 const NavbarComponent = () => {
   const expand = ''
   return (
-    <Navbar key={expand} bg="white" expand={expand} className="mb-3 mx-lg-3" style={{borderBottom: 'solid 1px #ccc'}}>
+    <Navbar key={expand} bg="white" expand={expand} className="mb-3 mx-lg-3" style={{ borderBottom: 'solid 1px #ccc' }}>
       <Container fluid>
         <Navbar.Brand as={Link} href='/ojii3/home'>
           {/*
@@ -66,9 +65,16 @@ const NavbarComponent = () => {
                 show={true}
                 disabled
               >
-                <NavDropdown.Item href="https://github.com/ojii3">GitHub</NavDropdown.Item>
-                <NavDropdown.Item href="https://qiita.com/ojii3">Qiita</NavDropdown.Item>
-                <NavDropdown.Item href="#action5">
+                <NavDropdown.Item href="https://github.com/ojii3">
+                  <Image fluid width={32} alt='github icon' src='/GitHub.png' />{' '}
+                  GitHub
+                </NavDropdown.Item>
+                <NavDropdown.Item href="https://qiita.com/ojii3">
+                  <Image fluid width={32} alt='qiita icon' src='/Qiita.png' />{' '}
+                  Qiita
+                  </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => alert("I can't tell you my twitter! Sorry")}>
+                  <Image fluid width={32} alt='twitter icon' src='/Twitter.svg' />
                   Twitter
                 </NavDropdown.Item>
               </NavDropdown>
