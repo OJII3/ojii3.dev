@@ -22,9 +22,12 @@ export default () => {
       <main>
         <Container fluid className='justify-content-center'>
           <Row className='py-5' ref={new FadeUpRef().ref}>
-            <h1 className='text-center'>
-              一問一答bot
-            </h1>
+            <Col className='text-center'>
+              <h1>
+                一問一答bot
+              </h1>
+              <b className='text-secondary'>LINE公式アカウント</b>
+            </Col>
           </Row>
 
           <Row className='py-5' ref={new FadeUpRef().ref}>

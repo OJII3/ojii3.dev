@@ -50,20 +50,41 @@ export default () => {
         </Container>
 
         <Container fluid>
-          <Row className='text-center p-5' ref={new FadeUpRef().ref}>
-            <Col>
-              <h2>What do I do?</h2>
-              <p></p>
+          <Row className='justify-content-center pt-5 px-5' ref={new FadeUpRef().ref}>
+            <Col md={6} className='text-center'>
+              <h2>What do I do</h2>
             </Col>
           </Row>
-          <Row className='text-center p-5' ref={new FadeUpRef().ref}>
-            <Col className='col-12'>
+          <Row className='justify-content-center p-5' ref={new FadeUpRef().ref}>
+            <Col md={6} className='text-center'>
+              <p className='brief text-center'>趣味でNode.jsや、Unityを使う。最近TypeScriptとPythonに手を出したもよう。</p>
+            </Col>
+          </Row>
+
+          <Row className='text-center justify-content-center pt-5 px-5' ref={new FadeUpRef().ref}>
+            <Col md={4}>
               <h2>GitHub Stats</h2>
-              <a href="https://github.com/anuraghazra/github-readme-stats">
-                <Image fluid alt='Image of my preferred language' src="https://github-readme-stats.vercel.app/api/top-langs/?username=OJII3&layout=compact" />
-              </a>
             </Col>
           </Row>
+          <Row className='text-center justify-content-center pt-5 px-5' ref={new FadeUpRef().ref}>
+            <Col md={4}>
+              <Image fluid width={'100%'} alt='Image of my preferred language' src="https://github-readme-stats.vercel.app/api/top-langs/?username=OJII3&layout=compact&count_private=true" />
+            </Col>
+          </Row>
+          <Row className='text-center justify-content-center py-5 px-5' ref={new FadeUpRef().ref}>
+            <Col md={4}>
+              <Image fluid width={'100%'} alt='' src='https://github-readme-stats.vercel.app/api?username=OJII3&count_private=true' />
+            </Col>
+          </Row>
+          <Row className='text-center justify-content-center py-2 px-5' ref={new FadeUpRef().ref}>
+            <Col md={6}>
+              <p>I can use these displays thanks to{' '}
+                <a href='https://github.com/anuraghazra/github-readme-stats#github-stats-card'>github-readme-stats.vercel.app</a>
+              </p>
+            </Col>
+          </Row>
+
+
           <Row className='text-center p-5' ref={new FadeUpRef().ref}>
             <Col>
               <h2>Works</h2>
