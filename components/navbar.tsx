@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Button, Container, Form, Nav, Navbar, NavDropdown, Offcanvas, Image } from 'react-bootstrap'
+import { Button, Container, Nav, Navbar, NavDropdown, Offcanvas, Image } from 'react-bootstrap'
 
 /**
  * Navbar: BsPrefixRefForwardingComponent<"nav", NavbarProps>
@@ -12,16 +12,16 @@ const NavbarComponent = () => {
       <Navbar key={expand} bg="white" expand={expand}>
         <Container fluid>
           <Navbar.Brand as={Link} href='/ojii3/home'>
-            {/*
+            
           <Image
-          alt=""
-          src="https://avatars.githubusercontent.com/u/84656786?v=4"
+          alt="icon"
+          src="/selfmade-icon.jpg"
           width="30"
           height="30"
           className="d-inline-block align-top"
           style={{borderRadius: '50%'}}
           />
-        */}
+        
             {' '}OJII3
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
