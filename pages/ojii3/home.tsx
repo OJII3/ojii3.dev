@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { Container, Row, Col, Card, Image } from 'react-bootstrap'
+import { Container, Row, Col, Card, Image, Button } from 'react-bootstrap'
 
 import NavbarComponent from '../../components/navbar'
 import Footer from '../../components/footer'
@@ -93,27 +93,27 @@ export default () => {
 
           <Row className='justify-content-md-center p-2' style={{ overflowX: 'hidden' }}>
             <Col className={cardColPadding} ref={new FadeLeftRef().ref} lg={cardColgrid}>
-              <Card>
+              <Card as='a' href='/ojii3/nextjs-gh-pages' className='text-decoration-none text-reset card-link'>
                 <Card.Body>
                   <Card.Title>Next.js × GitHub Pages</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">Website</Card.Subtitle>
                   <Card.Text>
                     React(Next.js)で作成したホームページです。2022.11
                   </Card.Text>
-                  <Card.Link href="/ojii3/nextjs-gh-pages">Details →</Card.Link>
+                  <Card.Link as={Button} variant='outline-info'>See Details</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
 
             <Col className={cardColPadding} ref={new FadeRightRef().ref} lg={cardColgrid}>
-              <Card as='a'>
+              <Card as='a' href='/ojii3/tetris' className='text-decoration-none text-reset card-link'>
                 <Card.Body>
                   <Card.Title>Tetris</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">Website</Card.Subtitle>
                   <Card.Text>
                     JavaScriptでフルスクラッチしたテトリス風ブラウザゲームです。
                   </Card.Text>
-                  <Card.Link href="/ojii3/tetris">Details →</Card.Link>
+                  <Card.Link as={Button} variant='outline-info'>See Details</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
@@ -121,27 +121,27 @@ export default () => {
           </Row>
           <Row className='justify-content-md-center p-2' style={{ overflowX: 'hidden' }}>
             <Col className={cardColPadding} ref={new FadeLeftRef().ref} lg={cardColgrid}>
-              <Card>
+              <Card as='a' href='/ojii3/chrome-form-character-counter' className='text-decoration-none text-reset card-link'>
                 <Card.Body>
                   <Card.Title>Form Character Counter</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">Chrome Extensions</Card.Subtitle>
                   <Card.Text>
                     Google Formsで、入力文字数を表示するChrome拡張です。2022.5
                   </Card.Text>
-                  <Card.Link href="/ojii3/chrome-form-character-counter">Details →</Card.Link>
+                  <Card.Link as={Button} variant='outline-info'>Details →</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
 
             <Col className={cardColPadding} ref={new FadeRightRef().ref} lg={cardColgrid}>
-              <Card>
+              <Card as='a' href='/ojii3/ichimon-itto-bot' className='text-decoration-none text-reset card-link'>
                 <Card.Body>
                   <Card.Title>一問一答bot</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">LINE bot</Card.Subtitle>
                   <Card.Text>
                     英単語等暗記のための LINE bot です。
                   </Card.Text>
-                  <Card.Link href="/ojii3/ichimon-itto-bot">Details →</Card.Link>
+                  <Card.Link as={Button} variant='outline-info'>Details →</Card.Link>
                 </Card.Body>
               </Card>
             </Col>

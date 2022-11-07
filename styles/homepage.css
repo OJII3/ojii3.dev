@@ -3,3 +3,12 @@
   letter-spacing: .1em;
   text-align: justify;
 }
+
+.card-link {
+  transition: all 1s;
+}
+
+.card-link:hover {
+  transform: scale(1.04, 1.04);
+  background-color: #f5faff;
+}

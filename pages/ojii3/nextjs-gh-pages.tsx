@@ -64,6 +64,7 @@ export default () => {
                 <ListGroup.Item><li>react-bootstrap v2.5.0 (Bootstrap 5)</li></ListGroup.Item>
                 <ListGroup.Item><li>GitHub Pages</li></ListGroup.Item>
                 <ListGroup.Item><li>GitHub Actions</li></ListGroup.Item>
+                <ListGroup.Item><li>Google Analytics</li></ListGroup.Item>
               </ListGroup>
             </Col>
           </Row>

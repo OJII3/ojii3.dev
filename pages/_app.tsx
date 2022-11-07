@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import '../styles/animations.css'
+import '../styles/fadeIn.css'
 import '../styles/homepage.css'
 import type { AppProps } from 'next/app'
 import PageView from '../hook/pageview'
