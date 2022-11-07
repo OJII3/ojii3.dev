@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
   PageView()
   return (
     <>
-    <GoogleAnalytics />
+      <GoogleAnalytics />
       <Component {...pageProps} />
     </>
   )

@@ -106,7 +106,7 @@ export default () => {
             </Col>
 
             <Col className={cardColPadding} ref={new FadeRightRef().ref} lg={cardColgrid}>
-              <Card>
+              <Card as='a'>
                 <Card.Body>
                   <Card.Title>Tetris</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">Website</Card.Subtitle>
