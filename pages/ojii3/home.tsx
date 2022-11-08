@@ -52,7 +52,7 @@ export default () => {
         <Container fluid>
           <Row className='justify-content-center pt-5 px-5' ref={new FadeUpRef().ref}>
             <Col md={6} className='text-center'>
-              <h2>What do I do</h2>
+              <h2>What do I do?</h2>
             </Col>
           </Row>
           <Row className='justify-content-center p-5' ref={new FadeUpRef().ref}>

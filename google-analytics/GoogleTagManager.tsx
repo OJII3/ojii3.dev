@@ -8,7 +8,7 @@ declare global {
 
 
 export const GoogleTagManager: () => JSX.Element = () => {
-  // クライアントサイドで環境変数を使うには、NEXT_PUBLIC_がいる。
+  // GTM id を環境変数にする必要はないとおもわれ
   const gtmId = process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID || ''
   return (
     <Script
@@ -20,7 +20,7 @@ export const GoogleTagManager: () => JSX.Element = () => {
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${gtmId}');
+})(window,document,'script','dataLayer','GTM-WF4T837');
 `
       }}
     />

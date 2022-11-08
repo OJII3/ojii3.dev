@@ -43,8 +43,6 @@ const NavbarComponent = () => {
                 <NavDropdown
                   title="Works"
                   id={`offcanvasNavbarDropdown-expand-${expand}`}
-                  show={true}
-                  disabled
                 >
                   <NavDropdown.ItemText className='text-info'>Website</NavDropdown.ItemText>
                   <NavDropdown.Divider />
@@ -63,8 +61,6 @@ const NavbarComponent = () => {
                 <NavDropdown
                   title="Others"
                   id={`offcanvasNavbarDropdown-expand-${expand}`}
-                  show={true}
-                  disabled
                 >
                   <NavDropdown.Item as='a' href="https://github.com/ojii3" target='_blank'>
                     <Image fluid width={32} alt='github icon' src='/GitHub.png' />{' '}
