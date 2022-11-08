@@ -25,7 +25,7 @@ export default () => {
       <main>
         <Container fluid className='justify-content-center'>
           <Row className='p-5' ref={new FadeUpRef().ref}>
-            <h1 className='text-center'>
+            <h1 className='text-center' style={{ fontFamily: 'monospace' }}>
               Welcome to OJII3's Home!
             </h1>
           </Row>
@@ -49,7 +49,7 @@ export default () => {
           </Row>
         </Container>
 
-        <Container fluid>
+        <Container fluid className='fade-parent'>
           <Row className='justify-content-center pt-5 px-5' ref={new FadeUpRef().ref}>
             <Col md={6} className='text-center'>
               <h2>What do I do?</h2>
@@ -67,12 +67,10 @@ export default () => {
             </Col>
           </Row>
           <Row className='text-center justify-content-center pt-5 px-5' ref={new FadeUpRef().ref}>
-            <Col md={4}>
+            <Col md={12} lg={4}>
               <Image fluid width={'100%'} alt='Image of my preferred language' src="https://github-readme-stats.vercel.app/api/top-langs/?username=OJII3&layout=compact&count_private=true" />
             </Col>
-          </Row>
-          <Row className='text-center justify-content-center py-5 px-5' ref={new FadeUpRef().ref}>
-            <Col md={4}>
+            <Col md={12} lg={4}>
               <Image fluid width={'100%'} alt='' src='https://github-readme-stats.vercel.app/api?username=OJII3&count_private=true' />
             </Col>
           </Row>
@@ -91,7 +89,7 @@ export default () => {
             </Col>
           </Row>
 
-          <Row className='justify-content-md-center p-2' style={{ overflowX: 'hidden' }}>
+          <Row className='justify-content-md-center p-2 fade-parent'>
             <Col className={cardColPadding} ref={new FadeLeftRef().ref} lg={cardColgrid}>
               <Card as='a' href='/ojii3/nextjs-gh-pages' className='text-decoration-none text-reset card-link'>
                 <Card.Body>
@@ -100,7 +98,7 @@ export default () => {
                   <Card.Text>
                     React(Next.js)で作成したホームページです。2022.11
                   </Card.Text>
-                  <Card.Link as={Button} variant='outline-info'>See Details</Card.Link>
+                  <Card.Link as={Button} variant='light'>See Details</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
@@ -113,13 +111,13 @@ export default () => {
                   <Card.Text>
                     JavaScriptでフルスクラッチしたテトリス風ブラウザゲームです。
                   </Card.Text>
-                  <Card.Link as={Button} variant='outline-info'>See Details</Card.Link>
+                  <Card.Link as={Button} variant='light'>See Details</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
 
           </Row>
-          <Row className='justify-content-md-center p-2' style={{ overflowX: 'hidden' }}>
+          <Row className='justify-content-md-center p-2 fade-parent'>
             <Col className={cardColPadding} ref={new FadeLeftRef().ref} lg={cardColgrid}>
               <Card as='a' href='/ojii3/chrome-form-character-counter' className='text-decoration-none text-reset card-link'>
                 <Card.Body>
@@ -128,20 +126,20 @@ export default () => {
                   <Card.Text>
                     Google Formsで、入力文字数を表示するChrome拡張です。2022.5
                   </Card.Text>
-                  <Card.Link as={Button} variant='outline-info'>Details →</Card.Link>
+                  <Card.Link as={Button} variant='light'>Details →</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
 
             <Col className={cardColPadding} ref={new FadeRightRef().ref} lg={cardColgrid}>
-              <Card as='a' href='/ojii3/ichimon-itto-bot' className='text-decoration-none text-reset card-link'>
+              <Card as='a' href='/ojii3/ichimon-itto-bot' className='card-link text-decoration-none text-reset'>
                 <Card.Body>
                   <Card.Title>一問一答bot</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">LINE bot</Card.Subtitle>
                   <Card.Text>
                     英単語等暗記のための LINE bot です。
                   </Card.Text>
-                  <Card.Link as={Button} variant='outline-info'>Details →</Card.Link>
+                  <Card.Link as={Button} variant='light'>Details →</Card.Link>
                 </Card.Body>
               </Card>
             </Col>

@@ -1,3 +1,7 @@
+.fade-parent {
+  overflow: hidden;
+}
+
 .fade-untriggered {
   opacity: 0;
   overflow-x: hidden;

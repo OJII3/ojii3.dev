@@ -1,3 +1,8 @@
+.headline {
+  font-family: cursive;
+  font-weight: bold;
+}
+
 .brief {
   line-height: 2;
   letter-spacing: .1em;
@@ -6,9 +11,10 @@
 
 .card-link {
   transition: all 1s;
+  border-color: #ccc;
 }
 
 .card-link:hover {
   transform: scale(1.04, 1.04);
-  background-color: #f5faff;
+  border-color: #0ff;
 }

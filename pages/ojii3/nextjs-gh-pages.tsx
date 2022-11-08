@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Container, Row, Col, ListGroup } from 'react-bootstrap'
+import { Container, Row, Col, ListGroup, Image } from 'react-bootstrap'
 import NavbarComponent from '../../components/navbar'
 import Footer from '../../components/footer'
 import { FadeUpRef } from '../../components/scroll-fade-ref'
@@ -21,10 +21,11 @@ export default () => {
         <Container fluid className='justify-content-center'>
           <Row className='p-5' ref={new FadeUpRef().ref}>
             <Col className='text-center'>
-              <h1>
-                Next.js × Github Pages
+              <h1 style={{ font: '3.5em monospace' }}>
+                <Image width={200} src='/Nextjs.svg' /><br /> × <br/><Image width={200} src='/GitHub_Logo.png' />Pages
               </h1>
               <b className='text-secondary'>ウェブサイト</b>
+
             </Col>
           </Row>
 
@@ -39,7 +40,7 @@ export default () => {
 
           <Row className='p-5' ref={new FadeUpRef().ref}>
             <Col className='text-center'>
-              <h2 className='text-danger'>The Sample is Exactly This Homepage!!</h2>
+              <h2 className='text-danger'>This Website is Exactly the Work!</h2>
             </Col>
           </Row>
 
@@ -47,10 +48,10 @@ export default () => {
             <Col md={3}>
               <h2 className='text-center'>Feature</h2>
               <ListGroup variant='flush'>
-                <ListGroup.Item><li>Client Side Routing</li></ListGroup.Item>
-                <ListGroup.Item><li>Responsive Layout</li></ListGroup.Item>
-                <ListGroup.Item><li>Fast Rendering</li></ListGroup.Item>
-                <ListGroup.Item><li>Simple Animation</li></ListGroup.Item>
+                <ListGroup.Item><li>動的ルーティング</li></ListGroup.Item>
+                <ListGroup.Item><li>レスポンシブなレイアウト</li></ListGroup.Item>
+                <ListGroup.Item><li>高速なレンダリング</li></ListGroup.Item>
+                <ListGroup.Item><li>CSSアニメーション</li></ListGroup.Item>
               </ListGroup>
             </Col>
           </Row>
@@ -63,7 +64,7 @@ export default () => {
                 <ListGroup.Item><li>Next.js v13 (React v18)</li></ListGroup.Item>
                 <ListGroup.Item><li>react-bootstrap v2.5.0 (Bootstrap 5)</li></ListGroup.Item>
                 <ListGroup.Item><li>GitHub Pages</li></ListGroup.Item>
-                <ListGroup.Item><li>GitHub Actions</li></ListGroup.Item>
+                <ListGroup.Item><li>GitHub Action</li></ListGroup.Item>
                 <ListGroup.Item><li>Google Analytics 4</li></ListGroup.Item>
                 <ListGroup.Item><li>Google Tag Manager</li></ListGroup.Item>
               </ListGroup>
