@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 
 import * as gtag from '../lib/gtag'
 
-const PageView = () => {
+const usePageView = () => {
   const router = useRouter()
 
   useEffect(() => {
@@ -19,4 +19,4 @@ const PageView = () => {
   }, [router.events])
 }
 
-export default PageView
+export default usePageView

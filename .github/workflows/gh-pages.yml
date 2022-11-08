@@ -10,7 +10,7 @@ on:
 jobs:
   build-deploy:
     # ubuntu OS を仮想マシン上に用意する
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
 
@@ -35,9 +35,6 @@ jobs:
 
     # Next.jsアプリをビルドする
     # プロジェクトルート直下に.nextディレクトリができる
-    - name: build
-      run: npm run build
-
     # 静的なHTMLとしてNext.jsアプリを生成する
     # プロジェクトルート直下にoutディレクトリができる
     # そのなかに、HTMLファイル群と、それらが読み込むJSファイル群を収めた_nextディレクトリがある

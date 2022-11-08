@@ -38,3 +38,4 @@ next-env.d.ts
 # personally added
 # exported folder
 out
+_config.yml
