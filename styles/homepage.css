@@ -16,5 +16,6 @@
 
 .card-link:hover {
   transform: scale(1.04, 1.04);
-  border-color: #0ff;
+  border-color: #0af;
+  background-color: #00aaff10;
 }

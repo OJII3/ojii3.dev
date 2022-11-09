@@ -6,7 +6,6 @@ import NavbarComponent from '../../components/navbar'
 import Footer from '../../components/footer'
 import { FadeUpRef, FadeRightRef, FadeLeftRef } from '../../components/scroll-fade-ref'
 import BackToTopButton from '../../components/back-to-top-button'
-import ContentSecurityPolicy from '../../security/content-security-policy'
 
 export default () => {
   const cardColgrid = 3
@@ -14,7 +13,6 @@ export default () => {
   return (
     <>
       <Head>
-        <ContentSecurityPolicy />
         <title>Home - OJII3</title>
         <meta lang='ja' />
         <meta name="description"

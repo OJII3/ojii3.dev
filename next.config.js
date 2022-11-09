@@ -6,7 +6,16 @@ const nextConfig = {
   swcMinify: true,
   images: {
     unoptimized: true
-  }
+  },
+}
+
+nextConfig.headers = async () => {
+  return [
+    {
+      source: '/(.*)',
+      headers: securityHeaders
+    }
+  ]
 }
 
 module.exports = nextConfig

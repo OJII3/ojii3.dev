@@ -34,7 +34,13 @@ module.exports = [
   },
   // todo: Content Security Policy を適用する
   {
-    key: 'Content-Security-Policy',
-    value: 'default-src \'self\'',
-  },
+    key: 'Content-Securtity-Policy',
+    value: "\
+    default-src 'self';\
+    script-src 'self' 'unsafe-inline';\
+    child-src https://github-readme-stats.vercel.app;\
+    style-src 'self';\
+    font-src 'self'; \
+    "
+  }
 ];
