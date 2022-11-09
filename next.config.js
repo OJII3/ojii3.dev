@@ -1,5 +1,5 @@
-import { imageOptimizer } from 'next/dist/server/image-optimizer'
-import { headers } from './headers.js'
+const imageOptimizer = require('next/dist/server/image-optimizer')
+const headers  = require('./headers.js')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
