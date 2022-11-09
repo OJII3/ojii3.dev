@@ -22,7 +22,7 @@ export default () => {
           <Row className='p-5' ref={new FadeUpRef().ref}>
             <Col className='text-center'>
               <h1>
-                <Image height={50} src='/Nextjs.svg' /><br /> × <br/><Image height={55} src='/GitHubPages.svg' />
+                <Image height={50} src='/Nextjs.svg' /><div> × </div><Image height={55} src='/GitHubPages.svg' />
               </h1>
               <b className='text-secondary'>ウェブサイト</b>
 

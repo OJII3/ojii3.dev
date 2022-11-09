@@ -128,7 +128,7 @@ export default () => {
                   <Card.Text>
                     Google Formsで、入力文字数を表示するChrome拡張です。2022.5
                   </Card.Text>
-                  <Card.Link as={Button} variant='light'>Details →</Card.Link>
+                  <Card.Link as={Button} variant='light'>See Details</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
@@ -141,7 +141,7 @@ export default () => {
                   <Card.Text>
                     英単語等暗記のための LINE bot です。
                   </Card.Text>
-                  <Card.Link as={Button} variant='light'>Details →</Card.Link>
+                  <Card.Link as={Button} variant='light'>See Details</Card.Link>
                 </Card.Body>
               </Card>
             </Col>
