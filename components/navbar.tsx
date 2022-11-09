@@ -6,7 +6,7 @@ import { Button, Container, Nav, Navbar, NavDropdown, Offcanvas, Image } from 'r
  * @returns NavbarComponent: () => JSX.Element
  */
 const NavbarComponent = () => {
-  const expand = ''
+  const expand = 'lg'
   return (
     <>
       <Navbar key={expand} bg="white" expand={expand}>
@@ -36,7 +36,7 @@ const NavbarComponent = () => {
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-end flex-grow-1 pe-3">
+              <Nav className="justify-content-start flex-grow-1 pe-3">
                 <Nav.Link as={Link} href='/ojii3/home'>
                   Home
                 </Nav.Link>
@@ -59,7 +59,7 @@ const NavbarComponent = () => {
                   <NavDropdown.ItemText />
                 </NavDropdown>
                 <NavDropdown
-                  title="Others"
+                  title="Info"
                   id={`offcanvasNavbarDropdown-expand-${expand}`}
                 >
                   <NavDropdown.Item as='a' href="https://github.com/ojii3" target='_blank'>

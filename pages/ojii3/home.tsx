@@ -24,10 +24,12 @@ export default () => {
 
       <main>
         <Container fluid className='justify-content-center'>
-          <Row className='p-5' ref={new FadeUpRef().ref}>
-            <h1 className='text-center' style={{ fontFamily: 'monospace' }}>
-              Welcome to OJII3's Home!
-            </h1>
+          <Row className='p-5 mt-5' ref={new FadeUpRef().ref}>
+            <Col className='pt-5'>
+              <h1 className='text-center' style={{ fontFamily: 'monospace' }}>
+                Welcome to OJII3's Home!
+              </h1>
+            </Col>
           </Row>
           <Row ref={new FadeUpRef().ref}>
             <Col className='text-center'>
@@ -39,8 +41,8 @@ export default () => {
             </Col>
           </Row>
 
-          <Row className='p-5' ref={new FadeUpRef().ref}>
-            <Col>
+          <Row className='pb-5' ref={new FadeUpRef().ref}>
+            <Col className='pb-5 mb-5'>
               <p className='text-center'>
                 See more about this website →{' '}
                 <Link href='/ojii3/nextjs-gh-pages'>Next.js × GitHub Pages</Link>

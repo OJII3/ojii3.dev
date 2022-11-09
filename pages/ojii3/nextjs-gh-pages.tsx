@@ -21,8 +21,8 @@ export default () => {
         <Container fluid className='justify-content-center'>
           <Row className='p-5' ref={new FadeUpRef().ref}>
             <Col className='text-center'>
-              <h1 style={{ font: '3.5em monospace' }}>
-                <Image width={200} src='/Nextjs.svg' /><br /> × <br/><Image width={200} src='/GitHub_Logo.png' />Pages
+              <h1>
+                <Image height={50} src='/Nextjs.svg' /><br /> × <br/><Image height={55} src='/GitHubPages.svg' />
               </h1>
               <b className='text-secondary'>ウェブサイト</b>
 
@@ -48,10 +48,10 @@ export default () => {
             <Col md={3}>
               <h2 className='text-center'>Feature</h2>
               <ListGroup variant='flush'>
-                <ListGroup.Item><li>動的ルーティング</li></ListGroup.Item>
-                <ListGroup.Item><li>レスポンシブなレイアウト</li></ListGroup.Item>
-                <ListGroup.Item><li>高速なレンダリング</li></ListGroup.Item>
-                <ListGroup.Item><li>CSSアニメーション</li></ListGroup.Item>
+                <ListGroup.Item><li>Static HTML</li></ListGroup.Item>
+                <ListGroup.Item><li>Fast Rendering</li></ListGroup.Item>
+                <ListGroup.Item><li>Responsive Layout</li></ListGroup.Item>
+                <ListGroup.Item><li>CSS Animation</li></ListGroup.Item>
               </ListGroup>
             </Col>
           </Row>
