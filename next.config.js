@@ -8,7 +8,17 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  headers: headers
 }
 
 export default nextConfig
+
+module.exports = {
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: headers
+      }
+    ]
+  }
+}
