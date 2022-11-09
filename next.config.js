@@ -7,18 +7,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     unoptimized: true
-  },
+  }
 }
 
 export default nextConfig
-
-module.exports = {
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: headers
-      }
-    ]
-  }
-}
