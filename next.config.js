@@ -1,5 +1,5 @@
 const imageOptimizer = require('next/dist/server/image-optimizer')
-const headers  = require('./headers.js')
+const securityHeaders = require('./security-headers')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -7,7 +7,15 @@ const nextConfig = {
   swcMinify: true,
   images: {
     unoptimized: true
+  },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: securityHeaders
+      }
+    ]
   }
 }
 
-export default nextConfig
+module.exports = nextConfig

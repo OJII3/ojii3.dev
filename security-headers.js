@@ -1,4 +1,4 @@
-export const headers = [
+module.exports = [
   {
       key: 'X-DNS-Prefetch-Control',
       value: 'on',
