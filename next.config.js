@@ -1,4 +1,5 @@
-const { imageOptimizer } = require('next/dist/server/image-optimizer')
+import { imageOptimizer } from 'next/dist/server/image-optimizer'
+import { headers } from './headers.js'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -6,7 +7,8 @@ const nextConfig = {
   swcMinify: true,
   images: {
     unoptimized: true
-  }
+  },
+  headers: headers
 }
 
-module.exports = nextConfig
+export default nextConfig
