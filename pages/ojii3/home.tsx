@@ -79,7 +79,7 @@ export default () => {
           <Row className='text-center justify-content-center py-2 px-5' ref={new FadeUpRef().ref}>
             <Col md={6}>
               <p>I can use these displays thanks to{' '}
-                <a href='https://github.com/anuraghazra/github-readme-stats#github-stats-card'>github-readme-stats.vercel.app</a>
+                <a href='https://github.com/anuraghazra/github-readme-stats#github-stats-card' target='_brank'>github-readme-stats.vercel.app</a>
               </p>
             </Col>
           </Row>
