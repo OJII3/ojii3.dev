@@ -29,9 +29,9 @@ Run `npm run dev` to see how app works on `localhost:3000`.
 
 ## Get Ready to export
 
-1. Add this command `export: npm run build && next export` to `package.json` so you can export the next app as static HTML. If you run `npm run export`, you will see exported things in `/out` directory.
-2. Add `out` to `.gitignore`
-3. Create `.github/workflows/gh-pages.yml` (you can replace the filename as you like) and edit like this.
+1. `package.json` の `scripts` にエクスポート用のコマンド `export: npm run build && next export` を追加します。これで`npm run export` をターミナルで実行すると、`/out` ディレクトリに静的なHTMLが出力されるようになります。
+2. Gitに残す必要はないので、`.gitignore` に `out` を追記します。
+3. `.github/workflows/gh-pages.yml` (ファイル名は自由)を以下の内容で作成します。
 
   ```gh-pages.yml
   name: github pages
@@ -92,21 +92,20 @@ Run `npm run dev` to see how app works on `localhost:3000`.
           publish_dir: ./out
   ```
 
-4. Go to your GitHub Project and set up for GitHub pages from Settings.
-5. When you push your project to master, your GitHub Pages will be uploaded!
+4. GitHubからSetting -> Pages にて `gh-pages` ブランチを公開するよう設定します。
+5. これで、`master`ブランチにpushすると、GitHub Actionsが動き、自動でGitHub Pages側が更新されるようになります！
 
 ## In Addition
 
 - You can introduce Google Analytics 4 with Google Tag Manager.
 - You can introduce `next-static` from npm to automatically generate a sitemap.
 
-## attentin
+## next export の注意点
 
-- You can set security headers at `next.config.js`, but it won't work if you export at GitHub Pages.
-- Perhaps You need to change image optimizer setting at `next.config.js`.
+`next export`で静的なHTMLとして出力することで、様々な静的サイトホスティングサービスで使えるのは、メリットですが、サーバー側の処理を必要とするNext.jsの一部機能が使えなくなります。
 
-## Deploy on Vercel
+- `next.config.js` で `image optimizer` の設定を変える必要があります（確か）.
+- `next.config.js`で`security headers`を設定できますがこれはサーバー側の処理（多分）なので、反映されません。
+- `API routing` は使えません。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+無料サーバーを借りたり、VercelでNext.jsとしてデプロイしたりすれば解決できます。GitHub Pagesでは無理です。少なくとも無料では。
