@@ -35,7 +35,7 @@ export default () => {
             <Col className='text-center'>
               <p>
                 See code in{' '}
-                <a href='https://github.com/ojii3/ojii3.github.io'>GitHub</a>
+                <a target='_brank' href='https://github.com/ojii3/ojii3.github.io'>GitHub</a>
               </p>
             </Col>
           </Row>
@@ -76,7 +76,7 @@ export default () => {
             <Col md={6}>
               <h2 className='text-center'>Live Site</h2>
               <p className='text-center brief py-3'>
-                <Button variant='primary' href='https://script.google.com/macros/s/AKfycbwhYmfDdeKwVQSjXGXyv58aRqDb7WpN-xyeWXWNZdjd3vBsRn5F6ZgzpMgew1X140Qy7g/exec'>
+                <Button as='a' target='_brank' variant='primary' href='https://script.google.com/macros/s/AKfycbwhYmfDdeKwVQSjXGXyv58aRqDb7WpN-xyeWXWNZdjd3vBsRn5F6ZgzpMgew1X140Qy7g/exec'>
                   Play
                 </Button>
               </p>

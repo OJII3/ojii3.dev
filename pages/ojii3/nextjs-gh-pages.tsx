@@ -33,7 +33,7 @@ export default () => {
             <Col className='text-center'>
               <p>
                 See code in{' '}
-                <a href='https://github.com/ojii3/ojii3.github.io'>GitHub</a>
+                <a target='_brank' href='https://github.com/ojii3/ojii3.github.io'>GitHub</a>
               </p>
             </Col>
           </Row>

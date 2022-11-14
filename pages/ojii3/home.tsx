@@ -24,25 +24,20 @@ export default () => {
 
       <main>
         <Container fluid className='justify-content-center'>
-          <Row className='p-5 mt-5' ref={new FadeUpRef().ref}>
-            <Col className='pt-5'>
+          <Row style={{ height: '90vh' }} className={'justify-content-center flex-column'} >
+            <Col className='col-12' ref={new FadeUpRef().ref}>
               <h1 className='text-center' style={{ fontFamily: 'monospace' }}>
                 Welcome to OJII3's Home!
               </h1>
             </Col>
-          </Row>
-          <Row ref={new FadeUpRef().ref}>
-            <Col className='text-center'>
-              {/*
+            {/*
+            <Col className='text-center col-12' ref={new FadeUpRef().ref}>
               <Image alt='' width={130} height={136}
                 style={{ borderRadius: '50%' }}
                 src='https://avatars.githubusercontent.com/u/84656786?v=4' />
-  */}
             </Col>
-          </Row>
-
-          <Row className='pb-5' ref={new FadeUpRef().ref}>
-            <Col className='pb-5 mb-5'>
+  */}
+            <Col className='col-12' ref={new FadeUpRef().ref}>
               <p className='text-center'>
                 See more about this website →{' '}
                 <Link href='/ojii3/nextjs-gh-pages'>Next.js × GitHub Pages</Link>

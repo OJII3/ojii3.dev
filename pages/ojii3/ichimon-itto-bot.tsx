@@ -34,7 +34,7 @@ export default () => {
             <Col className='text-center'>
               <p>
                 See code in{' '}
-                <a href='https://github.com/OJII3/ichimon-itto-bot'>GitHub</a>
+                <a target='_brank' href='https://github.com/OJII3/ichimon-itto-bot'>GitHub</a>
               </p>
             </Col>
           </Row>
@@ -79,7 +79,7 @@ export default () => {
                 GASで動いており、パラメータによりページ遷移をしています。
               </p>
               <p className='text-center py-3'>
-                <Button variant='primary' href='https://script.google.com/macros/s/AKfycbxMFjeqhicoaIMp-h3Fq4JSbfq_FwSgh6bqxhvxUluubPvFSre-v-TpbQnhmm3tmlGDtA/exec?open=ichimon_ittou'>
+                <Button as='a' target='_brank' variant='primary' href='https://script.google.com/macros/s/AKfycbxMFjeqhicoaIMp-h3Fq4JSbfq_FwSgh6bqxhvxUluubPvFSre-v-TpbQnhmm3tmlGDtA/exec?open=ichimon_ittou'>
                   Open
                 </Button>
               </p>
