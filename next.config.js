@@ -1,4 +1,8 @@
 const securityHeaders = require('./security/security-headers')
+const {
+  createVanillaExtractPlugin
+} = require('@vanilla-extract/next-plugin');
+const withVanillaExtract = createVanillaExtractPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -7,6 +11,9 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
+  exportPathMap(defaultMap, ctx) {
+    ctx.outDir = 'docs'
+  }
 }
 
 nextConfig.headers = async () => {
@@ -18,4 +25,4 @@ nextConfig.headers = async () => {
   ]
 }
 
-module.exports = nextConfig
+module.exports = withVanillaExtract(nextConfig)

@@ -44,3 +44,6 @@ out
 # env
 .env
 _config.yml
+
+# editor
+.idea
