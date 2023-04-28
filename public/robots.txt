@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://ojii3.github.io
-
-# Sitemaps
-Sitemap: https://ojii3.github.io/sitemap.xml
