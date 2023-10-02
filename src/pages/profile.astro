@@ -1,0 +1,68 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../layouts/Header.astro";
+import Badge from "../components/Badge.astro";
+---
+
+<Layout title="Profile" className="bg-yellow-50">
+  <Header />
+  <main class="m-auto max-w-960 p-5">
+    <h1 class="text-3xl font-yuji mt-8 text-center">プロフィール</h1>
+    <h1 class="text-lg text-center fade-in">PROFILE</h1>
+    <section class="font-yuji border mt-20 px-3">
+      <h2 class="text-2xl w-32 px-2 mx-5 bg-yellow-50 mt-[-20px]">所属大学</h2>
+      <p class="p-3">東京農工大学::工学部::機械システム工学科::2年</p>
+    </section>
+    <section class="font-yuji border mt-20 px-3">
+      <h2 class="text-2xl w-20 px-2 ml-5 bg-yellow-50 mt-[-20px]">活動</h2>
+      <div class="p-2 border-b-2 m-2">
+        <h3 class="text-lg">
+          マイクロコンピュータークラブ<Badge label="サークル" />
+        </h3>
+        <p class="p-2">
+          好きなことをるする。講習会のお手伝い、Unityゲーム開発、ホームページ開発、競プロなど。私の本拠地。
+        </p>
+      </div>
+      <div class="p-2 border-b-2 m-2">
+        <h3 class="text-lg">ロボット研究会R.U.R<Badge label="サークル" /></h3>
+        <p class="p-2">
+          NHK学生ロボコンを目標に活動。制御屋に所属し、ROS2など比較的高レイヤーの開発を担当している。
+          所属サークルの中で最も活動量が多い。
+        </p>
+      </div>
+      <div class="p-2 border-b-2 m-2">
+        <h3 class="text-lg">電脳サークル<Badge label="サークル" /></h3>
+        <p class="p-2">
+          人との関わりを増やすため途中加入。Unityゲーム開発のお手伝いをした。
+        </p>
+      </div>
+      <div class="p-2 border-b-2 m-2">
+        <h3 class="text-lg">
+          フロントエンドインターン<Badge
+            label="インターン"
+            bgColor="bg-red-200"
+          />
+        </h3>
+        <p class="p-2">
+          2022年12月からフロントエンドエンジニアの長期インターンを開始した。Next.jsやcss-modulesなどを用いて開発を行っている。
+        </p>
+      </div>
+    </section>
+
+    <style>
+      .fade-in {
+        animation: fadeIn 1s ease-in-out;
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </main>
+</Layout>
