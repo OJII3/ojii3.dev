@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Badge from "@/components/profile/Badge.astro";
 import GitRepoLink from "@/components/GitRepoLink.astro";
+import Footer from "@/components/Footer.astro";
 
 const activities = [
   {
@@ -42,10 +43,12 @@ const activities = [
   <main class="m-auto max-w-960 p-5">
     <h1 class="text-3xl font-yuji mt-8 text-center">プロフィール</h1>
     <h1 class="text-lg text-center fade-in">PROFILE</h1>
+
     <section class="font-yuji border mt-20 px-3">
       <h2 class="text-2xl w-32 px-2 mx-5 bg-yellow-50 mt-[-20px]">所属大学</h2>
       <p class="p-3">東京農工大学::工学部::機械システム工学科::2年</p>
     </section>
+
     <section class="font-yuji border mt-20 px-3">
       <h2 class="text-2xl w-20 px-2 ml-5 bg-yellow-50 mt-[-20px]">活動</h2>
       {
@@ -77,4 +80,5 @@ const activities = [
       }
     </style>
   </main>
+  <Footer />
 </Layout>
