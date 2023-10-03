@@ -1,8 +1,19 @@
 ---
 import { ROUTES } from "../constants/routes.ts";
+
+const navLinks = [
+  {
+    label: "PROFILE",
+    link: ROUTES.PROFILE,
+  },
+  {
+    label: "WORKS",
+    link: ROUTES.WORKS,
+  },
+];
 ---
 
-<header class="sticky flex items-center">
+<header class="flex items-center">
   <div class="flex h-20 p-2 filter-blur">
     <a href={ROUTES.HOME} class="flex items-center">
       <img
@@ -13,9 +24,18 @@ import { ROUTES } from "../constants/routes.ts";
       <span class="ml-2 text-xl font-bold">OJII3</span>
     </a>
   </div>
-  <ul class="flex">
-    <a href={ROUTES.PROFILE} class="px-2 py-1">
-      <li>PROFILE</li>
-    </a>
+  <ul class="flex gap-1 text-sm">
+    {
+      navLinks.map(({ label, link }) => (
+        <li>
+          <a
+            href={link}
+            class="px-2 py-1 transition-colors hover:text-gray-500"
+          >
+            {label}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </header>
