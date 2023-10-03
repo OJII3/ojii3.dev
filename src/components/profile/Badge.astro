@@ -1,0 +1,14 @@
+---
+interface Props {
+  bgColor: String;
+}
+
+const { bgColor }: Props = Astro.props;
+---
+
+<span
+  class={bgColor +
+    " inline-block px-2 mx-3 font-noto text-xs text-gray-700 bg-cyan-200 rounded-lg"}
+>
+  <slot />
+</span>
