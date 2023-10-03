@@ -1,10 +1,43 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../layouts/Header.astro";
-import Badge from "../components/Badge.astro";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Badge from "@/components/profile/Badge.astro";
+import GitRepoLink from "@/components/GitRepoLink.astro";
+
+const activities = [
+  {
+    name: "マイクロコンピュータークラブ",
+    badge: "サークル",
+    badgeColor: "bg-blue-200",
+    description:
+      "好きなことをるする。講習会のお手伝い、Unityゲーム開発、ホームページ開発、競プロなど。",
+  },
+  {
+    name: "ロボット研究会R.U.R",
+    badge: "サークル",
+    badgeColor: "bg-blue-200",
+    description:
+      "NHK学生ロボコンを目標に活動。制御屋に所属し、ROS2など比較的高レイヤーの開発をしている。",
+  },
+  {
+    name: "電脳サークル",
+    badge: "サークル",
+    badgeColor: "bg-blue-200",
+    description:
+      "人との関わりを増やすため途中加入。Unityゲーム開発のお手伝いをした。",
+  },
+  {
+    name: "フロントエンドインターン",
+    badge: "インターン",
+    badgeColor: "bg-red-200",
+    description:
+      "2022年12月からフロントエンドエンジニアの長期インターンを開始した。Next.jsやcss-modulesなどを用いて開発を行っている。",
+  },
+];
 ---
 
 <Layout title="Profile" className="bg-yellow-50">
+  <GitRepoLink />
   <Header />
   <main class="m-auto max-w-960 p-5">
     <h1 class="text-3xl font-yuji mt-8 text-center">プロフィール</h1>
@@ -15,38 +48,17 @@ import Badge from "../components/Badge.astro";
     </section>
     <section class="font-yuji border mt-20 px-3">
       <h2 class="text-2xl w-20 px-2 ml-5 bg-yellow-50 mt-[-20px]">活動</h2>
-      <div class="p-2 border-b-2 m-2">
-        <h3 class="text-lg">
-          マイクロコンピュータークラブ<Badge label="サークル" />
-        </h3>
-        <p class="p-2">
-          好きなことをるする。講習会のお手伝い、Unityゲーム開発、ホームページ開発、競プロなど。私の本拠地。
-        </p>
-      </div>
-      <div class="p-2 border-b-2 m-2">
-        <h3 class="text-lg">ロボット研究会R.U.R<Badge label="サークル" /></h3>
-        <p class="p-2">
-          NHK学生ロボコンを目標に活動。制御屋に所属し、ROS2など比較的高レイヤーの開発を担当している。
-          所属サークルの中で最も活動量が多い。
-        </p>
-      </div>
-      <div class="p-2 border-b-2 m-2">
-        <h3 class="text-lg">電脳サークル<Badge label="サークル" /></h3>
-        <p class="p-2">
-          人との関わりを増やすため途中加入。Unityゲーム開発のお手伝いをした。
-        </p>
-      </div>
-      <div class="p-2 border-b-2 m-2">
-        <h3 class="text-lg">
-          フロントエンドインターン<Badge
-            label="インターン"
-            bgColor="bg-red-200"
-          />
-        </h3>
-        <p class="p-2">
-          2022年12月からフロントエンドエンジニアの長期インターンを開始した。Next.jsやcss-modulesなどを用いて開発を行っている。
-        </p>
-      </div>
+      {
+        activities.map((activity) => (
+          <div class="p-2 m-2 border-b-2 last:border-b-0">
+            <h3 class="text-lg">
+              {activity.name}
+              <Badge bgColor={activity.badgeColor}>{activity.badge}</Badge>
+            </h3>
+            <p class="p-2">{activity.description}</p>
+          </div>
+        ))
+      }
     </section>
 
     <style>
