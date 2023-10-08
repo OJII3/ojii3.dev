@@ -1,13 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import Card from "@/components/Card.astro";
 ---
 
 <Layout title="Home">
   <Header />
 
-  <div class="min-h-full">
-    <h1>Home</h1>
-    <p>Home page</p>
+  <div class="min-h-100 flex items-center justify-center gap-5 flex-col">
+    <Card title="GitHub" body="github" href="https://github.com/ojii3" />
+    <Card title="Twitter" body="twitter" href="https://twitter.com/ojii3_dev" />
+    <Card
+      title="AtCoder"
+      body="atcoder"
+      href="https://atcoder.jp/users/ojii3"
+    />
   </div>
 </Layout>
