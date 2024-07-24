@@ -1,6 +1,7 @@
 ---
 title: titleeee
-tags: [tag1, tag2]
+tags:
+    - tag
 image: https://example.com/image.jpg
 ---
 
