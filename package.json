@@ -1,18 +1,23 @@
 {
-  "name": "ojii3.github.io",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/tailwind": "^5.0.0",
-    "astro": "^3.1.1",
-    "tailwind": "^4.0.0",
-    "tailwindcss": "^3.0.24"
-  }
+	"name": "ojii3.github.io",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"biome": "biome",
+		"lint": "biome check .",
+		"fmt": "biome check . --write"
+	},
+	"dependencies": {
+		"@astrojs/tailwind": "^5.1.0",
+		"@biomejs/biome": "^1.8.3",
+		"astro": "^2.10.15",
+		"tailwind": "^4.0.0",
+		"tailwindcss": "^3.4.6",
+		"typescript": "^5.5.3"
+	}
 }

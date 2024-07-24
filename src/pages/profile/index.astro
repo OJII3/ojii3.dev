@@ -1,39 +1,39 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import Footer from "@/components/Footer.astro";
+import GitRepoLink from "@/components/GitRepoLink.astro";
 import Header from "@/components/Header.astro";
 import Badge from "@/components/profile/Badge.astro";
-import GitRepoLink from "@/components/GitRepoLink.astro";
-import Footer from "@/components/Footer.astro";
+import Layout from "@/layouts/Layout.astro";
 
 const activities = [
-  {
-    name: "マイクロコンピュータークラブ",
-    badge: "サークル",
-    badgeColor: "bg-blue-200",
-    description:
-      "好きなことをする。講習会のお手伝い、Unityゲーム開発、ホームページ開発、競プロなど。",
-  },
-  {
-    name: "ロボット研究会R.U.R",
-    badge: "サークル",
-    badgeColor: "bg-blue-200",
-    description:
-      "NHK学生ロボコンを目標に活動。制御屋に所属し、ROS2など比較的高レイヤーの開発をしている。",
-  },
-  {
-    name: "電脳サークル",
-    badge: "サークル",
-    badgeColor: "bg-blue-200",
-    description:
-      "人との関わりを増やすため途中加入。Unityゲーム開発のお手伝いをした。",
-  },
-  {
-    name: "フロントエンドインターン",
-    badge: "インターン",
-    badgeColor: "bg-red-200",
-    description:
-      "フロントエンドエンジニアの長期インターン。Next.jsやcss-modulesなどを使っている。",
-  },
+	{
+		name: "マイクロコンピュータークラブ",
+		badge: "サークル",
+		badgeColor: "bg-blue-200",
+		description:
+			"好きなことをする。講習会のお手伝い、Unityゲーム開発、ホームページ開発、競プロなど。",
+	},
+	{
+		name: "ロボット研究会R.U.R",
+		badge: "サークル",
+		badgeColor: "bg-blue-200",
+		description:
+			"NHK学生ロボコンを目標に活動。制御屋に所属し、ROS2など比較的高レイヤーの開発をしている。",
+	},
+	{
+		name: "電脳サークル",
+		badge: "サークル",
+		badgeColor: "bg-blue-200",
+		description:
+			"人との関わりを増やすため途中加入。Unityゲーム開発のお手伝いをした。",
+	},
+	{
+		name: "フロントエンドインターン",
+		badge: "インターン",
+		badgeColor: "bg-red-200",
+		description:
+			"フロントエンドエンジニアの長期インターン。Next.jsやcss-modulesなどを使っている。",
+	},
 ];
 ---
 
