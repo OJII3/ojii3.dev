@@ -1,6 +1,7 @@
+import { Provider } from "@/components/ui/provider";
 import type { Metadata } from "next";
+import { Orbitron } from "next/font/google";
 import localFont from "next/font/local";
-import "./globals.css";
 
 const geistSans = localFont({
 	src: "./fonts/GeistVF.woff",
@@ -11,6 +12,12 @@ const geistMono = localFont({
 	src: "./fonts/GeistMonoVF.woff",
 	variable: "--font-geist-mono",
 	weight: "100 900",
+});
+
+const orbitron = Orbitron({
+	weight: ["400", "700"],
+	variable: "--font-orbitron",
+	subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -24,11 +31,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="ja" suppressHydrationWarning>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} antialiased`}
 			>
-				{children}
+				<Provider>{children}</Provider>
 			</body>
 		</html>
 	);
