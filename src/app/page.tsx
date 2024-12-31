@@ -4,10 +4,12 @@ import { Welcome } from "./_components/Welcome";
 
 export default function Home() {
 	return (
-		<main style={{ position: "relative" }}>
-			<Welcome />
-			<About />
+		<>
+			<main style={{ position: "relative" }}>
+				<Welcome />
+				<About />
+			</main>
 			<Links />
-		</main>
+		</>
 	);
 }
