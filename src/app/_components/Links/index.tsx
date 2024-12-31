@@ -8,14 +8,23 @@ import {
 	DrawerTitle,
 	DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Box, DrawerCloseTrigger, Flex, Link } from "@chakra-ui/react";
+import {
+	Box,
+	DrawerActionTrigger,
+	DrawerCloseTrigger,
+	Flex,
+	IconButton,
+	Link,
+} from "@chakra-ui/react";
 import { BsBook, BsCode, BsGithub, BsTwitterX } from "react-icons/bs";
-import { LuMenu } from "react-icons/lu";
+import { LuCross, LuMenu } from "react-icons/lu";
 
-import DiagonalWindow from "@/assets/diagnoal_window.svg";
 import DiagonalSlash from "@/assets/diagonal_slash.svg";
+import DiagonalWindow from "@/assets/diagonal_window.svg";
 import ForKiana from "@/assets/may_you_the_beauty.svg";
 import Honkai3rd from "@/assets/valkyrie.svg";
+import { BiCloset } from "react-icons/bi";
+import { IoClose } from "react-icons/io5";
 
 const links = [
 	{
@@ -50,14 +59,26 @@ export const Links = () => {
 		<>
 			<DrawerRoot size="sm">
 				<DrawerBackdrop />
-				<DrawerTrigger asChild pos="fixed" top="1" right="1">
+				<DrawerTrigger asChild>
 					<Button
+						pos="fixed"
+						top="2"
+						right="2"
 						colorPalette="black"
-						clipPath="polygon(0 0, 0 calc(100% - 14px), 14px 100%, 100% 100%, 100% 0)"
-						borderRadius="0"
-						pr="2"
+						h="auto"
+						p="1"
 					>
-						<LuMenu />
+						<Box
+							h="6"
+							w="8"
+							bg="orange"
+							pl="3"
+							pr="2"
+							clipPath="polygon(0 0, 0 calc(100% - 14px), 14px 100%, 100% 100%, 100% 0)"
+							color="black"
+						>
+							<LuMenu />
+						</Box>
 					</Button>
 				</DrawerTrigger>
 				<DrawerContent
@@ -91,10 +112,17 @@ export const Links = () => {
 						h="7/12"
 						borderRadius="md"
 						bg="orange"
+						zIndex="-1"
 					/>
-					<Box pos="absolute" bottom="8" left="20" color="orange">
+					<Box pos="absolute" bottom="9" left="20" color="orange" zIndex="-1">
 						<DiagonalWindow />
 					</Box>
+
+					<DrawerActionTrigger asChild>
+						<IconButton colorPalette="white" pos="absolute" right="4" top="4">
+							<IoClose />
+						</IconButton>
+					</DrawerActionTrigger>
 
 					<DrawerHeader>
 						<DrawerTitle fontFamily="orbitron" letterSpacing="0.1em">
@@ -122,7 +150,6 @@ export const Links = () => {
 							</Link>
 						))}
 					</DrawerBody>
-					<DrawerCloseTrigger />
 				</DrawerContent>
 			</DrawerRoot>
 		</>
