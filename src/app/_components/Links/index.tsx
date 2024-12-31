@@ -25,7 +25,7 @@ const links = [
 		icon: <BsGithub />,
 	},
 	{
-		href: "https://pixiv.net/users/12345678",
+		href: "https://www.pixiv.net/users/91784105",
 		icon: <SiPixiv />,
 		label: "Pixiv",
 	},
