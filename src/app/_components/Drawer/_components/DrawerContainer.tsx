@@ -138,7 +138,7 @@ export const DrawerContainer = () => {
 								href={link.href}
 								icon={link.icon}
 								label={link.label}
-								delay={(i + 1) * 0.08}
+								delay={(i + 0.5) * 0.06}
 							/>
 						))}
 					</DrawerBody>
