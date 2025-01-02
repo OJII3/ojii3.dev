@@ -51,9 +51,7 @@ const links = [
 export const DrawerContainer = () => {
 	return (
 		<>
-			<DrawerRoot
-				size="sm"
-			>
+			<DrawerRoot size="sm">
 				<DrawerBackdrop />
 				<DrawerTrigger asChild>
 					<Button
