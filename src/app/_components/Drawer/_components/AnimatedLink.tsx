@@ -25,7 +25,7 @@ export const AnimatedLink = ({
 				opacity: isInView ? 1 : 0,
 				translateX: isInView ? 0 : 40,
 				transitionDelay: `${delay}s`,
-				transitionDuration: "0.2s",
+				transitionDuration: "0.3s",
 			}}
 		>
 			<Link
@@ -35,9 +35,11 @@ export const AnimatedLink = ({
 				gap="3"
 				padding="2"
 				letterSpacing="0.05em"
-				fontSize="md"
+				fontSize="sm"
 				color="white"
 				pos="relative"
+				target="_blank"
+				rel="noopener noreferrer"
 				_after={{
 					content: "''",
 					pos: "absolute",

@@ -24,16 +24,16 @@ const links = [
 	{
 		href: "https://x.com/ojii3dev",
 		label: "TwitterX",
-		icon: <BsTwitterX size="28" />,
+		icon: <BsTwitterX size="22" />,
 	},
 	{
 		href: "https://github.com/ojii3",
 		label: "GitHub",
-		icon: <BsGithub size="28" />,
+		icon: <BsGithub size="22" />,
 	},
 	{
 		href: "https://atcoder.jp/users/ojii3",
-		icon: <BsCode size="28" />,
+		icon: <BsCode size="22" />,
 		label: "AtCoder",
 	},
 	{
@@ -43,7 +43,7 @@ const links = [
 	},
 	{
 		href: "https://blog.ojii3.dev",
-		icon: <BsBook size="28" />,
+		icon: <BsBook size="22" />,
 		label: "Blog",
 	},
 ];
@@ -51,7 +51,7 @@ const links = [
 export const DrawerContainer = () => {
 	return (
 		<>
-			<DrawerRoot size="sm">
+			<DrawerRoot size="xs">
 				<DrawerBackdrop />
 				<DrawerTrigger asChild>
 					<Button
@@ -62,8 +62,10 @@ export const DrawerContainer = () => {
 						h="auto"
 						p="1"
 						color="gray.900"
+						shadow="xs"
 					>
 						<Box
+							shadow="xs"
 							h="6"
 							w="8"
 							bg="gray.200"
@@ -98,11 +100,19 @@ export const DrawerContainer = () => {
 						right="16"
 						opacity="10%"
 						zIndex="-1"
+						h="100%"
 					>
 						<ForKiana />
 					</Box>
 					<AnimatedVerticalBar />
-					<Box pos="absolute" bottom="9" left="20" color="orange" zIndex="-1">
+					<Box
+						pos="absolute"
+						bottom="9"
+						left="20"
+						maxH="30%"
+						color="orange"
+						zIndex="-1"
+					>
 						<DiagonalWindow />
 					</Box>
 
@@ -138,7 +148,7 @@ export const DrawerContainer = () => {
 								href={link.href}
 								icon={link.icon}
 								label={link.label}
-								delay={(i + 0.5) * 0.06}
+								delay={(i + 0.1) * 0.1}
 							/>
 						))}
 					</DrawerBody>
