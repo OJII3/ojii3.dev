@@ -81,7 +81,7 @@ export const DrawerContainer = () => {
 
 				<DrawerContent
 					clipPath="polygon(0 0, 0 30%, 40px calc(30% + 40px), 40px calc(100% - 160px), 0 calc(100% - 120px), 0 100%, 100% 100%, 100% 0)"
-					pl="16"
+					pl="12"
 					bg="gray.800"
 					color="gray.100"
 				>
@@ -97,7 +97,7 @@ export const DrawerContainer = () => {
 						top="4"
 						bottom="-12px"
 						color="gray.500"
-						right="16"
+						right="8"
 						opacity="10%"
 						zIndex="-1"
 						h="100%"
@@ -126,12 +126,12 @@ export const DrawerContainer = () => {
 						<Box
 							pos="absolute"
 							top="0"
-							left="12"
+							left="10"
 							h="16"
-							w="48"
+							w="44"
 							bg="orange"
 							zIndex="-1"
-							clipPath="polygon(0 0, 0 calc(100% - 24px), 24px 100%, calc(100% - 60px) 100%, 100% 0)"
+							clipPath="polygon(0 0, 0 calc(100% - 24px), 24px 100%, calc(100% - var(--chakra-spacing-16)) 100%, 100% 0)"
 						/>
 						<DrawerTitle
 							fontFamily="orbitron"
@@ -148,7 +148,7 @@ export const DrawerContainer = () => {
 								href={link.href}
 								icon={link.icon}
 								label={link.label}
-								delay={(i + 0.1) * 0.1}
+								delay={(i + 0.05) * 0.1}
 							/>
 						))}
 					</DrawerBody>

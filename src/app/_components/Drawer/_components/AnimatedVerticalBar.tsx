@@ -9,7 +9,7 @@ export const AnimatedVerticalBar = () => {
 				position: "absolute",
 				bottom: "1.5rem",
 				right: "2rem",
-				width: "0.25rem",
+				width: "4px",
 				height: "60%",
 				zIndex: -1,
 				borderRadius: "20px",
