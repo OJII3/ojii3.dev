@@ -141,7 +141,13 @@ export const DrawerContainer = () => {
 							Links
 						</DrawerTitle>
 					</DrawerHeader>
-					<DrawerBody as={Flex} gap="3" flexDir="column" pt="12">
+					<DrawerBody
+						as={Flex}
+						gap="3"
+						flexDir="column"
+						pt="12"
+						overflowX="hidden"
+					>
 						{links.map((link, i) => (
 							<AnimatedLink
 								key={link.href}
