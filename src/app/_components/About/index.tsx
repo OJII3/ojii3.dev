@@ -36,7 +36,7 @@ const items = [
 	},
  {
   date: "2025.02",
-  title: "技育博vol6 DeNA賞",
+  title: "技育博vol6 DeNA賞獲得",
  },
 ];
 
