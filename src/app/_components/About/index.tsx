@@ -13,10 +13,6 @@ import { LuCheck } from "react-icons/lu";
 
 const items = [
 	{ date: "2022.04", title: "東京農工大学 工学部 機械システム工学科 入学" },
- {
-  date: "2024.04",
-  title: "ロボット研究会R.U.R、マイクロコンピュータークラブ(MCC)入部",
- },
 	{
 		date: "2022.12",
 		title: "フロントエンドエンジニア長期インターンシップ",
