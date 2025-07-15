@@ -13,6 +13,10 @@ import { LuCheck } from "react-icons/lu";
 
 const items = [
 	{ date: "2022.04", title: "東京農工大学 工学部 機械システム工学科 入学" },
+ {
+  date: "2024.04",
+  title: "ロボット研究会R.U.R、マイクロコンピュータークラブ(MCC)入部",
+ },
 	{
 		date: "2022.12",
 		title: "フロントエンドエンジニア長期インターンシップ",
@@ -22,6 +26,10 @@ const items = [
 		date: "2024.04",
 		title: "東京農工大学 工学部 知能情報システム工学科 編入学",
 	},
+ {
+  date: "2024.04",
+  title: "MCC部長就任",
+ },
 	{
 		date: "2024.06",
 		title: "NHK学生ロボコン2024 準決勝進出",
@@ -30,6 +38,10 @@ const items = [
 		date: "2024.11",
 		title: "技育展2024決勝大会出場",
 	},
+ {
+  date: "2025.02",
+  title: "技育博vol6 DeNA賞",
+ },
 ];
 
 export const About = () => {
