@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { LuCircleCheck } from "react-icons/lu";
 import { Drawer } from "@/components/Drawer";
 import { LinkCard } from "@/components/LinkCard";
 
@@ -8,11 +7,12 @@ export const Route = createFileRoute("/")({
 });
 
 function App() {
+
 	return (
 		<div className="min-h-dvh w-screen">
 			<Drawer />
-			<main className="mx-auto max-w-200 p-4">
-				<div className="py-20">
+			<main className="mx-auto flex max-w-200 flex-col gap-20 p-4">
+				<section className="pt-28">
 					<h1 className="font-tektur text-6xl">Hello! I am OJII3.</h1>
 					<p className="mt-8 font-tektur text-secondary-content">
 						Japanese University Student.
@@ -23,10 +23,11 @@ function App() {
 					<p className="mt-4 font-tektur text-secondary-content">
 						A fan of Nix & Neovim. Sometimes enjoy modeling with Blender.
 					</p>
-				</div>
+				</section>
 				<section>
-					<h2 className="font-tektur text-3xl">Links</h2>
-					<div className="mx-auto mt-12 grid w-[320px] grid-flow-col grid-cols-2 grid-rows-3 gap-8 md:w-full md:grid-flow-row md:grid-cols-4 md:grid-rows-2">
+					<h2 className="font-bold font-tektur text-2xl">Links</h2>
+					<hr className="h-[1px] w-full border-0 bg-primary drop-shadow-bloom drop-shadow-primary" />
+					<div className="mx-auto mt-12 grid w-[336px] grid-flow-col grid-cols-2 grid-rows-3 gap-x-12 gap-y-8 md:w-full md:grid-flow-row md:grid-cols-4 md:grid-rows-2">
 						<LinkCard
 							label="Blog"
 							to="https://blog.ojii3.dev"
@@ -63,47 +64,81 @@ function App() {
 						/>
 					</div>
 				</section>
-				<section className="mt-20">
-					<h2 className="font-tektur text-2xl">The way I went through</h2>
-					<ul className="timeline timeline-vertical my-4">
+				<section>
+					<h2 className="font-bold font-tektur text-2xl">
+						The way I went through
+					</h2>
+					<hr className="h-[1px] w-full border-0 bg-primary drop-shadow-bloom drop-shadow-primary" />
+					<ul className="timeline timeline-vertical mt-8">
 						<li>
-							<div className="timeline-start">
-								<LuCircleCheck />
+							<div className="timeline-start">2022/04</div>
+							<div className="timeline-middle"></div>
+							<div className="timeline-end timeline-box border-primary">
+								東京農工大学 工学部 機械システム工学科 入学
 							</div>
-							<div className="timeline-middle timeline-box">
-								First Macintosh computer
-							</div>
-							<hr />
+							<hr className="bg-primary" />
 						</li>
 						<li>
-							<hr />
-							<div className="timeline-start">
-								<LuCircleCheck />
+							<hr className="bg-primary" />
+							<div className="timeline-start">2024/03</div>
+							<div className="timeline-middle"></div>
+							<div className="timeline-end timeline-box border-primary">
+								東京農工大学 工学部 機械システム工学科 中退
 							</div>
-							<div className="timeline-middle timeline-box">iMac</div>
-							<hr />
+							<hr className="bg-primary" />
 						</li>
 						<li>
-							<hr />
-							<div className="timeline-start">
-								<LuCircleCheck />
+							<hr className="bg-primary" />
+							<div className="timeline-start">2024/04</div>
+							<div className="timeline-middle"></div>
+							<div className="timeline-end timeline-box border-primary">
+								東京農工大学 工学部 知能情報システム工学科 入学
 							</div>
-							<div className="timeline-middle timeline-box">iPod</div>
-							<hr />
+							<hr className="bg-primary" />
 						</li>
 						<li>
-							<hr />
-							<div className="timeline-start">
-								<LuCircleCheck />
+							<hr className="bg-primary" />
+							<div className="timeline-start">2024/04</div>
+							<div className="timeline-middle"></div>
+							<div className="timeline-end timeline-box border-primary">
+								マイクロコンピュータークラブ部長 就任
 							</div>
-							<hr />
+							<hr className="bg-primary" />
 						</li>
 						<li>
-							<hr />
-							<div className="timeline-start">
-								<LuCircleCheck />
+							<hr className="bg-primary" />
+							<div className="timeline-start">2024/06</div>
+							<div className="timeline-middle"></div>
+							<div className="timeline-end timeline-box border-primary">
+								NHK学生ロボコン2024 準決勝進出
 							</div>
-							<div className="timeline-middle timeline-box">Apple Watch</div>
+							<hr className="bg-primary" />
+						</li>
+						<li>
+							<hr className="bg-primary" />
+							<div className="timeline-start">2024/08</div>
+							<div className="timeline-middle"></div>
+							<div className="timeline-end timeline-box border-primary">
+								技育博 vol2 出場 (Avoid Game を出展)
+							</div>
+							<hr className="bg-primary" />
+						</li>
+						<li>
+							<hr className="bg-primary" />
+							<div className="timeline-start">2024/08</div>
+							<div className="timeline-middle"></div>
+							<div className="timeline-end timeline-box border-primary">
+								Hack U Tokyo 2024 出場 (Who is? を制作)
+							</div>
+							<hr className="bg-primary" />
+						</li>
+						<li>
+							<hr className="bg-primary" />
+							<div className="timeline-start">2024/10</div>
+							<div className="timeline-middle"></div>
+							<div className="timeline-end timeline-box border-primary">
+								技育展 2024 決勝大会出場 (Who is? を出展)
+							</div>
 						</li>
 					</ul>
 				</section>

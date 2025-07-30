@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Tektur:wght@400..900&display=swap");
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes:
+    dark --default,
+    dracura;
+}
 @plugin "daisyui/theme" {
   name: "dracura";
   default: true;
@@ -10,6 +14,7 @@
   --color-secondary: var(--color-sky-500);
 
   --radius-field: 0.25rem;
+  --radius-box: 0.2rem;
 }
 
 @font-face {
@@ -36,7 +41,8 @@
 
   --shadow-bloom: 0 0 4px var(--tw-inset-ring-color, currentcolor);
   --shadow-inset-bloom: inset 0 0 4px var(--tw-inset-ring-color, currentcolor);
-  --shadow-both-bloom: 0 0 4px var(--tw-inset-ring-color, currentcolor),
+  --shadow-both-bloom:
+    0 0 4px var(--tw-inset-ring-color, currentcolor),
     inset 0 0 4px var(--tw-inset-ring-color, currentcolor);
   --drop-shadow-bloom: 0 0 4px var(--tw-inset-ring-color);
 }
