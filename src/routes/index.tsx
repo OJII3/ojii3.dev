@@ -7,7 +7,6 @@ export const Route = createFileRoute("/")({
 });
 
 function App() {
-
 	return (
 		<div className="min-h-dvh w-screen">
 			<Drawer />

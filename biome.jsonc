@@ -7,7 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-    "includes": ["./src/app/**/*"]
+		"includes": ["src/*", "!src/*.gen.ts"]
 	},
 	"formatter": {
 		"enabled": true,

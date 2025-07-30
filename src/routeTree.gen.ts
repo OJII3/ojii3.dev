@@ -8,70 +8,70 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as Hi3RouteRouteImport } from './routes/hi3/route'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as Hi3RouteRouteImport } from "./routes/hi3/route";
+import { Route as IndexRouteImport } from "./routes/index";
 
 const Hi3RouteRoute = Hi3RouteRouteImport.update({
-  id: '/hi3',
-  path: '/hi3',
-  getParentRoute: () => rootRouteImport,
-} as any)
+	id: "/hi3",
+	path: "/hi3",
+	getParentRoute: () => rootRouteImport,
+} as any);
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
+	id: "/",
+	path: "/",
+	getParentRoute: () => rootRouteImport,
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/hi3': typeof Hi3RouteRoute
+	"/": typeof IndexRoute;
+	"/hi3": typeof Hi3RouteRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/hi3': typeof Hi3RouteRoute
+	"/": typeof IndexRoute;
+	"/hi3": typeof Hi3RouteRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/hi3': typeof Hi3RouteRoute
+	__root__: typeof rootRouteImport;
+	"/": typeof IndexRoute;
+	"/hi3": typeof Hi3RouteRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/hi3'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/hi3'
-  id: '__root__' | '/' | '/hi3'
-  fileRoutesById: FileRoutesById
+	fileRoutesByFullPath: FileRoutesByFullPath;
+	fullPaths: "/" | "/hi3";
+	fileRoutesByTo: FileRoutesByTo;
+	to: "/" | "/hi3";
+	id: "__root__" | "/" | "/hi3";
+	fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  Hi3RouteRoute: typeof Hi3RouteRoute
+	IndexRoute: typeof IndexRoute;
+	Hi3RouteRoute: typeof Hi3RouteRoute;
 }
 
-declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {
-    '/hi3': {
-      id: '/hi3'
-      path: '/hi3'
-      fullPath: '/hi3'
-      preLoaderRoute: typeof Hi3RouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-  }
+declare module "@tanstack/react-router" {
+	interface FileRoutesByPath {
+		"/hi3": {
+			id: "/hi3";
+			path: "/hi3";
+			fullPath: "/hi3";
+			preLoaderRoute: typeof Hi3RouteRouteImport;
+			parentRoute: typeof rootRouteImport;
+		};
+		"/": {
+			id: "/";
+			path: "/";
+			fullPath: "/";
+			preLoaderRoute: typeof IndexRouteImport;
+			parentRoute: typeof rootRouteImport;
+		};
+	}
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  Hi3RouteRoute: Hi3RouteRoute,
-}
+	IndexRoute: IndexRoute,
+	Hi3RouteRoute: Hi3RouteRoute,
+};
 export const routeTree = rootRouteImport
-  ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+	._addFileChildren(rootRouteChildren)
+	._addFileTypes<FileRouteTypes>();

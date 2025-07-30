@@ -2,12 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { Drawer } from "@/components/Drawer";
-import { Celing } from "./_components/Ceiling";
-import { Door } from "./_components/Door";
-import { DoorFrame } from "./_components/DoorFrame";
-import { Floor } from "./_components/Floor";
-import { Wall } from "./_components/Wall";
-import { Window } from "./_components/Window";
+import { Celing } from "./_components/_Ceiling";
+import { Door } from "./_components/_Door";
+import { DoorFrame } from "./_components/_DoorFrame";
+import { Floor } from "./_components/_Floor";
+import { Wall } from "./_components/_Wall";
+import { Window } from "./_components/_Window";
 
 export const Route = createFileRoute("/hi3")({
 	component: RouteComponent,
