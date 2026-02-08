@@ -109,7 +109,8 @@ export function ProfilePanel() {
             <div
               className="relative flex items-center justify-between bg-bg-dark border border-border-light h-[100px] w-full"
               style={{
-                clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)",
+                clipPath:
+                  "polygon(0 0, 100% 0, 100% calc(100% - 32px), calc(100% - 32px) 100%, 0 100%)",
               }}
             >
               <div className="pl-5">
