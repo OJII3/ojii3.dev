@@ -1,0 +1,7 @@
+pre-commit:
+  parallel: true
+  commands:
+    biome-check:
+      run: bunx biome check --no-errors-on-unmatched {staged_files}
+    typecheck:
+      run: bunx tsc -b --noEmit
