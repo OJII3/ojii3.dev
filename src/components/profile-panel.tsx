@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AngledButton } from "@/components/angled-button";
 import { LinkCard } from "@/components/link-card";
 import { StatRow } from "@/components/stat-row";
 
@@ -43,6 +44,9 @@ function TechTag({ label }: { label: string }) {
 function BasicTab() {
   return (
     <div className="flex flex-col">
+      <div className="mb-3">
+        <AngledButton to="/works" label="WORKS" />
+      </div>
       <StatRow label="HANDLE" value="@OJII3" accent />
       <StatRow label="AFFILIATION" value="Keio Univ." />
       <StatRow label="SPECIALTY" value="Computer Science" />
@@ -77,7 +81,6 @@ function LinksTab() {
     <div className="flex flex-col gap-2">
       <LinkCard label="GITHUB" href="https://github.com/OJII3" external />
       <LinkCard label="X / TWITTER" href="https://x.com/OJII3_" external />
-      <LinkCard label="WORKS" href="/works" />
     </div>
   );
 }
