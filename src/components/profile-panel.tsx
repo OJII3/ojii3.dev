@@ -107,22 +107,35 @@ export function ProfilePanel() {
           <div className="p-4 pb-4">
             {/* Name & Avatar area */}
             <div
-              className="relative flex items-center justify-between bg-bg-dark border border-border-light h-[100px] w-full"
+              className="relative h-[100px] w-full"
               style={{
                 clipPath:
                   "polygon(0 0, 100% 0, 100% calc(100% - 32px), calc(100% - 32px) 100%, 0 100%)",
               }}
             >
-              <div className="pl-5">
-                <p className="text-[36px] text-white font-squada leading-none">
-                  OKAZU
-                </p>
-                <p className="text-[12px] text-muted-light tracking-wider mt-1">
-                  Web Developer
-                </p>
+              {/* Border layer */}
+              <div className="absolute inset-0 bg-border-light" />
+              {/* Background layer */}
+              <div
+                className="absolute inset-[1px] bg-bg-dark"
+                style={{
+                  clipPath:
+                    "polygon(0 0, 100% 0, 100% calc(100% - 31px), calc(100% - 31px) 100%, 0 100%)",
+                }}
+              />
+              {/* Content */}
+              <div className="relative z-10 flex items-center justify-between h-full">
+                <div className="pl-5">
+                  <p className="text-[36px] text-white font-squada leading-none">
+                    OKAZU
+                  </p>
+                  <p className="text-[12px] text-muted-light tracking-wider mt-1">
+                    Web Developer
+                  </p>
+                </div>
+                {/* Avatar circle */}
+                <div className="w-[64px] h-[64px] rounded-full bg-text-sub mr-14 shrink-0" />
               </div>
-              {/* Avatar circle */}
-              <div className="w-[64px] h-[64px] rounded-full bg-text-sub mr-14 shrink-0" />
             </div>
 
             {/* Level badge + Tech tags */}
