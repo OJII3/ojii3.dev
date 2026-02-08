@@ -13,9 +13,10 @@ function HomePage() {
         <div className="relative w-full max-w-[370px]">
           {/* Background panel */}
           <div
-            className="relative bg-bg-panel border border-border w-full"
+            className="relative bg-bg-panel w-full"
             style={{
-              clipPath: "polygon(0 0, 90% 0, 100% 8%, 100% 100%, 0 100%)",
+              clipPath:
+                "polygon(0 0, 100% 0, 100% 16%, 97.8% 18.6%, 97.8% 81.4%, 100% 84%, 100% 100%, 0 100%)",
             }}
           >
             <div className="p-4 pb-24">
@@ -39,6 +40,21 @@ function HomePage() {
               </div>
             </div>
           </div>
+          {/* SVG border outline */}
+          <svg
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            viewBox="0 0 370 318"
+            preserveAspectRatio="none"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 0 L370 0 L370 51 L362 59 L362 259 L370 267 L370 318 L0 318 Z"
+              stroke="var(--color-muted)"
+              strokeWidth="2"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
         </div>
       </div>
     </div>
