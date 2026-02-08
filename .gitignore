@@ -25,3 +25,7 @@ Thumbs.db
 
 # Wrangler
 .wrangler/
+
+# Nix
+.direnv/
+.bun-version
