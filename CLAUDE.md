@@ -11,7 +11,7 @@ OJII3 の個人ポートフォリオサイト。
 - **スタイリング**: Tailwind CSS v4
 - **UIコンポーネント**: shadcn/ui
 - **ランタイム/パッケージマネージャ**: Bun
-- **デプロイ**: Cloudflare Pages
+- **デプロイ**: Cloudflare Workers
 - **リンター/フォーマッター**: Biome
 
 ## ディレクトリ構成 (予定)
@@ -40,7 +40,7 @@ OJII3 の個人ポートフォリオサイト。
 │       ├── index.tsx         # トップページ
 │       ├── about.tsx         # 自己紹介
 │       └── works.tsx         # 作品一覧
-└── wrangler.toml             # Cloudflare Pages 設定
+└── wrangler.toml             # Cloudflare Workers 設定
 ```
 
 ## ページ構成 (予定)
@@ -57,6 +57,8 @@ nr build        # プロダクションビルド
 nr preview      # ビルド結果のプレビュー
 nr lint         # Biome による lint
 nr format       # Biome による format
+nr deploy       # Cloudflare Workers へデプロイ
+bun test        # テスト実行 (Bun 予約コマンド)
 ```
 
 ## 開発ルール
@@ -66,4 +68,13 @@ nr format       # Biome による format
 - Tailwind CSS のユーティリティクラスでスタイリングする
 - ファイルベースルーティング (TanStack Router) に従う
 - `nr` コマンドを使う (`npm run` / `pnpm run` の代替)
+- `bun test`, `bun build` などの Bun 予約コマンドはそのまま実行する
+- Biome で lint/format を統一する (ESLint/Prettier は使わない)
 - `rm -rf` の代わりに `gomi -rf` を使う
+
+## CLAUDE.md メンテナンスルール
+
+- **plan 完了後**: 設計変更・技術選定の結果を CLAUDE.md に反映する
+- **機能追加・削除後**: ページ構成、ディレクトリ構成、技術スタック、開発コマンドを更新する
+- **依存関係変更後**: 技術スタックや開発コマンドに差分があれば更新する
+- CLAUDE.md は常にプロジェクトの現状と一致させること
