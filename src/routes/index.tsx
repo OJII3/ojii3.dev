@@ -13,7 +13,7 @@ function HomePage() {
         <div className="relative w-full max-w-[370px]">
           {/* Background panel */}
           <div
-            className="relative bg-[#2a2a2a] border border-[#444] w-full"
+            className="relative bg-bg-panel border border-border w-full"
             style={{
               clipPath: "polygon(0 0, 90% 0, 100% 8%, 100% 100%, 0 100%)",
             }}
@@ -21,7 +21,7 @@ function HomePage() {
             <div className="p-4 pb-24">
               {/* Name & Icon area */}
               <div
-                className="relative flex items-center justify-between bg-[#1a1a1a] border border-[#555] h-[127px] w-full max-w-[334px]"
+                className="relative flex items-center justify-between bg-bg-dark border border-border-light h-[127px] w-full max-w-[334px]"
                 style={{
                   clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)",
                 }}
@@ -30,7 +30,7 @@ function HomePage() {
                   OKAZU
                 </p>
                 {/* Avatar circle */}
-                <div className="w-[80px] h-[80px] rounded-full bg-[#ccc] mr-12 shrink-0" />
+                <div className="w-[80px] h-[80px] rounded-full bg-text-sub mr-12 shrink-0" />
               </div>
 
               {/* Works Link */}

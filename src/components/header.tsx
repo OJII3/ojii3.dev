@@ -14,7 +14,7 @@ export function Header({ title }: HeaderProps) {
       >
         {/* Arrow background */}
         <div
-          className="absolute inset-0 bg-[#444] group-hover:bg-[#555] transition-colors"
+          className="absolute inset-0 bg-border group-hover:bg-border-light transition-colors"
           style={{
             clipPath: "polygon(0 0, 70% 0, 100% 50%, 70% 100%, 0 100%)",
           }}

@@ -3,13 +3,32 @@
 
 @theme {
   --font-squada: "Squada One", sans-serif;
-  --color-bg-main: #222222;
+
+  /* Background (dark → light) */
   --color-bg-header: #111111;
+  --color-bg-dark: #1a1a1a;
+  --color-bg-main: #222222;
+  --color-bg-panel: #2a2a2a;
   --color-bg-button: #333333;
+
+  /* Border */
+  --color-border: #444444;
+  --color-border-light: #555555;
+
+  /* Muted (disabled / locked) */
+  --color-muted: #666666;
+  --color-muted-mid: #888888;
+  --color-muted-light: #999999;
+
+  /* Accent */
   --color-accent: #ff3300;
   --color-accent-dark: #cc2200;
+  --color-accent-darker: #991100;
+
+  /* Text */
   --color-text-main: #ffffff;
   --color-text-sub: #cccccc;
+  --color-text-on-accent: #000000;
 }
 
 body {

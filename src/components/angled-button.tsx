@@ -37,7 +37,11 @@ export function AngledButton({ to, label }: AngledButtonProps) {
           className="-mr-2"
           aria-hidden="true"
         >
-          <path d="M0 0L14 14L0 28" stroke="#222" strokeWidth="4" />
+          <path
+            d="M0 0L14 14L0 28"
+            stroke="var(--color-bg-main)"
+            strokeWidth="4"
+          />
         </svg>
         <svg
           width="18"
@@ -46,7 +50,11 @@ export function AngledButton({ to, label }: AngledButtonProps) {
           fill="none"
           aria-hidden="true"
         >
-          <path d="M0 0L14 14L0 28" stroke="#222" strokeWidth="4" />
+          <path
+            d="M0 0L14 14L0 28"
+            stroke="var(--color-bg-main)"
+            strokeWidth="4"
+          />
         </svg>
       </div>
     </Link>
