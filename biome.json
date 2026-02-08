@@ -1,8 +1,6 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
+  "$schema": "https://biomejs.dev/schemas/2.3.14/schema.json",
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
@@ -25,10 +23,7 @@
         "useExhaustiveDependencies": "warn",
         "useHookAtTopLevel": "error"
       },
-      "nursery": {
-        "noConsole": "warn",
-        "useConsistentMemberAccessibility": "warn"
-      },
+      "nursery": {},
       "performance": {
         "noAccumulatingSpread": "warn",
         "noBarrelFile": "warn"
@@ -49,13 +44,13 @@
           }
         },
         "useFragmentSyntax": "warn",
-        "useShorthandArrayType": "warn",
-        "useShorthandAssign": "warn"
+        "useShorthandAssign": "warn",
+        "useConsistentMemberAccessibility": "warn"
       },
       "suspicious": {
-        "noConsoleLog": "warn",
         "noEmptyBlockStatements": "warn",
-        "useAwait": "warn"
+        "useAwait": "warn",
+        "noConsole": "warn"
       }
     }
   },
@@ -67,7 +62,20 @@
       "arrowParentheses": "always"
     }
   },
+  "css": {
+    "parser": {
+      "cssModules": false,
+      "tailwindDirectives": true
+    }
+  },
   "files": {
-    "ignore": ["node_modules", "dist", ".wrangler", "src/routeTree.gen.ts"]
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/dist",
+      "!**/.wrangler",
+      "!**/src/routeTree.gen.ts",
+      "!**/.claude"
+    ]
   }
 }
