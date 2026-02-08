@@ -162,7 +162,7 @@ export function ProfilePanel() {
                   }`}
                   style={{
                     clipPath:
-                      "polygon(4px 0, calc(100% - 4px) 0, 100% 100%, 0 100%)",
+                      "polygon(16px 0, 100% 0, calc(100% - 16px) 100%, 0 100%)",
                   }}
                 >
                   {tab}
