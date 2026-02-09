@@ -1,7 +1,14 @@
+import { Info } from "lucide-react";
 import { useState } from "react";
 import { AngledButton } from "@/components/angled-button";
 import { LinkCard } from "@/components/link-card";
 import { StatRow } from "@/components/stat-row";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const TABS = ["BASIC", "SKILLS", "LINKS"] as const;
 type Tab = (typeof TABS)[number];
@@ -48,7 +55,22 @@ function BasicTab() {
         <AngledButton to="/works" label="WORKS" />
       </div>
       <StatRow label="HANDLE" value="@OJII3" accent />
-      <StatRow label="AFFILIATION" value="Keio Univ." />
+      <StatRow
+        label="AFFILIATION"
+        value={
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <span className="inline-flex items-center gap-1 cursor-help">
+                  TUAT
+                  <Info className="size-3 text-muted-light" />
+                </span>
+              </TooltipTrigger>
+              <TooltipContent>東京農工大学</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        }
+      />
       <StatRow label="SPECIALTY" value="Computer Science" />
       <StatRow label="FOCUS" value="Web / Systems" accent />
       <StatRow label="LOCATION" value="Japan" />
