@@ -35,11 +35,11 @@ export function ClippedCard({ variant, title, subtitle }: ClippedCardProps) {
       />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-between h-full p-4">
-        <p className="text-[clamp(24px,8vw,40px)] text-text-on-accent font-squada leading-none">
+      <div className="relative z-10 flex flex-col justify-between h-full p-4 lg:p-5">
+        <p className="text-xl text-text-on-accent font-squada leading-none">
           {isPreview ? "PREVIEW" : "NO DATA"}
         </p>
-        <div className="text-text-sub text-[clamp(14px,4vw,24px)] font-squada leading-tight">
+        <div className="text-text-sub text-base lg:text-xl font-squada leading-tight">
           {isPreview && title ? <p>{title}</p> : <p>{subtitle ?? "LOCKED"}</p>}
         </div>
       </div>

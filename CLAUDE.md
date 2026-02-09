@@ -39,7 +39,7 @@ OJII3 の個人ポートフォリオサイト。
 │       ├── __root.tsx        # ルートレイアウト
 │       ├── index.tsx         # トップページ
 │       ├── about.tsx         # 自己紹介
-│       └── works.tsx         # 作品一覧
+│       └── projects.tsx      # プロジェクト一覧
 └── wrangler.toml             # Cloudflare Workers 設定
 ```
 
@@ -47,7 +47,7 @@ OJII3 の個人ポートフォリオサイト。
 
 - **トップページ (`/`)**: ヒーローセクション、簡単な自己紹介、主要な作品のハイライト
 - **自己紹介 (`/about`)**: スキル、経歴、興味分野
-- **作品一覧 (`/works`)**: プロジェクト一覧 (GitHub 連携等)
+- **プロジェクト一覧 (`/projects`)**: プロジェクト一覧 (GitHub 連携等)
 
 ## 開発コマンド
 
@@ -60,6 +60,24 @@ nr format       # Biome による format
 nr deploy       # Cloudflare Workers へデプロイ
 bun test        # テスト実行 (Bun 予約コマンド)
 ```
+
+## フォントサイズトークン (`styles.css`)
+
+| トークン | サイズ | 用途例 |
+|----------|--------|--------|
+| `text-2xs` | 13px | ごく小さいバッジ |
+| `text-xs` | 14px | ラベル、Tooltip |
+| `text-xs-plus` | 15px | レベルバッジ |
+| `text-sm` | 16px | 本文、タブ、StatRow ラベル |
+| `text-base` | 18px | StatRow 値、LinkCard テキスト |
+| `text-lg` | 20px | PC 表示での本文拡大用 |
+| `text-xl` | 26px | ボタンラベル、カードタイトル |
+| `text-2xl` | 38px | 名前 (OKAZU) |
+| `text-3xl` | 42px | ページヘッダータイトル |
+| `text-4xl` | 48px | PC 表示でのヘッダー/名前拡大用 |
+
+- arbitrary value (`text-[...]`) は使わず、必ずトークンを使う
+- 新サイズが必要な場合はトークンを追加する
 
 ## 開発ルール
 
