@@ -42,7 +42,7 @@ function BasicTab() {
   return (
     <div className="flex flex-col">
       <div className="mb-3">
-        <AngledButton to="/works" label="WORKS" />
+        <AngledButton to="/projects" label="PROJECTS" />
       </div>
       <StatRow label="HANDLE" value="OKAZU / OJII3" accent />
       <StatRow

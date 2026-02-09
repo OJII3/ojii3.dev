@@ -2,16 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ClippedCard } from "@/components/clipped-card";
 import { Header } from "@/components/header";
 
-export const Route = createFileRoute("/works")({
-  component: WorksPage,
+export const Route = createFileRoute("/projects")({
+  component: ProjectsPage,
 });
 
-type Work = {
+type Project = {
   variant: "preview" | "locked";
   title?: string;
 };
 
-const works: Work[] = [
+const projects: Project[] = [
   { variant: "preview", title: "OBSIDIAN\nSYNC WORKERS" },
   { variant: "preview", title: "OJII3.DEV" },
   { variant: "preview", title: "COMPETITIVE\nPROGRAMMING" },
@@ -20,20 +20,21 @@ const works: Work[] = [
   { variant: "locked" },
   { variant: "locked" },
   { variant: "locked" },
+  { variant: "locked" },
 ];
 
-function WorksPage() {
+function ProjectsPage() {
   return (
     <div className="flex flex-col gap-4 min-h-screen">
-      <Header title="WORKS" />
+      <Header title="PROJECTS" />
 
-      {/* Works grid */}
-      <div className="grid grid-cols-2 gap-4 px-4 pb-4 max-w-panel-max mx-auto w-full">
-        {works.map((work, i) => (
+      {/* Projects grid */}
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 px-4 pb-4 max-w-panel-max mx-auto w-full">
+        {projects.map((project, i) => (
           <ClippedCard
-            key={`work-${work.variant}-${i}`}
-            variant={work.variant}
-            title={work.title}
+            key={`project-${project.variant}-${i}`}
+            variant={project.variant}
+            title={project.title}
           />
         ))}
       </div>
