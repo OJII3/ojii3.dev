@@ -74,15 +74,15 @@ function SkillsTab() {
       {SKILLS.map((s) => (
         <div
           key={s.name}
-          className="flex items-center justify-between py-1.5 border-b border-border-dim"
+          className="flex items-center justify-between py-1.5 lg:py-2 border-b border-border-dim"
         >
           <span
-            className={`text-sm lg:text-base tracking-wider ${s.good ? "text-accent" : "text-muted-light"}`}
+            className={`text-sm lg:text-[1.25rem] tracking-wider ${s.good ? "text-accent" : "text-muted-light"}`}
           >
             {s.name}
           </span>
           {s.good && (
-            <span className="text-2xs lg:text-xs tracking-wider text-accent/70 font-squada border border-accent/30 rounded-full px-1.5 lg:px-2 py-0.5 leading-none">
+            <span className="text-2xs lg:text-sm tracking-wider text-accent/70 font-squada border border-accent/30 rounded-full px-1.5 lg:px-2.5 py-0.5 lg:py-1 leading-none">
               ★ good
             </span>
           )}
