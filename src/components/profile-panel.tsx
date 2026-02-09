@@ -137,7 +137,11 @@ export function ProfilePanel() {
                   </p>
                 </div>
                 {/* Avatar circle */}
-                <div className="w-avatar lg:w-[5rem] h-avatar lg:h-[5rem] rounded-full bg-text-sub mr-14 shrink-0" />
+                <img
+                  src="/images/avatar.png"
+                  alt="Avatar"
+                  className="w-avatar lg:w-[5rem] h-avatar lg:h-[5rem] rounded-full object-cover mr-14 shrink-0"
+                />
               </div>
             </div>
 
