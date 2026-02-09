@@ -104,7 +104,7 @@ export function ProfilePanel() {
               "polygon(0 0, 100% 0, 100% 40px, calc(100% - 8px) 48px, calc(100% - 8px) calc(100% - 48px), 100% calc(100% - 40px), 100% 100%, 0 100%)",
           }}
         >
-          <div className="p-4 pb-4">
+          <div className="p-4 pr-6 pb-4">
             {/* Name & Avatar area */}
             <div
               className="relative h-[100px] w-full"
@@ -166,20 +166,20 @@ export function ProfilePanel() {
             </div>
 
             {/* Tab bar */}
-            <div className="flex gap-1 mt-4">
-              {TABS.map((tab) => (
+            <div className="flex mt-4">
+              {TABS.map((tab, i) => (
                 <button
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(tab)}
-                  className={`flex-1 h-[32px] text-[12px] font-squada tracking-wider transition-colors ${
+                  className={`flex-1 h-[32px] text-[12px] font-squada tracking-wider transition-colors ${i > 0 ? "-ml-2" : ""} ${
                     activeTab === tab
-                      ? "bg-accent text-text-on-accent"
+                      ? "bg-accent text-text-on-accent z-10"
                       : "bg-bg-dark text-muted-light hover:text-text-sub"
                   }`}
                   style={{
                     clipPath:
-                      "polygon(16px 0, 100% 0, calc(100% - 16px) 100%, 0 100%)",
+                      "polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%)",
                   }}
                 >
                   {tab}
