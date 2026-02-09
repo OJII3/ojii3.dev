@@ -1,5 +1,5 @@
----
-name: Deploy Preview & Publish Production
+name: Deploy
+
 on:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -8,110 +8,118 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  upload:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     outputs:
-      success: ${{ steps.deploy-preview.outputs.command-stderr == '' }}
-      version_tag: ${{ steps.get-version.outputs.version }}
+      version_tag: ${{ steps.version.outputs.tag }}
     steps:
-      - name: Setup | Checkout
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup | Bun
+      - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version-file: ".bun-version"
 
-      - name: Setup | Install dependencies
+      - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Setup | Post comment
+      - name: Post building status
         if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          gh pr comment ${{ github.event.pull_request.number }} --edit-last --create-if-none --body-file - <<EOF
-          ### <span aria-hidden="true">🚧</span> Deploy Preview building...
+          gh pr comment ${{ github.event.pull_request.number }} \
+            --edit-last --create-if-none --body-file - <<'EOF'
+          ### ⏳ Deploy Preview building...
 
           |  Name | Link |
-          |---------------------------------|------------------------|
-          |<span aria-hidden="true">🔨</span> Latest commit | ${{ github.sha }} |
-          |<span aria-hidden="true">🔍</span> Latest deploy log | ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} |
-          ---
+          |-------|------|
+          | Latest commit | ${{ github.sha }} |
+          | Deploy log | ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} |
           EOF
 
-      - name: Setup | Get version
-        id: get-version
-        run: |
-          version="$(git rev-parse --short ${{ github.sha }})"
-          echo "version=${version}" >> $GITHUB_OUTPUT
+      - name: Get version tag
+        id: version
+        run: echo "tag=$(git rev-parse --short ${{ github.sha }})" >> "$GITHUB_OUTPUT"
 
-      - name: Run | Build
+      - name: Build
         run: bun run build
 
-      - name: Run | Deploy
+      - name: Upload version
         uses: cloudflare/wrangler-action@v3
-        id: deploy-preview
+        id: upload
         with:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           command: >-
-            versions
-            upload
-            --tag "${{ steps.get-version.outputs.version }}"
-            --message "${{ github.event_name == 'pull_request' && format('Preview deployment for PR #{0}', github.event.pull_request.number) || 'Release deployment' }}"
+            versions upload
+            --tag "${{ steps.version.outputs.tag }}"
+            --message "${{ github.event_name == 'pull_request' && format('PR #{0} ({1})', github.event.pull_request.number, steps.version.outputs.tag) || format('Release {0}', steps.version.outputs.tag) }}"
 
-      - name: Finish | Post comment
+      - name: Post preview comment
         if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          gh pr comment ${{ github.event.pull_request.number }} --edit-last --create-if-none --body-file - <<EOF
-          ### <span aria-hidden="true">✅</span> Deploy Preview ready!
+          gh pr comment ${{ github.event.pull_request.number }} \
+            --edit-last --create-if-none --body-file - <<'EOF'
+          ### ✅ Deploy Preview ready!
 
           |  Name | Link |
-          |---------------------------------|------------------------|
-          |<span aria-hidden="true">🔨</span> Latest commit | ${{ github.sha }} |
-          |<span aria-hidden="true">🔍</span> Latest deploy log | ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} |
-          |<span aria-hidden="true">🌐</span> Preview link | [${{ steps.deploy-preview.outputs.deployment-url }}](${{ steps.deploy-preview.outputs.deployment-url }}) |
-          ---
+          |-------|------|
+          | Latest commit | ${{ github.sha }} |
+          | Deploy log | ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} |
+          | Preview | ${{ steps.upload.outputs.deployment-url }} |
           EOF
 
   publish:
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: deploy
-    if: needs.deploy.outputs.success == 'true' && github.event_name == 'push'
+    needs: upload
+    if: github.event_name == 'push'
     environment:
       name: production
-      url: ${{ steps.publish.outputs.deployment-url }}
+      url: ${{ steps.deploy.outputs.deployment-url }}
     steps:
-      - name: Setup | Checkout
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup | Bun
+      - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version-file: ".bun-version"
 
-      - name: Setup | Install dependencies
+      - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Setup | Get version ID
+      - name: Get version ID
         id: get-version-id
-        run: |
-          version_id="$(bun wrangler versions list --json | jq -r '.[] | select(.annotations."workers/tag" == "${{ needs.deploy.outputs.version_tag }}") | .id')"
-          echo "version_id=${version_id}" >> $GITHUB_OUTPUT
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          version_id="$(
+            bun wrangler versions list --json \
+              | jq -r '.[] | select(.annotations."workers/tag" == "${{ needs.upload.outputs.version_tag }}") | .id'
+          )"
+          if [ -z "$version_id" ]; then
+            echo "::error::Version with tag '${{ needs.upload.outputs.version_tag }}' not found"
+            exit 1
+          fi
+          echo "version_id=${version_id}" >> "$GITHUB_OUTPUT"
 
-      - name: Run | Publish
+      - name: Deploy to production
         uses: cloudflare/wrangler-action@v3
-        id: publish
+        id: deploy
         with:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
