@@ -62,8 +62,8 @@ function BasicTab() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <span className="inline-flex items-center gap-1 cursor-help">
-                  TUAT
                   <Info className="size-3 text-muted-light" />
+                  TUAT
                 </span>
               </TooltipTrigger>
               <TooltipContent>東京農工大学</TooltipContent>
