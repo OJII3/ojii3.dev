@@ -9,7 +9,7 @@ export function AngledButton({ to, label }: AngledButtonProps) {
   return (
     <Link
       to={to}
-      className="relative inline-flex items-center h-btn-h lg:h-12 w-btn-w lg:w-52 group"
+      className="relative inline-flex items-center h-btn-h lg:h-14 w-btn-w lg:w-56 group"
     >
       {/* Base dark rectangle */}
       <div className="absolute inset-0 bg-bg-button border-2 border-bg-header" />
@@ -21,7 +21,7 @@ export function AngledButton({ to, label }: AngledButtonProps) {
 
       {/* Orange angled section */}
       <div
-        className="absolute right-0 top-0 h-full w-[67px] bg-accent"
+        className="absolute right-0 top-0 h-full w-[67px] lg:w-[80px] bg-accent"
         style={{
           clipPath: "polygon(30% 0, 100% 0, 100% 100%, 0 100%)",
         }}

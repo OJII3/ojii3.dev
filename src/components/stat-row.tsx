@@ -8,7 +8,7 @@ type StatRowProps = {
 
 export function StatRow({ label, value, accent = false }: StatRowProps) {
   return (
-    <div className="flex items-baseline justify-between py-1.5 border-b border-border-dim">
+    <div className="flex items-baseline justify-between py-1.5 lg:py-2 border-b border-border-dim">
       <span className="text-sm lg:text-base tracking-widest text-muted-light uppercase">
         {label}
       </span>

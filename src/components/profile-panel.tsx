@@ -28,7 +28,7 @@ const SKILLS: { name: string; good?: boolean }[] = [
 function TechTag({ label }: { label: string }) {
   return (
     <span
-      className="inline-flex items-center h-tag-h px-2 text-xs tracking-wider text-text-sub border border-border uppercase"
+      className="inline-flex items-center h-tag-h lg:h-[1.75rem] px-2 lg:px-3 text-xs lg:text-sm tracking-wider text-text-sub border border-border uppercase"
       style={{
         clipPath: "polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%)",
       }}
@@ -41,7 +41,7 @@ function TechTag({ label }: { label: string }) {
 function BasicTab() {
   return (
     <div className="flex flex-col">
-      <div className="mb-3">
+      <div className="mb-3 lg:mb-4">
         <AngledButton to="/projects" label="PROJECTS" />
       </div>
       <StatRow label="HANDLE" value="OKAZU / OJII3" accent />
@@ -52,7 +52,7 @@ function BasicTab() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <span className="inline-flex items-center gap-1 cursor-help">
-                  <Info className="size-3 text-muted-light" />
+                  <Info className="size-3 lg:size-4 text-muted-light" />
                   TUAT
                 </span>
               </TooltipTrigger>
@@ -70,7 +70,7 @@ function BasicTab() {
 
 function SkillsTab() {
   return (
-    <div className="grid grid-cols-2 gap-x-4">
+    <div className="grid grid-cols-2 gap-x-4 lg:gap-x-6">
       {SKILLS.map((s) => (
         <div
           key={s.name}
@@ -82,7 +82,7 @@ function SkillsTab() {
             {s.name}
           </span>
           {s.good && (
-            <span className="text-2xs tracking-wider text-accent/70 font-squada border border-accent/30 rounded-full px-1.5 py-0.5 leading-none">
+            <span className="text-2xs lg:text-xs tracking-wider text-accent/70 font-squada border border-accent/30 rounded-full px-1.5 lg:px-2 py-0.5 leading-none">
               ★ good
             </span>
           )}
@@ -94,7 +94,7 @@ function SkillsTab() {
 
 function LinksTab() {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 lg:gap-3">
       <LinkCard label="GITHUB" href="https://github.com/OJII3" external />
       <LinkCard label="X / TWITTER" href="https://x.com/OJII3_" external />
     </div>
@@ -105,13 +105,13 @@ export function ProfilePanel() {
   const [activeTab, setActiveTab] = useState<Tab>("BASIC");
 
   return (
-    <div className="flex flex-col items-start overflow-hidden p-4 lg:p-5 w-full max-w-panel-max lg:max-w-lg mx-auto">
+    <div className="flex flex-col items-start overflow-hidden p-4 lg:p-6 w-full max-w-panel-max lg:max-w-xl mx-auto">
       {/* Section label */}
-      <p className="text-xs lg:text-sm tracking-[0.2em] text-muted-light uppercase mb-2 pl-1">
+      <p className="text-xs lg:text-sm tracking-[0.2em] text-muted-light uppercase mb-2 lg:mb-3 pl-1">
         profile
       </p>
 
-      <div className="relative w-full max-w-panel-inner">
+      <div className="relative w-full max-w-panel-inner lg:max-w-none">
         {/* Background panel */}
         <div
           className="relative bg-bg-panel w-full"
@@ -120,10 +120,10 @@ export function ProfilePanel() {
               "polygon(0 0, 100% 0, 100% 40px, calc(100% - 8px) 48px, calc(100% - 8px) calc(100% - 48px), 100% calc(100% - 40px), 100% 100%, 0 100%)",
           }}
         >
-          <div className="p-4 lg:p-5 pr-6 pb-4">
+          <div className="p-4 lg:p-6 pr-6 pb-4">
             {/* Name & Avatar area */}
             <div
-              className="relative h-avatar-area w-full"
+              className="relative h-avatar-area lg:h-[7.5rem] w-full"
               style={{
                 clipPath:
                   "polygon(0 0, 100% 0, 100% calc(100% - 32px), calc(100% - 32px) 100%, 0 100%)",
@@ -142,15 +142,15 @@ export function ProfilePanel() {
               {/* Content */}
               <div className="relative z-10 flex items-center justify-between h-full">
                 <div className="pl-5">
-                  <p className="text-2xl lg:text-3xl text-white font-squada leading-none">
+                  <p className="text-2xl lg:text-[3rem] text-white font-squada leading-none">
                     OKAZU
                   </p>
-                  <p className="text-sm lg:text-base text-muted-light tracking-wider mt-1">
+                  <p className="text-sm lg:text-[1.25rem] text-muted-light tracking-wider mt-1">
                     CS Student
                   </p>
                 </div>
                 {/* Avatar circle */}
-                <div className="w-avatar h-avatar rounded-full bg-text-sub mr-14 shrink-0" />
+                <div className="w-avatar lg:w-[5rem] h-avatar lg:h-[5rem] rounded-full bg-text-sub mr-14 shrink-0" />
               </div>
             </div>
 
@@ -158,7 +158,7 @@ export function ProfilePanel() {
             <div className="flex items-center gap-2 mt-3 flex-wrap">
               {/* Level badge */}
               <span
-                className="inline-flex items-center justify-center h-badge-h px-3 bg-accent text-xs-plus lg:text-sm font-squada text-text-on-accent tracking-wider"
+                className="inline-flex items-center justify-center h-badge-h lg:h-[1.875rem] px-3 lg:px-4 bg-accent text-xs-plus lg:text-sm font-squada text-text-on-accent tracking-wider"
                 style={{
                   clipPath:
                     "polygon(4px 0, calc(100% - 4px) 0, 100% 50%, calc(100% - 4px) 100%, 4px 100%, 0 50%)",
@@ -172,10 +172,10 @@ export function ProfilePanel() {
             </div>
 
             {/* Separator */}
-            <div className="h-px bg-border-dim mt-4 mb-3" />
+            <div className="h-px bg-border-dim mt-4 lg:mt-5 mb-3 lg:mb-4" />
 
             {/* Tab content */}
-            <div className="min-h-tab-min">
+            <div className="min-h-tab-min lg:min-h-[14rem]">
               {activeTab === "BASIC" && <BasicTab />}
               {activeTab === "SKILLS" && <SkillsTab />}
               {activeTab === "LINKS" && <LinksTab />}
@@ -188,7 +188,7 @@ export function ProfilePanel() {
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(tab)}
-                  className={`flex-1 h-tab-h text-sm lg:text-base font-squada tracking-wider transition-colors ${i > 0 ? "-ml-2" : ""} ${
+                  className={`flex-1 h-tab-h lg:h-[2.5rem] text-sm lg:text-base font-squada tracking-wider transition-colors ${i > 0 ? "-ml-2" : ""} ${
                     activeTab === tab
                       ? "bg-accent text-text-on-accent z-10"
                       : "bg-bg-dark text-muted-light hover:text-text-sub"
