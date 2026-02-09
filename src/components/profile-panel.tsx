@@ -172,7 +172,7 @@ export function ProfilePanel() {
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(tab)}
-                  className={`flex-1 h-[32px] text-[12px] font-squada tracking-wider transition-colors ${i > 0 ? "-ml-8" : ""} ${
+                  className={`flex-1 h-[32px] text-[12px] font-squada tracking-wider transition-colors ${i > 0 ? "-ml-2" : ""} ${
                     activeTab === tab
                       ? "bg-accent text-text-on-accent z-10"
                       : "bg-bg-dark text-muted-light hover:text-text-sub"
