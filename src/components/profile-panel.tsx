@@ -1,32 +1,29 @@
+import { Info } from "lucide-react";
 import { useState } from "react";
 import { AngledButton } from "@/components/angled-button";
 import { LinkCard } from "@/components/link-card";
 import { StatRow } from "@/components/stat-row";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const TABS = ["BASIC", "SKILLS", "LINKS"] as const;
 type Tab = (typeof TABS)[number];
 
-const SKILLS: { name: string; rank: "S" | "A" | "B" }[] = [
-  { name: "TypeScript", rank: "S" },
-  { name: "React", rank: "S" },
-  { name: "Tailwind", rank: "S" },
-  { name: "Rust", rank: "A" },
-  { name: "Go", rank: "A" },
-  { name: "Linux", rank: "A" },
-  { name: "C/C++", rank: "B" },
-  { name: "Docker", rank: "B" },
+const SKILLS: { name: string; good?: boolean }[] = [
+  { name: "TypeScript", good: true },
+  { name: "Unity", good: true },
+  { name: "Linux", good: true },
+  { name: "Blender", good: true },
+  { name: "React" },
+  { name: "C#" },
+  { name: "ROS 2" },
+  { name: "Python" },
+  { name: "C++" },
 ];
-
-function rankColor(rank: "S" | "A" | "B") {
-  switch (rank) {
-    case "S":
-      return "text-accent";
-    case "A":
-      return "text-text-sub";
-    case "B":
-      return "text-muted-light";
-  }
-}
 
 function TechTag({ label }: { label: string }) {
   return (
@@ -47,8 +44,23 @@ function BasicTab() {
       <div className="mb-3">
         <AngledButton to="/works" label="WORKS" />
       </div>
-      <StatRow label="HANDLE" value="@OJII3" accent />
-      <StatRow label="AFFILIATION" value="Keio Univ." />
+      <StatRow label="HANDLE" value="OKAZU / OJII3" accent />
+      <StatRow
+        label="AFFILIATION"
+        value={
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <span className="inline-flex items-center gap-1 cursor-help">
+                  <Info className="size-3 text-muted-light" />
+                  TUAT
+                </span>
+              </TooltipTrigger>
+              <TooltipContent>東京農工大学</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        }
+      />
       <StatRow label="SPECIALTY" value="Computer Science" />
       <StatRow label="FOCUS" value="Web / Systems" accent />
       <StatRow label="LOCATION" value="Japan" />
@@ -62,14 +74,18 @@ function SkillsTab() {
       {SKILLS.map((s) => (
         <div
           key={s.name}
-          className="flex items-baseline justify-between py-1.5 border-b border-border-dim"
+          className="flex items-center justify-between py-1.5 border-b border-border-dim"
         >
-          <span className="text-[12px] tracking-wider text-muted-light">
+          <span
+            className={`text-[12px] tracking-wider ${s.good ? "text-accent" : "text-muted-light"}`}
+          >
             {s.name}
           </span>
-          <span className={`text-[14px] font-squada ${rankColor(s.rank)}`}>
-            {s.rank}
-          </span>
+          {s.good && (
+            <span className="text-[9px] tracking-wider text-accent/70 font-squada border border-accent/30 rounded-full px-1.5 py-0.5 leading-none">
+              ★ good
+            </span>
+          )}
         </div>
       ))}
     </div>
@@ -130,7 +146,7 @@ export function ProfilePanel() {
                     OKAZU
                   </p>
                   <p className="text-[12px] text-muted-light tracking-wider mt-1">
-                    Web Developer
+                    CS Student
                   </p>
                 </div>
                 {/* Avatar circle */}

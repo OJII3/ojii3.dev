@@ -1,6 +1,8 @@
+import type React from "react";
+
 type StatRowProps = {
   label: string;
-  value: string;
+  value: React.ReactNode;
   accent?: boolean;
 };
 
