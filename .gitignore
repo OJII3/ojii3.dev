@@ -24,6 +24,9 @@ Thumbs.db
 .claude/*
 !.claude/skills/
 
+# TanStack
+.tanstack/
+
 # Wrangler
 .wrangler/
 
