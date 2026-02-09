@@ -29,7 +29,7 @@ function ProjectsPage() {
       <Header title="PROJECTS" />
 
       {/* Projects grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 px-4 pb-4 max-w-panel-max lg:max-w-3xl mx-auto w-full">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 px-4 pb-4 max-w-panel-max lg:max-w-2xl mx-auto w-full">
         {projects.map((project, i) => (
           <ClippedCard
             key={`project-${project.variant}-${i}`}
