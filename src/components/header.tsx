@@ -39,7 +39,7 @@ export function Header({ title }: HeaderProps) {
       </Link>
 
       {/* Title - aligned right */}
-      <h1 className="absolute right-4 text-3xl lg:text-[3rem] text-text-main font-squada leading-none">
+      <h1 className="absolute right-4 text-3xl lg:text-4xl text-text-main font-squada leading-none">
         {title}
       </h1>
     </header>

@@ -15,7 +15,7 @@ export function AngledButton({ to, label }: AngledButtonProps) {
       <div className="absolute inset-0 bg-bg-button border-2 border-bg-header" />
 
       {/* Label text */}
-      <span className="relative z-10 text-lg lg:text-xl text-text-main font-squada pl-3 leading-none">
+      <span className="relative z-10 text-xl text-text-main font-squada pl-3 leading-none">
         {label}
       </span>
 

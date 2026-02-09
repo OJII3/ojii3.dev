@@ -77,7 +77,7 @@ function SkillsTab() {
           className="flex items-center justify-between py-1.5 lg:py-2 border-b border-border-dim"
         >
           <span
-            className={`text-sm lg:text-[1.25rem] tracking-wider ${s.good ? "text-accent" : "text-muted-light"}`}
+            className={`text-sm lg:text-lg tracking-wider ${s.good ? "text-accent" : "text-muted-light"}`}
           >
             {s.name}
           </span>
@@ -142,10 +142,10 @@ export function ProfilePanel() {
               {/* Content */}
               <div className="relative z-10 flex items-center justify-between h-full">
                 <div className="pl-5">
-                  <p className="text-2xl lg:text-[3rem] text-white font-squada leading-none">
+                  <p className="text-2xl lg:text-4xl text-white font-squada leading-none">
                     OKAZU
                   </p>
-                  <p className="text-sm lg:text-[1.25rem] text-muted-light tracking-wider mt-1">
+                  <p className="text-sm lg:text-lg text-muted-light tracking-wider mt-1">
                     CS Student
                   </p>
                 </div>
@@ -188,7 +188,7 @@ export function ProfilePanel() {
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(tab)}
-                  className={`flex-1 h-tab-h lg:h-[2.5rem] text-sm lg:text-base font-squada tracking-wider transition-colors ${i > 0 ? "-ml-2" : ""} ${
+                  className={`flex-1 h-tab-h lg:h-[2.5rem] text-sm lg:text-lg font-squada tracking-wider transition-colors ${i > 0 ? "-ml-2" : ""} ${
                     activeTab === tab
                       ? "bg-accent text-text-on-accent z-10"
                       : "bg-bg-dark text-muted-light hover:text-text-sub"

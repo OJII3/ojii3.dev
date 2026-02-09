@@ -9,11 +9,11 @@ type StatRowProps = {
 export function StatRow({ label, value, accent = false }: StatRowProps) {
   return (
     <div className="flex items-baseline justify-between py-1.5 lg:py-2 border-b border-border-dim">
-      <span className="text-sm lg:text-[1.25rem] tracking-widest text-muted-light uppercase">
+      <span className="text-sm lg:text-lg tracking-widest text-muted-light uppercase">
         {label}
       </span>
       <span
-        className={`text-base lg:text-[1.375rem] font-squada tracking-wide ${
+        className={`text-base lg:text-xl font-squada tracking-wide ${
           accent ? "text-accent" : "text-text-sub"
         }`}
       >

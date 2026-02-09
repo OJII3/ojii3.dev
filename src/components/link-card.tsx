@@ -20,7 +20,7 @@ export function LinkCard({ label, href, external = false }: LinkCardProps) {
         className="relative flex items-center h-link-h lg:h-12 w-full bg-bg-dark border border-border-dim hover:border-accent transition-colors group"
         style={clipStyle}
       >
-        <span className="text-base lg:text-lg text-text-sub font-squada pl-3 tracking-wide group-hover:text-accent transition-colors">
+        <span className="text-base lg:text-xl text-text-sub font-squada pl-3 tracking-wide group-hover:text-accent transition-colors">
           {label}
         </span>
         <svg
@@ -48,7 +48,7 @@ export function LinkCard({ label, href, external = false }: LinkCardProps) {
       className="relative flex items-center h-link-h lg:h-12 w-full bg-bg-dark border border-border-dim hover:border-accent transition-colors group"
       style={clipStyle}
     >
-      <span className="text-base lg:text-lg text-text-sub font-squada pl-3 tracking-wide group-hover:text-accent transition-colors">
+      <span className="text-base lg:text-xl text-text-sub font-squada pl-3 tracking-wide group-hover:text-accent transition-colors">
         {label}
       </span>
       <svg
