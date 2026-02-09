@@ -1,0 +1,126 @@
+name: Deploy
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      version_tag: ${{ steps.version.outputs.tag }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: ".bun-version"
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Post building status
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} \
+            --edit-last --create-if-none --body-file - <<'EOF'
+          ### ⏳ Deploy Preview building...
+
+          |  Name | Link |
+          |-------|------|
+          | Latest commit | ${{ github.sha }} |
+          | Deploy log | ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} |
+          EOF
+
+      - name: Get version tag
+        id: version
+        run: echo "tag=$(git rev-parse --short ${{ github.sha }})" >> "$GITHUB_OUTPUT"
+
+      - name: Build
+        run: bun run build
+
+      - name: Upload version
+        uses: cloudflare/wrangler-action@v3
+        id: upload
+        with:
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: >-
+            versions upload
+            --tag "${{ steps.version.outputs.tag }}"
+            --message "${{ github.event_name == 'pull_request' && format('PR #{0} ({1})', github.event.pull_request.number, steps.version.outputs.tag) || format('Release {0}', steps.version.outputs.tag) }}"
+
+      - name: Post preview comment
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} \
+            --edit-last --create-if-none --body-file - <<'EOF'
+          ### ✅ Deploy Preview ready!
+
+          |  Name | Link |
+          |-------|------|
+          | Latest commit | ${{ github.sha }} |
+          | Deploy log | ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} |
+          | Preview | ${{ steps.upload.outputs.deployment-url }} |
+          EOF
+
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: upload
+    if: github.event_name == 'push'
+    environment:
+      name: production
+      url: ${{ steps.deploy.outputs.deployment-url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: ".bun-version"
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Get version ID
+        id: get-version-id
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          version_id="$(
+            bun wrangler versions list --json \
+              | jq -r '.[] | select(.annotations."workers/tag" == "${{ needs.upload.outputs.version_tag }}") | .id'
+          )"
+          if [ -z "$version_id" ]; then
+            echo "::error::Version with tag '${{ needs.upload.outputs.version_tag }}' not found"
+            exit 1
+          fi
+          echo "version_id=${version_id}" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy to production
+        uses: cloudflare/wrangler-action@v3
+        id: deploy
+        with:
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: versions deploy ${{ steps.get-version-id.outputs.version_id }} -y
