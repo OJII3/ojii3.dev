@@ -54,7 +54,7 @@ function BasicTab() {
       <div className="mb-3">
         <AngledButton to="/works" label="WORKS" />
       </div>
-      <StatRow label="HANDLE" value="@OJII3" accent />
+      <StatRow label="HANDLE" value="OKAZU / OJII3" accent />
       <StatRow
         label="AFFILIATION"
         value={
@@ -152,7 +152,7 @@ export function ProfilePanel() {
                     OKAZU
                   </p>
                   <p className="text-[12px] text-muted-light tracking-wider mt-1">
-                    Web Developer
+                    CS Student
                   </p>
                 </div>
                 {/* Avatar circle */}
