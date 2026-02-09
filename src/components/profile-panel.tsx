@@ -25,19 +25,6 @@ const SKILLS: { name: string; good?: boolean }[] = [
   { name: "C++" },
 ];
 
-function TechTag({ label }: { label: string }) {
-  return (
-    <span
-      className="inline-flex items-center h-tag-h lg:h-[1.75rem] px-2 lg:px-3 text-xs lg:text-sm tracking-wider text-text-sub border border-border uppercase"
-      style={{
-        clipPath: "polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%)",
-      }}
-    >
-      {label}
-    </span>
-  );
-}
-
 function BasicTab() {
   return (
     <div className="flex flex-col">
@@ -164,11 +151,8 @@ export function ProfilePanel() {
                     "polygon(4px 0, calc(100% - 4px) 0, 100% 50%, calc(100% - 4px) 100%, 4px 100%, 0 50%)",
                 }}
               >
-                LV.25
+                B4
               </span>
-              <TechTag label="React" />
-              <TechTag label="TypeScript" />
-              <TechTag label="Rust" />
             </div>
 
             {/* Separator */}
