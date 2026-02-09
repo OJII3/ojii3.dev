@@ -28,7 +28,7 @@ function WorksPage() {
       <Header title="WORKS" />
 
       {/* Works grid */}
-      <div className="grid grid-cols-2 gap-4 px-4 pb-4 max-w-[402px] mx-auto w-full">
+      <div className="grid grid-cols-2 gap-4 px-4 pb-4 max-w-panel-max mx-auto w-full">
         {works.map((work, i) => (
           <ClippedCard
             key={`work-${work.variant}-${i}`}

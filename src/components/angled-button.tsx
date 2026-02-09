@@ -9,13 +9,13 @@ export function AngledButton({ to, label }: AngledButtonProps) {
   return (
     <Link
       to={to}
-      className="relative inline-flex items-center h-[42px] w-[177px] group"
+      className="relative inline-flex items-center h-btn-h w-btn-w group"
     >
       {/* Base dark rectangle */}
       <div className="absolute inset-0 bg-bg-button border-2 border-bg-header" />
 
       {/* Label text */}
-      <span className="relative z-10 text-[24px] text-text-main font-squada pl-3 leading-none">
+      <span className="relative z-10 text-lg text-text-main font-squada pl-3 leading-none">
         {label}
       </span>
 

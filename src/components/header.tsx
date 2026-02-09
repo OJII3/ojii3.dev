@@ -10,7 +10,7 @@ export function Header({ title }: HeaderProps) {
       {/* Back link - angular arrow shape */}
       <Link
         to="/"
-        className="relative h-full w-[128px] flex items-center justify-center group"
+        className="relative h-full w-back-w flex items-center justify-center group"
       >
         {/* Arrow background */}
         <div
@@ -39,7 +39,7 @@ export function Header({ title }: HeaderProps) {
       </Link>
 
       {/* Title - aligned right */}
-      <h1 className="absolute right-4 text-[40px] text-text-main font-squada leading-none">
+      <h1 className="absolute right-4 text-3xl text-text-main font-squada leading-none">
         {title}
       </h1>
     </header>
