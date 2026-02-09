@@ -73,6 +73,18 @@
   --fs-card-subtitle: clamp(1.125rem, 4vw, 1.625rem);
 }
 
+/* PC ではベースフォントを拡大 → rem トークンが全体スケール */
+@media (min-width: 768px) {
+  :root {
+    --ui-scale: 112.5%; /* 18px base */
+  }
+}
+@media (min-width: 1280px) {
+  :root {
+    --ui-scale: 125%; /* 20px base */
+  }
+}
+
 body {
   margin: 0;
   background-color: var(--color-bg-main);
