@@ -21,7 +21,8 @@ Thumbs.db
 .vscode/
 
 # Claude Code
-.claude/
+.claude/*
+!.claude/skills/
 
 # Wrangler
 .wrangler/
