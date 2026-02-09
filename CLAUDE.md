@@ -61,6 +61,24 @@ nr deploy       # Cloudflare Workers へデプロイ
 bun test        # テスト実行 (Bun 予約コマンド)
 ```
 
+## フォントサイズトークン (`styles.css`)
+
+| トークン | サイズ | 用途例 |
+|----------|--------|--------|
+| `text-2xs` | 13px | ごく小さいバッジ |
+| `text-xs` | 14px | ラベル、Tooltip |
+| `text-xs-plus` | 15px | レベルバッジ |
+| `text-sm` | 16px | 本文、タブ、StatRow ラベル |
+| `text-base` | 18px | StatRow 値、LinkCard テキスト |
+| `text-lg` | 20px | PC 表示での本文拡大用 |
+| `text-xl` | 26px | ボタンラベル、カードタイトル |
+| `text-2xl` | 38px | 名前 (OKAZU) |
+| `text-3xl` | 42px | ページヘッダータイトル |
+| `text-4xl` | 48px | PC 表示でのヘッダー/名前拡大用 |
+
+- arbitrary value (`text-[...]`) は使わず、必ずトークンを使う
+- 新サイズが必要な場合はトークンを追加する
+
 ## 開発ルール
 
 - コンポーネントは関数コンポーネント + TypeScript で書く
