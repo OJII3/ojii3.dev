@@ -6,11 +6,11 @@ type HeaderProps = {
 
 export function Header({ title }: HeaderProps) {
   return (
-    <header className="relative bg-bg-header h-16 w-full flex items-center overflow-hidden">
+    <header className="relative bg-bg-header h-16 lg:h-20 w-full flex items-center overflow-hidden">
       {/* Back link - angular arrow shape */}
       <Link
         to="/"
-        className="relative h-full w-back-w flex items-center justify-center group"
+        className="relative h-full w-back-w lg:w-40 flex items-center justify-center group"
       >
         {/* Arrow background */}
         <div
@@ -39,7 +39,7 @@ export function Header({ title }: HeaderProps) {
       </Link>
 
       {/* Title - aligned right */}
-      <h1 className="absolute right-4 text-3xl text-text-main font-squada leading-none">
+      <h1 className="absolute right-4 text-3xl lg:text-[3rem] text-text-main font-squada leading-none">
         {title}
       </h1>
     </header>

@@ -77,7 +77,7 @@ function SkillsTab() {
           className="flex items-center justify-between py-1.5 border-b border-border-dim"
         >
           <span
-            className={`text-sm tracking-wider ${s.good ? "text-accent" : "text-muted-light"}`}
+            className={`text-sm lg:text-base tracking-wider ${s.good ? "text-accent" : "text-muted-light"}`}
           >
             {s.name}
           </span>
@@ -105,9 +105,9 @@ export function ProfilePanel() {
   const [activeTab, setActiveTab] = useState<Tab>("BASIC");
 
   return (
-    <div className="flex flex-col items-start overflow-hidden p-4 w-full max-w-panel-max mx-auto">
+    <div className="flex flex-col items-start overflow-hidden p-4 lg:p-5 w-full max-w-panel-max lg:max-w-lg mx-auto">
       {/* Section label */}
-      <p className="text-xs tracking-[0.2em] text-muted-light uppercase mb-2 pl-1">
+      <p className="text-xs lg:text-sm tracking-[0.2em] text-muted-light uppercase mb-2 pl-1">
         profile
       </p>
 
@@ -120,7 +120,7 @@ export function ProfilePanel() {
               "polygon(0 0, 100% 0, 100% 40px, calc(100% - 8px) 48px, calc(100% - 8px) calc(100% - 48px), 100% calc(100% - 40px), 100% 100%, 0 100%)",
           }}
         >
-          <div className="p-4 pr-6 pb-4">
+          <div className="p-4 lg:p-5 pr-6 pb-4">
             {/* Name & Avatar area */}
             <div
               className="relative h-avatar-area w-full"
@@ -142,10 +142,10 @@ export function ProfilePanel() {
               {/* Content */}
               <div className="relative z-10 flex items-center justify-between h-full">
                 <div className="pl-5">
-                  <p className="text-2xl text-white font-squada leading-none">
+                  <p className="text-2xl lg:text-3xl text-white font-squada leading-none">
                     OKAZU
                   </p>
-                  <p className="text-sm text-muted-light tracking-wider mt-1">
+                  <p className="text-sm lg:text-base text-muted-light tracking-wider mt-1">
                     CS Student
                   </p>
                 </div>
@@ -158,7 +158,7 @@ export function ProfilePanel() {
             <div className="flex items-center gap-2 mt-3 flex-wrap">
               {/* Level badge */}
               <span
-                className="inline-flex items-center justify-center h-badge-h px-3 bg-accent text-xs-plus font-squada text-text-on-accent tracking-wider"
+                className="inline-flex items-center justify-center h-badge-h px-3 bg-accent text-xs-plus lg:text-sm font-squada text-text-on-accent tracking-wider"
                 style={{
                   clipPath:
                     "polygon(4px 0, calc(100% - 4px) 0, 100% 50%, calc(100% - 4px) 100%, 4px 100%, 0 50%)",
@@ -188,7 +188,7 @@ export function ProfilePanel() {
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(tab)}
-                  className={`flex-1 h-tab-h text-sm font-squada tracking-wider transition-colors ${i > 0 ? "-ml-2" : ""} ${
+                  className={`flex-1 h-tab-h text-sm lg:text-base font-squada tracking-wider transition-colors ${i > 0 ? "-ml-2" : ""} ${
                     activeTab === tab
                       ? "bg-accent text-text-on-accent z-10"
                       : "bg-bg-dark text-muted-light hover:text-text-sub"
