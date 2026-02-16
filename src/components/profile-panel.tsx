@@ -168,28 +168,6 @@ export function ProfilePanel() {
               {activeTab === "SKILLS" && <SkillsTab />}
               {activeTab === "LINKS" && <LinksTab />}
             </div>
-
-            {/* Tab bar */}
-            <div className="flex mt-4">
-              {TABS.map((tab, i) => (
-                <button
-                  key={tab}
-                  type="button"
-                  onClick={() => setActiveTab(tab)}
-                  className={`flex-1 h-tab-h lg:h-[2.5rem] text-sm lg:text-lg font-squada tracking-wider transition-colors ${i > 0 ? "-ml-2" : ""} ${
-                    activeTab === tab
-                      ? "bg-accent text-text-on-accent z-10"
-                      : "bg-bg-dark text-muted-light hover:text-text-sub"
-                  }`}
-                  style={{
-                    clipPath:
-                      "polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%)",
-                  }}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
           </div>
         </div>
 
@@ -208,6 +186,30 @@ export function ProfilePanel() {
             vectorEffect="non-scaling-stroke"
           />
         </svg>
+      </div>
+
+      {/* Fixed tab bar island */}
+      <div className="fixed bottom-4 left-0 right-0 z-50 flex justify-center px-4 lg:px-6">
+        <div className="w-full max-w-panel-max lg:max-w-xl border-2 border-muted-light bg-bg-button flex items-center p-2 gap-2">
+          {TABS.map((tab, i) => (
+            <button
+              key={tab}
+              type="button"
+              onClick={() => setActiveTab(tab)}
+              className={`flex-1 h-tab-h lg:h-[2.5rem] text-sm lg:text-lg font-squada tracking-wider transition-colors ${i > 0 ? "-ml-2" : ""} ${
+                activeTab === tab
+                  ? "bg-accent text-text-on-accent z-10"
+                  : "bg-bg-dark text-muted-light hover:text-text-sub"
+              }`}
+              style={{
+                clipPath:
+                  "polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%)",
+              }}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
