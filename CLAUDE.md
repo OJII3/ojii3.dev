@@ -14,39 +14,9 @@ OJII3 の個人ポートフォリオサイト。
 - **デプロイ**: Cloudflare Workers
 - **リンター/フォーマッター**: Biome
 
-## ディレクトリ構成 (予定)
-
-```
-.
-├── CLAUDE.md
-├── index.html
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-├── biome.json
-├── components.json          # shadcn/ui 設定
-├── public/
-│   └── favicon.ico
-├── src/
-│   ├── main.tsx             # エントリーポイント
-│   ├── styles.css           # Tailwind のグローバルCSS
-│   ├── routeTree.gen.ts     # TanStack Router 自動生成
-│   ├── components/
-│   │   └── ui/              # shadcn/ui コンポーネント
-│   ├── lib/
-│   │   └── utils.ts         # ユーティリティ (cn関数 等)
-│   └── routes/
-│       ├── __root.tsx        # ルートレイアウト
-│       ├── index.tsx         # トップページ
-│       ├── about.tsx         # 自己紹介
-│       └── projects.tsx      # プロジェクト一覧
-└── wrangler.toml             # Cloudflare Workers 設定
-```
-
 ## ページ構成 (予定)
 
 - **トップページ (`/`)**: ヒーローセクション、簡単な自己紹介、主要な作品のハイライト
-- **自己紹介 (`/about`)**: スキル、経歴、興味分野
 - **プロジェクト一覧 (`/projects`)**: プロジェクト一覧 (GitHub 連携等)
 
 ## 開発コマンド
@@ -61,33 +31,24 @@ nr deploy       # Cloudflare Workers へデプロイ
 bun test        # テスト実行 (Bun 予約コマンド)
 ```
 
-## フォントサイズトークン (`styles.css`)
+## Git 戦略
 
-| トークン | サイズ | 用途例 |
-|----------|--------|--------|
-| `text-2xs` | 13px | ごく小さいバッジ |
-| `text-xs` | 14px | ラベル、Tooltip |
-| `text-xs-plus` | 15px | レベルバッジ |
-| `text-sm` | 16px | 本文、タブ、StatRow ラベル |
-| `text-base` | 18px | StatRow 値、LinkCard テキスト |
-| `text-lg` | 20px | PC 表示での本文拡大用 |
-| `text-xl` | 26px | ボタンラベル、カードタイトル |
-| `text-2xl` | 38px | 名前 (OKAZU) |
-| `text-3xl` | 42px | ページヘッダータイトル |
-| `text-4xl` | 48px | PC 表示でのヘッダー/名前拡大用 |
+- 一つの機能追加ごとに test を作成する
+- 一つの機能追加ごとに commit する
+- 一つの機能変更ごとに commit する
+- commit はシンプルな conventional commit
+- 一つの機能・領域に関する変更が完了するごとに PR を作成
 
-- arbitrary value (`text-[...]`) は使わず、必ずトークンを使う
-- 新サイズが必要な場合はトークンを追加する
+## テスト戦略
 
-## 開発ルール
+- `nr test`, `nr lint` を使用してチェックを行なう
+- デザインの指定がある場合、Claude in Chrome を用いて corner や border の形状が一致するか確認する
 
-- コンポーネントは関数コンポーネント + TypeScript で書く
-- shadcn/ui のコンポーネントを積極的に活用する
-- Tailwind CSS のユーティリティクラスでスタイリングする
-- ファイルベースルーティング (TanStack Router) に従う
-- `nr` コマンドを使う (`npm run` / `pnpm run` の代替)
-- `bun test`, `bun build` などの Bun 予約コマンドはそのまま実行する
-- Biome で lint/format を統一する (ESLint/Prettier は使わない)
+## その他ルール
+
+- コンポーネントを shadcn/ui で作成する
+- Tailwind では arbitrary value を可能なかぎり避けトークンを使用する
+- Tailwind のトークンは可能な限り上書きせず、追加もしくは、shadcn/ui で吸収する
 - `rm -rf` の代わりに `gomi -rf` を使う
 
 ## CLAUDE.md メンテナンスルール

@@ -14,14 +14,21 @@
       systems = import inputs.systems;
       perSystem =
         {
-          pkgs,
+          system,
           ...
         }:
+        let
+          pkgs = import inputs.nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        in
         {
           devShells.default = pkgs.mkShell {
             packages = with pkgs; [
               bun # as a package manager
               nodejs-slim # wrangler dev requires nodejs
+              claude-code-bin
             ];
             shellHook = ''
               bun --version > .bun-version

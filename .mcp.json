@@ -2,7 +2,7 @@
   "mcpServers": {
     "shadcn": {
       "type": "stdio",
-      "command": "npx",
+      "command": "bunx",
       "args": ["shadcn@latest", "mcp"]
     },
     "figma": {
