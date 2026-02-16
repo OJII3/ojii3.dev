@@ -186,28 +186,28 @@ export function ProfilePanel() {
             vectorEffect="non-scaling-stroke"
           />
         </svg>
+      </div>
 
-        {/* Tab bar island */}
-        <div className="w-full border-2 border-muted-light bg-bg-button flex items-center p-2 gap-2 mt-3">
-          {TABS.map((tab, i) => (
-            <button
-              key={tab}
-              type="button"
-              onClick={() => setActiveTab(tab)}
-              className={`flex-1 h-tab-h lg:h-[2.5rem] text-sm lg:text-lg font-squada tracking-wider transition-colors ${i > 0 ? "-ml-2" : ""} ${
-                activeTab === tab
-                  ? "bg-accent text-text-on-accent z-10"
-                  : "bg-bg-dark text-muted-light hover:text-text-sub"
-              }`}
-              style={{
-                clipPath:
-                  "polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%)",
-              }}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
+      {/* Tab bar island */}
+      <div className="w-full max-w-panel-inner lg:max-w-none border-2 border-muted-light bg-bg-button flex items-center p-2 gap-2 mt-3">
+        {TABS.map((tab, i) => (
+          <button
+            key={tab}
+            type="button"
+            onClick={() => setActiveTab(tab)}
+            className={`flex-1 h-tab-h lg:h-[2.5rem] text-sm lg:text-lg font-squada tracking-wider transition-colors ${i > 0 ? "-ml-2" : ""} ${
+              activeTab === tab
+                ? "bg-accent text-text-on-accent z-10"
+                : "bg-bg-dark text-muted-light hover:text-text-sub"
+            }`}
+            style={{
+              clipPath:
+                "polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%)",
+            }}
+          >
+            {tab}
+          </button>
+        ))}
       </div>
     </div>
   );
