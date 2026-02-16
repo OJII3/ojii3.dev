@@ -188,7 +188,7 @@ export function ProfilePanel() {
         </svg>
 
         {/* Tab bar island */}
-        <div className="w-full border-2 border-muted-light bg-bg-button flex items-center p-2 gap-2 mt-2">
+        <div className="w-full border-2 border-muted-light bg-bg-button flex items-center p-2 gap-2 mt-3">
           {TABS.map((tab, i) => (
             <button
               key={tab}
