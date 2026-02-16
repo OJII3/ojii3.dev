@@ -1,3 +1,8 @@
+---
+name: geometric-clip-path
+description: 切り欠き（ノッチ）、コーナーカット、平行四辺形などの幾何学的な形状を CSS clip-path polygon() で設計・実装するためのスキル。
+---
+
 # 幾何学的クリップパス・ノッチデザインスキル
 
 切り欠き（ノッチ）、コーナーカット、平行四辺形などの幾何学的な形状を CSS `clip-path: polygon()` で設計・実装するためのスキル。
