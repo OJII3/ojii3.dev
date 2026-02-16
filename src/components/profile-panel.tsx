@@ -181,7 +181,7 @@ export function ProfilePanel() {
         >
           <path
             d="M0 0 L370 0 L370 40 L362 48 L362 452 L370 460 L370 500 L0 500 Z"
-            stroke="var(--color-muted)"
+            stroke="var(--color-border-strong)"
             strokeWidth="2"
             vectorEffect="non-scaling-stroke"
           />
