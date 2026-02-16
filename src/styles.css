@@ -65,7 +65,7 @@
   --spacing-back-w: 8.5rem; /* 136px */
   --spacing-panel-max: 26rem; /* 416px */
   --spacing-panel-inner: 24rem; /* 384px */
-  --spacing-tab-min: 12rem; /* 192px */
+  --spacing-tab-min: 16rem; /* 256px */
 }
 
 :root {
