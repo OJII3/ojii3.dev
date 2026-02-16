@@ -7,7 +7,7 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   return (
-    <div className="flex flex-col items-start py-4 pb-20 min-h-screen">
+    <div className="flex flex-col items-start py-4 min-h-screen">
       <ProfilePanel />
     </div>
   );

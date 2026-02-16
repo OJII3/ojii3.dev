@@ -163,7 +163,7 @@ export function ProfilePanel() {
             <div className="h-px bg-border-dim mt-4 lg:mt-5 mb-3 lg:mb-4" />
 
             {/* Tab content */}
-            <div className="min-h-tab-min lg:min-h-[14rem]">
+            <div className="h-tab-min lg:h-[20rem] overflow-y-auto">
               {activeTab === "BASIC" && <BasicTab />}
               {activeTab === "SKILLS" && <SkillsTab />}
               {activeTab === "LINKS" && <LinksTab />}
@@ -186,31 +186,27 @@ export function ProfilePanel() {
             vectorEffect="non-scaling-stroke"
           />
         </svg>
-      </div>
 
-      {/* Fixed tab bar island */}
-      <div className="fixed bottom-4 left-0 right-0 z-50 flex justify-center">
-        <div className="w-full max-w-panel-max lg:max-w-xl px-4 lg:px-6">
-          <div className="w-full max-w-panel-inner lg:max-w-none border-2 border-muted-light bg-bg-button flex items-center p-2 gap-2">
-            {TABS.map((tab, i) => (
-              <button
-                key={tab}
-                type="button"
-                onClick={() => setActiveTab(tab)}
-                className={`flex-1 h-tab-h lg:h-[2.5rem] text-sm lg:text-lg font-squada tracking-wider transition-colors ${i > 0 ? "-ml-2" : ""} ${
-                  activeTab === tab
-                    ? "bg-accent text-text-on-accent z-10"
-                    : "bg-bg-dark text-muted-light hover:text-text-sub"
-                }`}
-                style={{
-                  clipPath:
-                    "polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%)",
-                }}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
+        {/* Tab bar island */}
+        <div className="w-full border-2 border-muted-light bg-bg-button flex items-center p-2 gap-2 mt-2">
+          {TABS.map((tab, i) => (
+            <button
+              key={tab}
+              type="button"
+              onClick={() => setActiveTab(tab)}
+              className={`flex-1 h-tab-h lg:h-[2.5rem] text-sm lg:text-lg font-squada tracking-wider transition-colors ${i > 0 ? "-ml-2" : ""} ${
+                activeTab === tab
+                  ? "bg-accent text-text-on-accent z-10"
+                  : "bg-bg-dark text-muted-light hover:text-text-sub"
+              }`}
+              style={{
+                clipPath:
+                  "polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%)",
+              }}
+            >
+              {tab}
+            </button>
+          ))}
         </div>
       </div>
     </div>
