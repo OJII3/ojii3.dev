@@ -11,10 +11,13 @@
   --color-bg-panel: #2a2a2a;
   --color-bg-button: #333333;
 
-  /* Border */
+  /* Border (dark → light) */
+  --color-border-dark: #111111;
+  --color-border-dim: #333333;
   --color-border: #444444;
   --color-border-light: #555555;
-  --color-border-dim: #333333;
+  --color-border-strong: #999999;
+  --color-border-accent: oklch(63.7% 0.237 29.23 / 0.3);
 
   /* Muted (disabled / locked) */
   --color-muted: #666666;

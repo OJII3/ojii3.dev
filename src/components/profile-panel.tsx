@@ -69,7 +69,7 @@ function SkillsTab() {
             {s.name}
           </span>
           {s.good && (
-            <span className="text-2xs lg:text-sm tracking-wider text-accent/70 font-squada border border-accent/30 rounded-full px-1.5 lg:px-2.5 py-0.5 lg:py-1 leading-none">
+            <span className="text-2xs lg:text-sm tracking-wider text-accent/70 font-squada border border-border-accent rounded-full px-1.5 lg:px-2.5 py-0.5 lg:py-1 leading-none">
               ★ good
             </span>
           )}
@@ -189,7 +189,7 @@ export function ProfilePanel() {
       </div>
 
       {/* Tab bar island */}
-      <div className="w-full max-w-panel-inner lg:max-w-none border-2 border-muted-light bg-bg-button flex items-center p-2 gap-2 mt-3">
+      <div className="w-full max-w-panel-inner lg:max-w-none border-2 border-border-strong bg-bg-button flex items-center p-2 gap-2 mt-3">
         {TABS.map((tab, i) => (
           <button
             key={tab}
