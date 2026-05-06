@@ -17,8 +17,8 @@ const SKILLS: { name: string; good?: boolean }[] = [
   { name: "TypeScript", good: true },
   { name: "Unity", good: true },
   { name: "Linux", good: true },
-  { name: "Blender", good: true },
-  { name: "React" },
+  { name: "Blender" },
+  { name: "Network" },
   { name: "C#" },
   { name: "ROS 2" },
   { name: "Python" },
@@ -28,9 +28,6 @@ const SKILLS: { name: string; good?: boolean }[] = [
 function BasicTab() {
   return (
     <div className="flex flex-col">
-      <div className="mb-3 lg:mb-4">
-        <AngledButton to="/projects" label="PROJECTS" />
-      </div>
       <StatRow label="HANDLE" value="OKAZU / OJII3" accent />
       <StatRow
         label="AFFILIATION"
@@ -81,9 +78,10 @@ function SkillsTab() {
 
 function LinksTab() {
   return (
-    <div className="flex flex-col gap-2 lg:gap-3">
+    <div className="grid grid-cols-2 gap-4 lg:gap-3">
       <LinkCard label="GITHUB" href="https://github.com/OJII3" external />
-      <LinkCard label="X / TWITTER" href="https://x.com/OJII3_" external />
+      <LinkCard label="X / TWITTER" href="https://x.com/ojii3dev" external />
+      <LinkCard label="Blog" href="https://blog.ojii3.dev" external />
     </div>
   );
 }
@@ -101,7 +99,7 @@ export function ProfilePanel() {
       <div className="relative w-full max-w-panel-inner lg:max-w-none">
         {/* Background panel */}
         <div className="relative bg-surface-raised w-full clip-profile-frame">
-          <div className="p-4 lg:p-6 pr-6 pb-4">
+          <div className="py-8 pl-4 lg:pl-6 pr-6 lg:pr-8 pb-4">
             {/* Name & Avatar area */}
             <div className="relative h-avatar-area lg:h-avatar-area-lg w-full clip-profile-hero">
               {/* Border layer */}
@@ -111,7 +109,7 @@ export function ProfilePanel() {
               {/* Content */}
               <div className="relative z-10 flex items-center justify-between h-full">
                 <div className="pl-5">
-                  <p className="text-2xl lg:text-4xl text-content-primary font-squada leading-none">
+                  <p className="text-4xl lg:text-5xl text-content-primary font-squada leading-none">
                     OKAZU
                   </p>
                   <p className="text-sm lg:text-lg text-content-muted tracking-wider mt-1">
@@ -128,18 +126,22 @@ export function ProfilePanel() {
             </div>
 
             {/* Level badge + Tech tags */}
-            <div className="flex items-center gap-2 mt-3 flex-wrap">
-              {/* Level badge */}
-              <span className="inline-flex items-center justify-center h-badge-h lg:h-badge-h-lg px-3 lg:px-4 bg-brand text-xs-plus lg:text-sm font-squada text-content-inverse tracking-wider clip-badge">
-                B4
-              </span>
-            </div>
+            {/* <div className="flex items-center gap-2 mt-3 flex-wrap"> */}
+            {/* Level badge */}
+            {/*   <span className="inline-flex items-center justify-center h-badge-h lg:h-badge-h-lg px-3 lg:px-4 bg-brand text-xs-plus lg:text-sm font-squada text-content-inverse tracking-wider clip-badge"> */}
+            {/*     B4 */}
+            {/*   </span> */}
+            {/* </div> */}
 
             {/* Separator */}
             <div className="h-px bg-line-subtle mt-4 lg:mt-5 mb-3 lg:mb-4" />
 
+            <div className="mb-3 lg:mb-4">
+              <AngledButton to="/projects" label="PROJECTS" />
+            </div>
+
             {/* Tab content */}
-            <div className="h-tab-min lg:h-tab-min-lg overflow-y-auto">
+            <div className="h-tab-min lg:h-tab-min-lg py-4 overflow-y-auto">
               {activeTab === "BASIC" && <BasicTab />}
               {activeTab === "SKILLS" && <SkillsTab />}
               {activeTab === "LINKS" && <LinksTab />}
@@ -165,7 +167,7 @@ export function ProfilePanel() {
       </div>
 
       {/* Tab bar island */}
-      <div className="w-full max-w-panel-inner lg:max-w-none border-2 border-line-strong bg-surface-control flex items-center p-2 gap-2 mt-3">
+      <div className="w-full max-w-panel-inner lg:max-w-none border-2 border-line-strong bg-surface-control flex items-center p-2 gap-2 mt-8 px-4 lg:px-6">
         {TABS.map((tab, i) => (
           <button
             key={tab}

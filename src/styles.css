@@ -67,9 +67,9 @@
   --spacing-badge-h: 1.625rem; /* 26px */
   --spacing-badge-h-lg: 1.875rem; /* 30px */
   --spacing-avatar-area: 6.5rem; /* 104px */
-  --spacing-avatar-area-lg: 7.5rem; /* 120px */
+  --spacing-avatar-area-lg: 10rem; /* 160px */
   --spacing-avatar: 4.25rem; /* 68px */
-  --spacing-avatar-lg: 5rem; /* 80px */
+  --spacing-avatar-lg: 6rem; /* 96px */
   --spacing-back-w: 8.5rem; /* 136px */
   --spacing-panel-max: 26rem; /* 416px */
   --spacing-panel-inner: 24rem; /* 384px */
@@ -116,7 +116,7 @@ body {
   }
 
   .clip-link-card {
-    clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
   }
 
   .clip-profile-frame {
