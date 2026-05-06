@@ -7,8 +7,11 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   return (
-    <div className="flex flex-col items-start py-4 min-h-screen">
-      <ProfilePanel />
-    </div>
+    <main className="min-h-screen px-4 py-4 lg:px-8 lg:py-6">
+      <div className="home-profile-shell mx-auto">
+        <div className="home-model-stage" aria-hidden="true" />
+        <ProfilePanel className="lg:mx-0 lg:justify-self-end" />
+      </div>
+    </main>
   );
 }

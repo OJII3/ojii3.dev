@@ -8,7 +8,7 @@ type LinkCardProps = {
 
 export function LinkCard({ label, href, external = false }: LinkCardProps) {
   const className =
-    "relative flex items-center h-link-h lg:h-12 w-full bg-surface-sunken border border-line-subtle hover:border-brand transition-colors group clip-link-card";
+    "relative flex items-center h-link-h lg:h-12 w-full bg-surface-sunken border border-l-0 border-line-subtle hover:border-brand transition-colors group clip-link-card";
 
   if (external) {
     return (
@@ -21,21 +21,6 @@ export function LinkCard({ label, href, external = false }: LinkCardProps) {
         <span className="text-base lg:text-xl text-content-secondary font-squada pl-3 tracking-wide group-hover:text-brand transition-colors">
           {label}
         </span>
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 14 14"
-          fill="none"
-          className="ml-auto mr-6"
-          aria-hidden="true"
-        >
-          <path
-            d="M3 11L11 3M11 3H5M11 3V9"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            className="text-content-disabled group-hover:text-brand transition-colors"
-          />
-        </svg>
       </a>
     );
   }

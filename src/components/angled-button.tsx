@@ -11,13 +11,13 @@ export function AngledButton({ to, label }: AngledButtonProps) {
       to={to}
       className="relative inline-flex items-center h-action-h lg:h-14 w-action-w lg:w-56 group"
     >
-      {/* Base dark rectangle */}
-      <div className="absolute inset-0 bg-surface-control border-2 border-line-deep" />
-
       {/* Label text */}
-      <span className="relative z-10 text-xl text-content-primary font-squada pl-3 leading-none">
+      <span className="relative z-10 text-2xl text-content-primary font-squada pl-4 leading-none">
         {label}
       </span>
+
+      {/* Base dark rectangle */}
+      <div className="absolute inset-0 bg-surface-control border-2 border-line-deep" />
 
       {/* Orange angled section */}
       <div className="absolute right-0 top-0 h-full w-angled-accent-w lg:w-angled-accent-w-lg bg-brand clip-angled-action" />
