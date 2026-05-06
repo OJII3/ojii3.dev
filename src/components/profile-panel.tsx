@@ -97,7 +97,7 @@ export function ProfilePanel({ className }: ProfilePanelProps) {
   return (
     <div
       className={cn(
-        "flex flex-col items-start overflow-hidden p-4 lg:p-6 w-full max-w-panel-max lg:max-w-xl mx-auto",
+        "flex flex-col items-start overflow-hidden w-full max-w-panel-max lg:max-w-xl mx-auto",
         className,
       )}
     >
