@@ -44,6 +44,13 @@ bun test        # テスト実行 (Bun 予約コマンド)
 - `nr test`, `nr lint` を使用してチェックを行なう
 - デザインの指定がある場合、Codex in Chrome を用いて corner や border の形状が一致するか確認する
 
+## スタイルトークン方針
+
+- Tailwind v4 の `@theme` トークンは `src/styles.css` に集約する
+- 色トークンは `canvas`, `surface-*`, `line-*`, `content-*`, `brand-*` の意味ベースで命名する
+- コンポーネント固有の固定寸法は spacing / aspect トークンとして定義し、arbitrary value は可能なかぎり避ける
+- `clip-path` などの幾何形状は `@layer utilities` の `clip-*` utility に集約し、コンポーネント内の inline style に埋め込まない
+
 ## その他ルール
 
 - コンポーネントを shadcn/ui で作成する

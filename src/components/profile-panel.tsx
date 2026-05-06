@@ -39,7 +39,7 @@ function BasicTab() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <span className="inline-flex items-center gap-1 cursor-help">
-                  <Info className="size-3 lg:size-4 text-muted-light" />
+                  <Info className="size-3 lg:size-4 text-content-muted" />
                   TUAT
                 </span>
               </TooltipTrigger>
@@ -61,15 +61,15 @@ function SkillsTab() {
       {SKILLS.map((s) => (
         <div
           key={s.name}
-          className="flex items-center justify-between py-1.5 lg:py-2 border-b border-border-dim"
+          className="flex items-center justify-between py-1.5 lg:py-2 border-b border-line-subtle"
         >
           <span
-            className={`text-sm lg:text-lg tracking-wider ${s.good ? "text-accent" : "text-muted-light"}`}
+            className={`text-sm lg:text-lg tracking-wider ${s.good ? "text-brand" : "text-content-muted"}`}
           >
             {s.name}
           </span>
           {s.good && (
-            <span className="text-2xs lg:text-sm tracking-wider text-accent/70 font-squada border border-border-accent rounded-full px-1.5 lg:px-2.5 py-0.5 lg:py-1 leading-none">
+            <span className="text-2xs lg:text-sm tracking-wider text-brand/70 font-squada border border-line-brand rounded-full px-1.5 lg:px-2.5 py-0.5 lg:py-1 leading-none">
               ★ good
             </span>
           )}
@@ -94,45 +94,27 @@ export function ProfilePanel() {
   return (
     <div className="flex flex-col items-start overflow-hidden p-4 lg:p-6 w-full max-w-panel-max lg:max-w-xl mx-auto">
       {/* Section label */}
-      <p className="text-xs lg:text-sm tracking-[0.2em] text-muted-light uppercase mb-2 lg:mb-3 pl-1">
+      <p className="text-xs lg:text-sm tracking-label text-content-muted uppercase mb-2 lg:mb-3 pl-1">
         profile
       </p>
 
       <div className="relative w-full max-w-panel-inner lg:max-w-none">
         {/* Background panel */}
-        <div
-          className="relative bg-bg-panel w-full"
-          style={{
-            clipPath:
-              "polygon(0 0, 100% 0, 100% 40px, calc(100% - 8px) 48px, calc(100% - 8px) calc(100% - 48px), 100% calc(100% - 40px), 100% 100%, 0 100%)",
-          }}
-        >
+        <div className="relative bg-surface-raised w-full clip-profile-frame">
           <div className="p-4 lg:p-6 pr-6 pb-4">
             {/* Name & Avatar area */}
-            <div
-              className="relative h-avatar-area lg:h-[7.5rem] w-full"
-              style={{
-                clipPath:
-                  "polygon(0 0, 100% 0, 100% calc(100% - 32px), calc(100% - 32px) 100%, 0 100%)",
-              }}
-            >
+            <div className="relative h-avatar-area lg:h-avatar-area-lg w-full clip-profile-hero">
               {/* Border layer */}
-              <div className="absolute inset-0 bg-border-light" />
+              <div className="absolute inset-0 bg-line-emphasis" />
               {/* Background layer */}
-              <div
-                className="absolute inset-[1px] bg-bg-dark"
-                style={{
-                  clipPath:
-                    "polygon(0 0, 100% 0, 100% calc(100% - 31px), calc(100% - 31px) 100%, 0 100%)",
-                }}
-              />
+              <div className="absolute inset-px bg-surface-sunken clip-profile-hero-inner" />
               {/* Content */}
               <div className="relative z-10 flex items-center justify-between h-full">
                 <div className="pl-5">
-                  <p className="text-2xl lg:text-4xl text-white font-squada leading-none">
+                  <p className="text-2xl lg:text-4xl text-content-primary font-squada leading-none">
                     OKAZU
                   </p>
-                  <p className="text-sm lg:text-lg text-muted-light tracking-wider mt-1">
+                  <p className="text-sm lg:text-lg text-content-muted tracking-wider mt-1">
                     CS Student
                   </p>
                 </div>
@@ -140,7 +122,7 @@ export function ProfilePanel() {
                 <img
                   src="/images/avatar.png"
                   alt="Avatar"
-                  className="w-avatar lg:w-[5rem] h-avatar lg:h-[5rem] rounded-full object-cover mr-14 shrink-0"
+                  className="w-avatar lg:w-avatar-lg h-avatar lg:h-avatar-lg rounded-full object-cover mr-14 shrink-0"
                 />
               </div>
             </div>
@@ -148,22 +130,16 @@ export function ProfilePanel() {
             {/* Level badge + Tech tags */}
             <div className="flex items-center gap-2 mt-3 flex-wrap">
               {/* Level badge */}
-              <span
-                className="inline-flex items-center justify-center h-badge-h lg:h-[1.875rem] px-3 lg:px-4 bg-accent text-xs-plus lg:text-sm font-squada text-text-on-accent tracking-wider"
-                style={{
-                  clipPath:
-                    "polygon(4px 0, calc(100% - 4px) 0, 100% 50%, calc(100% - 4px) 100%, 4px 100%, 0 50%)",
-                }}
-              >
+              <span className="inline-flex items-center justify-center h-badge-h lg:h-badge-h-lg px-3 lg:px-4 bg-brand text-xs-plus lg:text-sm font-squada text-content-inverse tracking-wider clip-badge">
                 B4
               </span>
             </div>
 
             {/* Separator */}
-            <div className="h-px bg-border-dim mt-4 lg:mt-5 mb-3 lg:mb-4" />
+            <div className="h-px bg-line-subtle mt-4 lg:mt-5 mb-3 lg:mb-4" />
 
             {/* Tab content */}
-            <div className="h-tab-min lg:h-[20rem] overflow-y-auto">
+            <div className="h-tab-min lg:h-tab-min-lg overflow-y-auto">
               {activeTab === "BASIC" && <BasicTab />}
               {activeTab === "SKILLS" && <SkillsTab />}
               {activeTab === "LINKS" && <LinksTab />}
@@ -181,7 +157,7 @@ export function ProfilePanel() {
         >
           <path
             d="M0 0 L370 0 L370 40 L362 48 L362 452 L370 460 L370 500 L0 500 Z"
-            stroke="var(--color-border-strong)"
+            stroke="var(--color-line-strong)"
             strokeWidth="2"
             vectorEffect="non-scaling-stroke"
           />
@@ -189,21 +165,17 @@ export function ProfilePanel() {
       </div>
 
       {/* Tab bar island */}
-      <div className="w-full max-w-panel-inner lg:max-w-none border-2 border-border-strong bg-bg-button flex items-center p-2 gap-2 mt-3">
+      <div className="w-full max-w-panel-inner lg:max-w-none border-2 border-line-strong bg-surface-control flex items-center p-2 gap-2 mt-3">
         {TABS.map((tab, i) => (
           <button
             key={tab}
             type="button"
             onClick={() => setActiveTab(tab)}
-            className={`flex-1 h-tab-h lg:h-[2.5rem] text-sm lg:text-lg font-squada tracking-wider transition-colors ${i > 0 ? "-ml-2" : ""} ${
+            className={`flex-1 h-tab-h lg:h-tab-h-lg text-sm lg:text-lg font-squada tracking-wider transition-colors clip-tab ${i > 0 ? "-ml-tab-overlap" : ""} ${
               activeTab === tab
-                ? "bg-accent text-text-on-accent z-10"
-                : "bg-bg-dark text-muted-light hover:text-text-sub"
+                ? "bg-brand text-content-inverse z-10"
+                : "bg-surface-sunken text-content-muted hover:text-content-secondary"
             }`}
-            style={{
-              clipPath:
-                "polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%)",
-            }}
           >
             {tab}
           </button>
