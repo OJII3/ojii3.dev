@@ -9,9 +9,14 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 
 const TABS = ["BASIC", "SKILLS", "LINKS"] as const;
 type Tab = (typeof TABS)[number];
+
+type ProfilePanelProps = {
+  className?: string;
+};
 
 const SKILLS: { name: string; good?: boolean }[] = [
   { name: "TypeScript", good: true },
@@ -86,11 +91,16 @@ function LinksTab() {
   );
 }
 
-export function ProfilePanel() {
+export function ProfilePanel({ className }: ProfilePanelProps) {
   const [activeTab, setActiveTab] = useState<Tab>("BASIC");
 
   return (
-    <div className="flex flex-col items-start overflow-hidden p-4 lg:p-6 w-full max-w-panel-max lg:max-w-xl mx-auto">
+    <div
+      className={cn(
+        "flex flex-col items-start overflow-hidden p-4 lg:p-6 w-full max-w-panel-max lg:max-w-xl mx-auto",
+        className,
+      )}
+    >
       {/* Section label */}
       <p className="text-xs lg:text-sm tracking-label text-content-muted uppercase mb-2 lg:mb-3 pl-1">
         profile

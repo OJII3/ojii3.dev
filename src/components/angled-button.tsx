@@ -16,11 +16,11 @@ export function AngledButton({ to, label }: AngledButtonProps) {
         {label}
       </span>
 
+      {/* Base dark rectangle */}
+      <div className="absolute inset-0 bg-surface-control border-2 border-line-deep" />
+
       {/* Orange angled section */}
       <div className="absolute right-0 top-0 h-full w-angled-accent-w lg:w-angled-accent-w-lg bg-brand clip-angled-action" />
-
-      {/* Base dark rectangle */}
-      <div className="absolute inset-0 border-2 border-line-deep" />
 
       {/* Double chevron >> */}
       <div className="absolute right-angled-chevron-offset top-1/2 -translate-y-1/2 z-10 flex items-center gap-0">

@@ -14,9 +14,9 @@ OJII3 の個人ポートフォリオサイト。
 - **デプロイ**: Cloudflare Workers
 - **リンター/フォーマッター**: Biome
 
-## ページ構成 (予定)
+## ページ構成
 
-- **トップページ (`/`)**: ヒーローセクション、簡単な自己紹介、主要な作品のハイライト
+- **トップページ (`/`)**: 左側に将来の 3D キャラクター Canvas 領域を確保し、右側にプロフィールパネルを配置する
 - **プロジェクト一覧 (`/projects`)**: プロジェクト一覧 (GitHub 連携等)
 
 ## 開発コマンド
@@ -50,6 +50,7 @@ bun test        # テスト実行 (Bun 予約コマンド)
 - 色トークンは `canvas`, `surface-*`, `line-*`, `content-*`, `brand-*` の意味ベースで命名する
 - コンポーネント固有の固定寸法は spacing / aspect トークンとして定義し、arbitrary value は可能なかぎり避ける
 - `clip-path` などの幾何形状は `@layer utilities` の `clip-*` utility に集約し、コンポーネント内の inline style に埋め込まない
+- トップページの Canvas 予約領域など、複数トークンを組み合わせるレイアウトは `@layer utilities` の semantic utility に集約する
 
 ## その他ルール
 
