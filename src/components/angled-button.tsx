@@ -9,26 +9,21 @@ export function AngledButton({ to, label }: AngledButtonProps) {
   return (
     <Link
       to={to}
-      className="relative inline-flex items-center h-btn-h lg:h-14 w-btn-w lg:w-56 group"
+      className="relative inline-flex items-center h-action-h lg:h-14 w-action-w lg:w-56 group"
     >
       {/* Base dark rectangle */}
-      <div className="absolute inset-0 bg-bg-button border-2 border-border-dark" />
+      <div className="absolute inset-0 bg-surface-control border-2 border-line-deep" />
 
       {/* Label text */}
-      <span className="relative z-10 text-xl text-text-main font-squada pl-3 leading-none">
+      <span className="relative z-10 text-xl text-content-primary font-squada pl-3 leading-none">
         {label}
       </span>
 
       {/* Orange angled section */}
-      <div
-        className="absolute right-0 top-0 h-full w-[67px] lg:w-[80px] bg-accent"
-        style={{
-          clipPath: "polygon(30% 0, 100% 0, 100% 100%, 0 100%)",
-        }}
-      />
+      <div className="absolute right-0 top-0 h-full w-angled-accent-w lg:w-angled-accent-w-lg bg-brand clip-angled-action" />
 
       {/* Double chevron >> */}
-      <div className="absolute right-[4px] top-1/2 -translate-y-1/2 z-10 flex items-center gap-0">
+      <div className="absolute right-angled-chevron-offset top-1/2 -translate-y-1/2 z-10 flex items-center gap-0">
         <svg
           width="18"
           height="28"
@@ -39,7 +34,7 @@ export function AngledButton({ to, label }: AngledButtonProps) {
         >
           <path
             d="M0 0L14 14L0 28"
-            stroke="var(--color-bg-main)"
+            stroke="var(--color-canvas)"
             strokeWidth="4"
           />
         </svg>
@@ -52,7 +47,7 @@ export function AngledButton({ to, label }: AngledButtonProps) {
         >
           <path
             d="M0 0L14 14L0 28"
-            stroke="var(--color-bg-main)"
+            stroke="var(--color-canvas)"
             strokeWidth="4"
           />
         </svg>

@@ -7,9 +7,8 @@ type LinkCardProps = {
 };
 
 export function LinkCard({ label, href, external = false }: LinkCardProps) {
-  const clipStyle = {
-    clipPath: "polygon(0 0, 92% 0, 100% 100%, 0 100%)",
-  };
+  const className =
+    "relative flex items-center h-link-h lg:h-12 w-full bg-surface-sunken border border-line-subtle hover:border-brand transition-colors group clip-link-card";
 
   if (external) {
     return (
@@ -17,10 +16,9 @@ export function LinkCard({ label, href, external = false }: LinkCardProps) {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative flex items-center h-link-h lg:h-12 w-full bg-bg-dark border border-border-dim hover:border-accent transition-colors group"
-        style={clipStyle}
+        className={className}
       >
-        <span className="text-base lg:text-xl text-text-sub font-squada pl-3 tracking-wide group-hover:text-accent transition-colors">
+        <span className="text-base lg:text-xl text-content-secondary font-squada pl-3 tracking-wide group-hover:text-brand transition-colors">
           {label}
         </span>
         <svg
@@ -35,7 +33,7 @@ export function LinkCard({ label, href, external = false }: LinkCardProps) {
             d="M3 11L11 3M11 3H5M11 3V9"
             stroke="currentColor"
             strokeWidth="1.5"
-            className="text-muted group-hover:text-accent transition-colors"
+            className="text-content-disabled group-hover:text-brand transition-colors"
           />
         </svg>
       </a>
@@ -43,12 +41,8 @@ export function LinkCard({ label, href, external = false }: LinkCardProps) {
   }
 
   return (
-    <Link
-      to={href}
-      className="relative flex items-center h-link-h lg:h-12 w-full bg-bg-dark border border-border-dim hover:border-accent transition-colors group"
-      style={clipStyle}
-    >
-      <span className="text-base lg:text-xl text-text-sub font-squada pl-3 tracking-wide group-hover:text-accent transition-colors">
+    <Link to={href} className={className}>
+      <span className="text-base lg:text-xl text-content-secondary font-squada pl-3 tracking-wide group-hover:text-brand transition-colors">
         {label}
       </span>
       <svg
@@ -63,7 +57,7 @@ export function LinkCard({ label, href, external = false }: LinkCardProps) {
           d="M2 7H12M8 3L12 7L8 11"
           stroke="currentColor"
           strokeWidth="1.5"
-          className="text-muted group-hover:text-accent transition-colors"
+          className="text-content-disabled group-hover:text-brand transition-colors"
         />
       </svg>
     </Link>
