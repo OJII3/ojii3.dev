@@ -7,19 +7,28 @@ export const Route = createFileRoute("/projects")({
 });
 
 type Project = {
+  id: string;
   variant: "preview" | "locked";
   title?: string;
 };
 
 const projects: Project[] = [
-  { variant: "preview", title: "OBSIDIAN\nSYNC WORKERS" },
-  { variant: "preview", title: "OJII3.DEV" },
-  { variant: "preview", title: "COMPETITIVE\nPROGRAMMING" },
-  { variant: "locked" },
-  { variant: "locked" },
-  { variant: "locked" },
-  { variant: "locked" },
-  { variant: "locked" },
+  {
+    id: "obsidian-sync-workers",
+    variant: "preview",
+    title: "OBSIDIAN\nSYNC WORKERS",
+  },
+  { id: "ojii3-dev", variant: "preview", title: "OJII3.DEV" },
+  {
+    id: "competitive-programming",
+    variant: "preview",
+    title: "COMPETITIVE\nPROGRAMMING",
+  },
+  { id: "locked-1", variant: "locked" },
+  { id: "locked-2", variant: "locked" },
+  { id: "locked-3", variant: "locked" },
+  { id: "locked-4", variant: "locked" },
+  { id: "locked-5", variant: "locked" },
 ];
 
 function ProjectsPage() {
@@ -29,9 +38,9 @@ function ProjectsPage() {
 
       {/* Projects grid */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 px-4 pb-4 max-w-panel-max lg:max-w-3xl mx-auto w-full">
-        {projects.map((project, i) => (
+        {projects.map((project) => (
           <ClippedCard
-            key={`project-${project.variant}-${i}`}
+            key={project.id}
             variant={project.variant}
             title={project.title}
           />
