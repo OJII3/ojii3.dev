@@ -83,7 +83,7 @@ function SkillsTab() {
 
 function LinksTab() {
   return (
-    <div className="grid grid-cols-2 gap-4 lg:gap-3">
+    <div className="grid grid-cols-2 gap-2 lg:gap-4">
       <LinkCard label="GITHUB" href="https://github.com/OJII3" external />
       <LinkCard label="X / TWITTER" href="https://x.com/ojii3dev" external />
       <LinkCard label="Blog" href="https://blog.ojii3.dev" external />
@@ -97,7 +97,7 @@ export function ProfilePanel({ className }: ProfilePanelProps) {
   return (
     <div
       className={cn(
-        "flex flex-col items-start overflow-hidden p-4 lg:p-6 w-full max-w-panel-max lg:max-w-xl mx-auto",
+        "flex flex-col items-start overflow-hidden w-full max-w-panel-max lg:max-w-xl mx-auto",
         className,
       )}
     >

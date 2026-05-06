@@ -1,41 +1,60 @@
+import type * as React from "react";
+import { forwardRef } from "react";
+import { cn } from "@/lib/utils";
+
 type ClippedCardProps = {
   variant: "preview" | "locked";
   title?: string;
   subtitle?: string;
-};
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export function ClippedCard({ variant, title, subtitle }: ClippedCardProps) {
-  const isPreview = variant === "preview";
+export const ClippedCard = forwardRef<HTMLButtonElement, ClippedCardProps>(
+  function ClippedCard(
+    { variant, title, subtitle, className, disabled, ...props },
+    ref,
+  ) {
+    const isPreview = variant === "preview";
 
-  return (
-    <div className="relative w-full aspect-project-card overflow-hidden clip-project-card">
-      {/* Background gradient */}
-      <div
-        className={`absolute inset-0 ${
-          isPreview
-            ? "bg-gradient-to-b from-brand to-brand-pressed"
-            : "bg-gradient-to-b from-content-muted to-content-disabled"
-        }`}
-      />
+    return (
+      <button
+        ref={ref}
+        type="button"
+        disabled={disabled ?? !isPreview}
+        className={cn(
+          "group relative w-full aspect-project-card overflow-hidden clip-project-card text-left disabled:cursor-default focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand",
+          className,
+        )}
+        {...props}
+      >
+        <div
+          className={`absolute inset-0 ${
+            isPreview
+              ? "bg-gradient-to-b from-brand to-brand-pressed"
+              : "bg-gradient-to-b from-content-muted to-content-disabled"
+          }`}
+        />
 
-      {/* Border effect */}
-      <div
-        className={`absolute inset-shape-border bg-gradient-to-b clip-project-card-inner ${
-          isPreview
-            ? "from-brand to-brand-deep"
-            : "from-content-disabled to-line-emphasis"
-        }`}
-      />
+        <div
+          className={`absolute inset-shape-border bg-gradient-to-b clip-project-card-inner ${
+            isPreview
+              ? "from-brand to-brand-deep"
+              : "from-content-disabled to-line-emphasis"
+          }`}
+        />
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col justify-between h-full p-4 lg:p-5">
-        <p className="text-xl text-content-inverse font-squada leading-none">
-          {isPreview ? "PREVIEW" : "NO DATA"}
-        </p>
-        <div className="text-content-secondary text-base lg:text-xl font-squada leading-tight">
-          {isPreview && title ? <p>{title}</p> : <p>{subtitle ?? "LOCKED"}</p>}
+        <div className="relative z-10 flex h-full flex-col justify-between p-4 lg:p-5">
+          <p className="font-squada text-xl leading-none text-content-inverse">
+            {isPreview ? "PREVIEW" : "NO DATA"}
+          </p>
+          <div className="whitespace-pre-line font-squada text-base leading-tight text-content-secondary lg:text-xl">
+            {isPreview && title ? (
+              <p>{title}</p>
+            ) : (
+              <p>{subtitle ?? "LOCKED"}</p>
+            )}
+          </div>
         </div>
-      </div>
-    </div>
-  );
-}
+      </button>
+    );
+  },
+);
