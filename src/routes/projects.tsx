@@ -167,7 +167,7 @@ function ProjectDetailPanel({ project }: { project: Project }) {
 
 function ProjectsPage() {
   return (
-    <main className="flex min-h-screen flex-col gap-4">
+    <main className="flex min-h-dvh flex-col gap-4">
       <Header title="WORKS" />
 
       <div className="mx-auto grid w-full max-w-panel-max box-border grid-cols-2 gap-4 px-4 pb-6 lg:max-w-projects-grid-max lg:grid-cols-4 lg:gap-5 lg:px-0 lg:pt-2">

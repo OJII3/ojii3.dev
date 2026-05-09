@@ -77,7 +77,7 @@
   --spacing-projects-grid-max: 48rem; /* 768px */
   --spacing-project-detail-max: 44rem; /* 704px */
   --spacing-project-detail-media: 11.5rem; /* 184px */
-  --spacing-project-detail-scroll: calc(100vh - 7rem);
+  --spacing-project-detail-scroll: calc(100dvh - 7rem);
   --spacing-panel-inner: 24rem; /* 384px */
   --spacing-home-content-max: 72rem; /* 1152px */
   --spacing-home-profile-max: 36rem; /* 576px */
@@ -113,7 +113,7 @@ body {
     align-items: center;
     width: 100%;
     max-width: var(--spacing-home-content-max);
-    min-height: calc(100vh - 2rem);
+    min-height: calc(100dvh - 2rem);
   }
 
   .home-model-stage {
@@ -241,7 +241,7 @@ body {
         minmax(var(--spacing-home-stage-min), 1fr)
         minmax(0, var(--spacing-home-profile-max));
       column-gap: var(--spacing-home-gap);
-      min-height: calc(100vh - 3rem);
+      min-height: calc(100dvh - 3rem);
     }
 
     .home-model-stage {
