@@ -50,6 +50,7 @@ bun test        # テスト実行 (Bun 予約コマンド)
 - Tailwind v4 の `@theme` トークンは `src/styles.css` に集約する
 - 色トークンは `canvas`, `surface-*`, `line-*`, `content-*`, `brand-*` の意味ベースで命名する
 - コンポーネント固有の固定寸法は spacing / aspect トークンとして定義し、arbitrary value は可能なかぎり避ける
+- ページ全体やモーダルの画面高計算は、モバイルブラウザの動的ツールバーを考慮して `vh` ではなく `dvh` を使う
 - `clip-path` などの幾何形状は `@layer utilities` の `clip-*` utility に集約し、コンポーネント内の inline style に埋め込まない
 - トップページの Canvas 予約領域など、複数トークンを組み合わせるレイアウトは `@layer utilities` の semantic utility に集約する
 
