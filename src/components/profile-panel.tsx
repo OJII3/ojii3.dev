@@ -18,10 +18,10 @@ type ProfilePanelProps = {
   className?: string;
 };
 
-const SKILLS: { name: string; good?: boolean }[] = [
-  { name: "TypeScript", good: true },
-  { name: "Unity", good: true },
-  { name: "Linux", good: true },
+const SKILLS: { name: string; focused?: boolean }[] = [
+  { name: "TypeScript", focused: true },
+  { name: "Unity", focused: true },
+  { name: "Linux", focused: true },
   { name: "Blender" },
   { name: "Network" },
   { name: "C#" },
@@ -29,6 +29,26 @@ const SKILLS: { name: string; good?: boolean }[] = [
   { name: "Python" },
   { name: "C++" },
 ];
+
+function FocusRing({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 12 12"
+      fill="none"
+      aria-hidden="true"
+      className={cn("size-3 lg:size-3.5 animate-focus-ring", className)}
+    >
+      <path d="M0 3.5 L0 0 L3.5 0" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M8.5 0 L12 0 L12 3.5" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M0 8.5 L0 12 L3.5 12" stroke="currentColor" strokeWidth="1.5" />
+      <path
+        d="M8.5 12 L12 12 L12 8.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+    </svg>
+  );
+}
 
 function BasicTab() {
   return (
@@ -66,15 +86,11 @@ function SkillsTab() {
           className="flex items-center justify-between py-1.5 lg:py-2 border-b border-line-subtle"
         >
           <span
-            className={`text-sm lg:text-lg tracking-wider ${s.good ? "text-brand" : "text-content-muted"}`}
+            className={`text-sm lg:text-lg tracking-wider ${s.focused ? "text-content-primary" : "text-content-muted"}`}
           >
             {s.name}
           </span>
-          {s.good && (
-            <span className="text-2xs lg:text-sm tracking-wider text-brand/70 font-squada border border-line-brand rounded-full px-1.5 lg:px-2.5 py-0.5 lg:py-1 leading-none">
-              ★ good
-            </span>
-          )}
+          {s.focused && <FocusRing className="text-brand" />}
         </div>
       ))}
     </div>
@@ -116,6 +132,10 @@ export function ProfilePanel({ className }: ProfilePanelProps) {
               <div className="absolute inset-0 bg-line-emphasis" />
               {/* Background layer */}
               <div className="absolute inset-px bg-surface-sunken clip-profile-hero-inner" />
+              {/* Inner shadow - top */}
+              <div className="absolute top-px left-px right-px h-1 bg-black/50 z-[5]" />
+              {/* Inner shadow - left */}
+              <div className="absolute top-px left-px bottom-px w-1 bg-black/50 z-[5]" />
               {/* Content */}
               <div className="relative z-10 flex items-center justify-between h-full">
                 <div className="pl-5">
