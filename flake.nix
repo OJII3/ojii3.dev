@@ -28,7 +28,6 @@
             packages = with pkgs; [
               bun # as a package manager
               nodejs-slim # wrangler dev requires nodejs
-              claude-code-bin
             ];
             shellHook = ''
               bun --version > .bun-version
