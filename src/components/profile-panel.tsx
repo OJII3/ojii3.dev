@@ -123,9 +123,12 @@ export function ProfilePanel({ className }: ProfilePanelProps) {
       </p>
 
       <div className="relative w-full max-w-panel-inner lg:max-w-none">
-        {/* Background panel */}
-        <div className="relative bg-surface-raised w-full clip-profile-frame">
-          <div className="py-8 pl-4 lg:pl-6 pr-6 lg:pr-8 pb-4">
+        {/* Background panel with border */}
+        <div className="relative bg-line-strong w-full clip-profile-frame">
+          {/* Inner background */}
+          <div className="absolute inset-0.5 bg-surface-raised clip-profile-frame-inner" />
+
+          <div className="relative z-10 py-8 pl-4 lg:pl-6 pr-6 lg:pr-8 pb-4">
             {/* Name & Avatar area */}
             <div className="relative h-avatar-area lg:h-avatar-area-lg w-full clip-profile-hero">
               {/* Border layer */}
@@ -155,14 +158,6 @@ export function ProfilePanel({ className }: ProfilePanelProps) {
               </div>
             </div>
 
-            {/* Level badge + Tech tags */}
-            {/* <div className="flex items-center gap-2 mt-3 flex-wrap"> */}
-            {/* Level badge */}
-            {/*   <span className="inline-flex items-center justify-center h-badge-h lg:h-badge-h-lg px-3 lg:px-4 bg-brand text-xs-plus lg:text-sm font-squada text-content-inverse tracking-wider clip-badge"> */}
-            {/*     B4 */}
-            {/*   </span> */}
-            {/* </div> */}
-
             {/* Separator */}
             <div className="h-px bg-line-subtle mt-4 lg:mt-5 mb-3 lg:mb-4" />
 
@@ -178,22 +173,6 @@ export function ProfilePanel({ className }: ProfilePanelProps) {
             </div>
           </div>
         </div>
-
-        {/* SVG border outline */}
-        <svg
-          className="absolute inset-0 w-full h-full pointer-events-none"
-          viewBox="0 0 370 500"
-          preserveAspectRatio="none"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M0 0 L370 0 L370 40 L362 48 L362 452 L370 460 L370 500 L0 500 Z"
-            stroke="var(--color-line-strong)"
-            strokeWidth="2"
-            vectorEffect="non-scaling-stroke"
-          />
-        </svg>
       </div>
 
       {/* Tab bar island */}
