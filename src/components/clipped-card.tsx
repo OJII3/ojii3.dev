@@ -29,13 +29,13 @@ export const ClippedCard = forwardRef<HTMLButtonElement, ClippedCardProps>(
         <div
           className={`absolute inset-0 ${
             isPreview
-              ? "bg-gradient-to-b from-brand to-brand-pressed"
-              : "bg-gradient-to-b from-content-muted to-content-disabled"
+              ? "bg-linear-to-b from-brand to-brand-pressed"
+              : "bg-linear-to-b from-content-muted to-content-disabled"
           }`}
         />
 
         <div
-          className={`absolute inset-shape-border bg-gradient-to-b clip-project-card-inner ${
+          className={`absolute inset-shape-border bg-linear-to-b clip-project-card-inner ${
             isPreview
               ? "from-brand to-brand-deep"
               : "from-content-disabled to-line-emphasis"
