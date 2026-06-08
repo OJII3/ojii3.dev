@@ -136,9 +136,9 @@ export function ProfilePanel({ className }: ProfilePanelProps) {
               {/* Background layer */}
               <div className="absolute inset-px bg-surface-sunken clip-profile-hero-inner" />
               {/* Inner shadow - top */}
-              <div className="absolute top-px left-px right-px h-1 bg-black/50 z-[5]" />
+              <div className="absolute top-px left-px right-px h-1 bg-black/50 z-5" />
               {/* Inner shadow - left */}
-              <div className="absolute top-px left-px bottom-px w-1 bg-black/50 z-[5]" />
+              <div className="absolute top-px left-px bottom-px w-1 bg-black/50 z-5" />
               {/* Content */}
               <div className="relative z-10 flex items-center justify-between h-full">
                 <div className="pl-5">
