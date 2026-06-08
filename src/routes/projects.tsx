@@ -50,15 +50,14 @@ const projects: Project[] = [
     stack: ["React", "Vite", "Tailwind CSS"],
   },
   {
-    id: "competitive-programming",
+    id: "",
     variant: "preview",
-    title: "COMPETITIVE\nPROGRAMMING",
-    category: "ARCHIVE",
+    title: "283 Production XXXX Performance XXX= S/N-GUL4R1TY",
+    category: "JOB",
     status: "LOGGED",
-    type: "TRAINING",
-    summary:
-      "競技プログラミングの記録や学習ログをまとめるスロット。スクリーンショットではなく、カテゴリ、達成度、関連リンクを中心に見せる。",
-    stack: ["C++", "Algorithms", "AtCoder"],
+    type: "Robot",
+    summary: "Robotics Software Engineer を担当しました",
+    stack: [],
   },
   { id: "locked-1", variant: "locked" },
   { id: "locked-2", variant: "locked" },
@@ -167,10 +166,10 @@ function ProjectDetailPanel({ project }: { project: Project }) {
 
 function ProjectsPage() {
   return (
-    <main className="flex min-h-dvh flex-col gap-4">
+    <main className="flex min-h-dvh flex-col gap-8 w-full max-w-panel-max mx-auto lg:max-w-projects-grid-max">
       <Header title="WORKS" />
 
-      <div className="mx-auto grid w-full max-w-panel-max box-border grid-cols-2 gap-4 px-4 pb-6 lg:max-w-projects-grid-max lg:grid-cols-4 lg:gap-5 lg:px-0 lg:pt-2">
+      <div className="grid box-border grid-cols-2 gap-4 px-4 pb-6 lg:grid-cols-4 lg:gap-5 lg:px-0 lg:pt-2">
         {projects.map((project) => (
           <Dialog key={project.id}>
             <DialogTrigger asChild>
