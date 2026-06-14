@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { X } from "lucide-react";
 import { ClippedCard } from "@/components/clipped-card";
 import { Header } from "@/components/header";
 import {
@@ -73,21 +74,7 @@ function ProjectDetailPanel({ project }: { project: Project }) {
     <DialogContent className="max-w-project-detail-max">
       <DialogClose className="-top-12 left-0 absolute inline-flex h-8 w-12 items-center justify-center rounded-full border-2 border-brand text-brand transition-colors hover:bg-brand hover:text-content-inverse focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
         <span className="sr-only">Close project detail</span>
-        <svg
-          width="26"
-          height="18"
-          viewBox="0 0 26 18"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M9 2L2 9L9 16M3 9H18C22 9 24 7 24 4"
-            stroke="currentColor"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        <X aria-hidden="true" size={20} strokeWidth={3} />
       </DialogClose>
 
       <div className="project-detail-panel project-detail-shell overflow-hidden border-2 border-line-deep bg-surface-raised shadow-2xl">
