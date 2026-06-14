@@ -6,11 +6,12 @@ type ClippedCardProps = {
   variant: "preview" | "locked";
   title?: string;
   subtitle?: string;
+  image?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const ClippedCard = forwardRef<HTMLButtonElement, ClippedCardProps>(
   function ClippedCard(
-    { variant, title, subtitle, className, disabled, ...props },
+    { variant, title, subtitle, image, className, disabled, ...props },
     ref,
   ) {
     const isPreview = variant === "preview";
@@ -41,6 +42,17 @@ export const ClippedCard = forwardRef<HTMLButtonElement, ClippedCardProps>(
               : "from-content-disabled to-line-emphasis"
           }`}
         />
+
+        {image && (
+          <>
+            <img
+              className="h-full w-full absolute object-cover"
+              aria-label={title}
+              src={image}
+            />
+            <div className="h-full w-full absolute bg-linear-to-b from-20% to-brand-deep/50" />
+          </>
+        )}
 
         <div className="relative z-10 flex h-full flex-col justify-between p-4 lg:p-5">
           <p className="font-squada text-xl leading-none text-content-inverse">

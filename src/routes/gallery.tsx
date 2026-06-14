@@ -11,7 +11,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-export const Route = createFileRoute("/projects")({
+export const Route = createFileRoute("/gallery")({
   component: ProjectsPage,
 });
 
@@ -25,30 +25,27 @@ type Project = {
   summary?: string;
   stack?: string[];
   href?: string;
+  image?: string;
 };
 
 const projects: Project[] = [
   {
-    id: "obsidian-sync-workers",
+    id: "kaina-project",
     variant: "preview",
-    title: "OBSIDIAN\nSYNC WORKERS",
-    category: "WORKER",
-    status: "ACTIVE",
-    type: "SYNC TOOL",
+    title: "KAINAproject",
     summary:
-      "Obsidian のノートを Cloudflare Workers 経由で同期するための実験プロジェクト。画像がなくても、同期対象、実行環境、状態をデータカードとして読める構成にする。",
-    stack: ["Cloudflare Workers", "TypeScript", "Obsidian"],
+      "大学の同期率いるロボットアーム「KAINA」制作プロジェクト. HMDを用いたテレオペの実装など",
   },
   {
-    id: "ojii3-dev",
+    id: "rosettadds",
     variant: "preview",
-    title: "OJII3.DEV",
-    category: "PORTFOLIO",
-    status: "BUILDING",
-    type: "WEB SITE",
+    title: "ROSettaDDS",
+    category: "Robotics",
+    status: "ACTIVE",
+    type: "Unity Library",
     summary:
-      "OJII3 のポートフォリオサイト。ゲーム UI 的な情報密度と、画像素材に依存しないプロジェクト表示を両立するための実装。",
-    stack: ["React", "Vite", "Tailwind CSS"],
+      "C#/.NETのみでDDSレイヤーから実装した、ROS 2 と直に通信可能な Unity 向けライブラリ",
+    stack: ["ROS 2", "DDS"],
   },
   {
     id: "",
@@ -57,8 +54,26 @@ const projects: Project[] = [
     category: "JOB",
     status: "LOGGED",
     type: "Robot",
-    summary: "Robotics Software Engineer を担当しました",
+    summary:
+      "283 Production XXXX Performance XXX= S/N-GUL4R1TY にて Robotics Software Engineer を担当しました",
     stack: [],
+    image: "/images/20260412-_DSC6666_with_rights.jpg",
+  },
+  {
+    id: "ojii3-dev",
+    variant: "preview",
+    title: "OJII3.DEV",
+    category: "PORTFOLIO",
+    status: "BUILDING",
+    type: "WEB SITE",
+    summary: "はやく完成させたいが、先に改修したくなってしまう",
+    stack: ["React", "Vite", "Tailwind CSS"],
+  },
+  {
+    id: "",
+    variant: "preview",
+    title: "NHK Robocon 2024",
+    summary: "NHK学生ロボコン2024にて主にスマホコントローラーの開発を担当",
   },
   { id: "locked-1", variant: "locked" },
   { id: "locked-2", variant: "locked" },
@@ -87,7 +102,14 @@ function ProjectDetailPanel({ project }: { project: Project }) {
         <div className="project-detail-content">
           <div className="flex flex-col gap-3">
             <div className="aspect-project-detail-media overflow-hidden border-4 border-line-deep bg-surface-sunken p-2 clip-project-card lg:aspect-project-card">
-              <div className="project-data-pattern flex size-full flex-col justify-between p-3 clip-project-card-inner">
+              <div className="project-data-pattern flex size-full flex-col justify-between p-3 clip-project-card-inner relative">
+                {project.image && (
+                  <img
+                    src={project.image}
+                    className="w-fit object-cover absolute left-0 bottom-0 -z-1"
+                    aria-label={project.title}
+                  />
+                )}
                 <p className="font-squada text-xl leading-none text-content-primary">
                   {project.category ?? "PROJECT"}
                 </p>
@@ -154,7 +176,7 @@ function ProjectDetailPanel({ project }: { project: Project }) {
 function ProjectsPage() {
   return (
     <main className="flex min-h-dvh flex-col gap-8 w-full max-w-panel-max mx-auto lg:max-w-projects-grid-max">
-      <Header title="WORKS" />
+      <Header title="GALLERY" />
 
       <div className="grid box-border grid-cols-2 gap-4 px-4 pb-6 lg:grid-cols-4 lg:gap-5 lg:px-0 lg:pt-2">
         {projects.map((project) => (
@@ -163,6 +185,7 @@ function ProjectsPage() {
               <ClippedCard
                 variant={project.variant}
                 title={project.title}
+                image={project.image}
                 aria-label={
                   project.variant === "preview"
                     ? `Open ${project.title?.replace(/\n/g, " ")}`

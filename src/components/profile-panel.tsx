@@ -162,7 +162,7 @@ export function ProfilePanel({ className }: ProfilePanelProps) {
             <div className="h-px bg-line-subtle mt-4 lg:mt-5 mb-3 lg:mb-4" />
 
             <div className="mb-3 lg:mb-4">
-              <AngledButton to="/projects" label="PROJECTS" />
+              <AngledButton to="/gallery" label="GALLERY" />
             </div>
 
             {/* Tab content */}
