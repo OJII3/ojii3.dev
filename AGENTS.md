@@ -6,18 +6,18 @@ OJII3 の個人ポートフォリオサイト。
 
 ## 技術スタック
 
-- **フレームワーク**: React + Vite
+- **フレームワーク**: React + TanStack Start + Vite
 - **ルーティング**: TanStack Router (ファイルベースルーティング)
 - **スタイリング**: Tailwind CSS v4
 - **UIコンポーネント**: shadcn/ui
 - **ランタイム/パッケージマネージャ**: Bun
-- **デプロイ**: Cloudflare Workers
+- **デプロイ**: Cloudflare Pages (Wrangler)
 - **リンター/フォーマッター**: Biome
 
 ## ページ構成
 
 - **トップページ (`/`)**: 左側に将来の 3D キャラクター Canvas 領域を確保し、右側にプロフィールパネルを配置する
-- **プロジェクト一覧 (`/projects`)**: Figma のモバイル版 Works 画面を基準に、64px の薄いヘッダー、角付き戻るリンク、2列カードグリッドを配置する。PC 版はヘッダーを厚くせず、カード幅を保ったまま最大 4 列で中央配置する。カードは画像の切り抜きや背景加工に依存せず、CSS の枠・グラデーション・テキスト情報だけでも成立する Project Data Card として扱う。
+- **プロジェクト一覧 (`/gallery`)**: Figma のモバイル版 Works 画面を基準に、64px の薄いヘッダー、角付き戻るリンク、2列カードグリッドを配置する。PC 版はヘッダーを厚くせず、カード幅を保ったまま最大 4 列で中央配置する。カードは画像の切り抜きや背景加工に依存せず、CSS の枠・グラデーション・テキスト情報だけでも成立する Project Data Card として扱う。
 - **プロジェクト詳細モーダル**: Figma の横長 Data File パネル案を基準に、一覧カードから詳細を開く。画像がある場合は規格化されたメディア枠に入れ、画像がない場合もステータス、種別、説明、リンクで成立する構成にする。
 
 ## 開発コマンド
@@ -26,11 +26,23 @@ OJII3 の個人ポートフォリオサイト。
 nr dev          # 開発サーバー起動
 nr build        # プロダクションビルド
 nr preview      # ビルド結果のプレビュー
+nr test         # Bun による smoke test
 nr lint         # Biome による lint
 nr format       # Biome による format
-nr deploy       # Cloudflare Workers へデプロイ
+nr deploy       # Cloudflare Pages へデプロイ
 bun test        # テスト実行 (Bun 予約コマンド)
 ```
+
+## 主なディレクトリ構成
+
+- `src/routes/`: TanStack Router のファイルベースルート
+- `src/router.tsx`: TanStack Start 用 router factory
+- `src/components/`: 画面コンポーネントと shadcn/ui コンポーネント
+- `src/styles.css`: Tailwind CSS v4 のテーマと共通 utility
+
+## prerender
+
+`vite.config.ts` で `/` と `/gallery` をビルド時に静的 HTML 化する。生成物は `dist/client` に出力し、Cloudflare Pages へデプロイする。
 
 ## Git 戦略
 
