@@ -20,9 +20,10 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Claude Code
-.claude/*
-!.claude/skills/
+# Local agent / dev files
+.agents/
+.claude/
+.codex/
 
 # TanStack
 .tanstack/
